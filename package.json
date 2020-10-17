@@ -10,15 +10,12 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:writinghelper.helloWorld"
+		"onLanguage:html",
+		"onLanguage:txt"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
-			{
-				"command": "writinghelper.helloWorld",
-				"title": "Hello World"
-			}
 		]
 	},
 	"scripts": {
