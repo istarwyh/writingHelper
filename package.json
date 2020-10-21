@@ -11,7 +11,7 @@
 	],
 	"activationEvents": [
 		"onLanguage:html",
-		"onLanguage:txt"
+		"onLanguage:plaintext"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -25,6 +25,10 @@
 		"watch": "tsc -watch -p ./",
 		"pretest": "npm run compile && npm run lint",
 		"test": "node ./out/test/runTest.js"
+	},
+	"dependencies": {
+		"vscode-languageserver": "^6.1.1",
+		"vscode-languageserver-textdocument": "^1.0.1"
 	},
 	"devDependencies": {
 		"@types/vscode": "^1.50.0",
