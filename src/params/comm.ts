@@ -1,3 +1,3 @@
 export default{
-    'communicate with others':'与他人交流'
+    'communicate with others':'Language is learned primarily through communication with other people.'
 };

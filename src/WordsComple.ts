@@ -13,8 +13,10 @@ function  provideCompletionItems(document: TextDocument, position: Position): Co
     const line: TextLine = document.lineAt(position);
     const text: string = line.text.substring(0,position.character);
     console.log(text);
-    const componentRegex = /(^[a-zA-Z0-9-]+){1}\b/;    
+    // const componentRegex = /([a-zA-Z0-9-]+){1}\b/;    
+    const componentRegex = /([a-zA-Z0-9-]+)/g;    
     if (componentRegex.test(text)) {
+
         const index = _getName.getName(text,componentRegex);
         const params = components[index];
 
@@ -22,13 +24,14 @@ function  provideCompletionItems(document: TextDocument, position: Position): Co
             const properties = Object.keys(params);
             // 回调函数循环将prop对应的details提取出来
             const completionItems = properties.map((prop) => {
-                const completionItem = new CompletionItem(prop +" ", CompletionItemKind.Text);
+                const completionItem = new CompletionItem(prop, CompletionItemKind.Text);
                 // params[prop]就是label对应的api细节部分
-                completionItem.documentation = new MarkdownString("&emsp;Explanation&emsp;").appendCodeblock(params[prop],'typescript');
+                completionItem.documentation = new MarkdownString("&emsp;ExplanationExample&emsp;").appendCodeblock(params[prop],'typescript');
                 // completionItem.insertText = new SnippetString( prop+" "+"${1|is,am,are,was,were|}" );
                 // completionItem.insertText = new SnippetString( prop+" " );
                 completionItem.preselect = true;
-                // console.log( _getName.rangeStartToString(position) );
+                completionItem.sortText = "L";
+                // console.log( _getName.position2String(position) );
                 // var inserting = new Range(position.line,10,position.line,20);
                 // var replacing = new Range(position.line,10,position.line,20);
                 // completionItem.range = {inserting,replacing};   

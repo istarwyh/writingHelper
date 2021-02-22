@@ -1,12 +1,17 @@
 import {Range,Position } from 'vscode';
 export function getName( text:string,componentRegex:RegExp){
-    text.match(componentRegex);
-    let preWord = RegExp.$9;
-    // var preWord = RegExp[Symbol.match](text);
-   console.log(" ???"+preWord);    
+    var matches = text.match(componentRegex);
+    // let preWord = RegExp.$1.substring(-1);
+    // // var preWord = RegExp[Symbol.match](text);
+    // // console.log(" ???"+matches[match.length-1]);    
+    // console.log("<"+preWord+">");    
+    console.log("<"+matches[matches.length-1]+">");    
+    console.log("<"+matches[0]+">");  
+    console.log("<"+matches[2]+">");  
+    console.log("<"+matches[1]+">");  
     
-    return preWord;
+    return matches[matches.length-1];
 };
-export function rangeStartToString(position:Position):String{
+export function position2String(position:Position):String{
     return `{Line: ${position.line}, Character: ${position.character}}`;
 }
