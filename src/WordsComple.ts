@@ -17,7 +17,7 @@ function  provideCompletionItems(document: TextDocument, position: Position): Co
     const componentRegex = /([a-zA-Z0-9-]+)/g;    
     if (componentRegex.test(text)) {
 
-        const index = _getName.getName(text,componentRegex);
+        const index = _getName.getName(text,componentRegex) ;
         const params = components[index];
 
         if (params) {

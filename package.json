@@ -3,6 +3,14 @@
 	"displayName": "writingHelper",
 	"description": "get all the benefits of Grammarly & Linggle",
 	"version": "0.0.1",
+	"publisher": "istarwyh",
+	"keywords": [
+		"writing",
+		"english",
+		"ielts",
+		"helper"
+	],
+	"icon": "images/writingcatlogo.png",
 	"engines": {
 		"vscode": "^1.50.0"
 	},
@@ -15,8 +23,7 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [
-		]
+		"commands": []
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
