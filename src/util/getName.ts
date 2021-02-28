@@ -14,8 +14,6 @@ export function getName( text:string,componentRegex:RegExp){
     }else{
         return 0;
     }
- 
-    
 };
 export function position2String(position:Position):String{
     return `{Line: ${position.line}, Character: ${position.character}}`;
