@@ -1,23 +1,24 @@
 'use strict';
-import {TextDocument,languages, CompletionItem, Position, CompletionItemKind, Range,MarkdownString, SnippetString, TextLine} from 'vscode';
+import { TextDocument, languages, CompletionItem, Position, CompletionItemKind, Range, MarkdownString, SnippetString, TextLine } from 'vscode';
 // 下面这个语句导入一个文件夹模块,入口在index
-import components from './params';
-import * as _getName from './util/getName';
+import components from '../params';
+import Line from '../utils/Line';
+import * as _getName from '../utils/getName';
+// import Phrases from './repository/CollocationJson.json';
 
- 
-function  provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
+function provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
     const start: Position = new Position(0, 0);
     const range: Range = new Range(start, position);
     // const text = document.getText(range);   
-    /* 减少检索范围，仅检索光标所在行 */ 
+    /* 减少检索范围，仅检索光标所在行 */
     const line: TextLine = document.lineAt(position);
-    const text: string = line.text.substring(0,position.character);
+    const text: string = line.text.substring(0, position.character);
     console.log(text);
     // const componentRegex = /([a-zA-Z0-9-]+){1}\b/;    
-    const componentRegex = /([a-zA-Z0-9-]+)/g;    
+    const componentRegex = /([a-zA-Z0-9-]+)/g;
     if (componentRegex.test(text)) {
-
-        const index = _getName.getName(text,componentRegex) ;
+        let line = new Line();
+        const index = line.distillName(text, componentRegex);
         const params = components[index];
 
         if (params) {
@@ -26,7 +27,7 @@ function  provideCompletionItems(document: TextDocument, position: Position): Co
             const completionItems = properties.map((prop) => {
                 const completionItem = new CompletionItem(prop, CompletionItemKind.Text);
                 // params[prop]就是label对应的api细节部分
-                completionItem.documentation = new MarkdownString("&emsp;ExplanationExample&emsp;").appendCodeblock(params[prop],'typescript');
+                completionItem.documentation = new MarkdownString("&emsp;ExplanationExample&emsp;").appendCodeblock(params[prop], 'typescript');
                 // completionItem.insertText = new SnippetString( prop+" "+"${1|is,am,are,was,were|}" );
                 // completionItem.insertText = new SnippetString( prop+" " );
                 completionItem.preselect = true;
@@ -39,18 +40,18 @@ function  provideCompletionItems(document: TextDocument, position: Position): Co
                 return completionItem;
             });
 
-            return completionItems;  
+            return completionItems;
         }
         return [];
     }
     return [];
 }
-const completionTriggerChars =  [" ", "\n","~"];  
-const documentSelector = ['html','plainText','plaintext','txt'];
-const wordsComple = languages.registerCompletionItemProvider(documentSelector, 
-{provideCompletionItems}, ...completionTriggerChars);
+const completionTriggerChars = [" ", "\n", "~"];
+const documentSelector = ['html', 'plainText', 'plaintext', 'txt'];
+const wordsComple = languages.registerCompletionItemProvider(documentSelector,
+    { provideCompletionItems }, ...completionTriggerChars);
 
-module.exports = function(context: { subscriptions: any[]; }) {
+module.exports = function (context: { subscriptions: any[]; }) {
     context.subscriptions.push(
         wordsComple
     );

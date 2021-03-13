@@ -1,9 +1,9 @@
 {
-	"name": "writinghelper",
-	"displayName": "writingHelper",
+	"name": "writingcat",
+	"displayName": "writingCat",
 	"description": "get all the benefits of Grammarly & Linggle",
 	"version": "0.0.1",
-	"publisher": "istarwyh",
+	"publisher": "wx:istarwyh",
 	"keywords": [
 		"writing",
 		"english",
@@ -50,5 +50,8 @@
 		"typescript": "^4.0.2",
 		"vscode-test": "^1.4.0"
 	},
-	"repository": "https://github.com/istarwyh/writingHelper"
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/istarwyh/writingHelper"
+	}
 }
