@@ -3,8 +3,8 @@ import { TextDocument, languages, CompletionItem, Position, CompletionItemKind, 
 // 下面这个语句导入一个文件夹模块,入口在index
 import components from '../params';
 import Line from '../utils/Line';
-import * as _getName from '../utils/getName';
-// import Phrases from './repository/CollocationJson.json';
+import Phrases from '../repository/CollocationJson.json';
+import CollocationDetail from '../entity/CollocationDetail';
 
 function provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
     const start: Position = new Position(0, 0);
@@ -13,21 +13,22 @@ function provideCompletionItems(document: TextDocument, position: Position): Com
     /* 减少检索范围，仅检索光标所在行 */
     const line: TextLine = document.lineAt(position);
     const text: string = line.text.substring(0, position.character);
-    console.log(text);
+    console.log("text:\n" + text);
     // const componentRegex = /([a-zA-Z0-9-]+){1}\b/;    
     const componentRegex = /([a-zA-Z0-9-]+)/g;
     if (componentRegex.test(text)) {
-        let line = new Line();
-        const index = line.distillName(text, componentRegex);
-        const params = components[index];
+        const wordKey: string = Line.distillName(text, componentRegex);
+        if(wordKey === Phrases[0][CollocationDetail.wordKey.toString()]){
 
+        }
+        const params:string = components[wordKey];
         if (params) {
             const properties = Object.keys(params);
-            // 回调函数循环将prop对应的details提取出来
-            const completionItems = properties.map((prop) => {
-                const completionItem = new CompletionItem(prop, CompletionItemKind.Text);
+            // map()回调循环将phraseKey对应的phrase提取出来
+            const completionItems = properties.map((phraseKey) => {
+                const completionItem = new CompletionItem( phraseKey , CompletionItemKind.Text);
                 // params[prop]就是label对应的api细节部分
-                completionItem.documentation = new MarkdownString("&emsp;ExplanationExample&emsp;").appendCodeblock(params[prop], 'typescript');
+                completionItem.documentation = new MarkdownString("&emsp;ExplanationExample&emsp;").appendCodeblock(params[phraseKey], 'typescript');
                 // completionItem.insertText = new SnippetString( prop+" "+"${1|is,am,are,was,were|}" );
                 // completionItem.insertText = new SnippetString( prop+" " );
                 completionItem.preselect = true;

@@ -1,12 +1,16 @@
 class CollocationDetail {
-    issue: [string];
-    collocation: string;
-    note: string;
-    interception: [Interception];
-    public constructor(issue: [string], collocation: string, note: string, interception: [Interception]) {
-        this.issue = issue;
-        this.collocation = collocation;
-        this.note = note;
-        this.interception = interception;
+    static issue: [string];
+    static collocation: string;
+    static note: string;
+    static wordKey: string;
+    static interception: [Interception];
+    public constructor(issue: [string], collocation: string, note: string, wordKey: string, interception: [Interception]) {
+        issue = issue;
+        collocation = collocation;
+        note = note;
+        wordKey = wordKey;
+        interception = interception;
     }
 }
+export default CollocationDetail;
+// In financial markets, options and futures are examples of zero-sum games, excluding transaction costs.

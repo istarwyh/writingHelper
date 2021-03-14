@@ -1,11 +1,16 @@
 [
   {
-    "issue":["compete","work","竞争"],
+    "issue": [
+      "compete",
+      "work",
+      "竞争"
+    ],
     "collocation": "zero-sum game",
-    "note":"",
+    "wordKey": "zero",
+    "note": "",
     "interception": {
       "1": {
-        "Chinese": "零和游戏",
+        "Chinese": "零和博弈",
         "English": "",
         "sentence": ""
       }
