@@ -1,4 +1,6 @@
-class CollocationDetail {
+import { Interception } from "./Interception";
+
+export default class CollocationDetail {
     static issue: [string];
     static collocation: string;
     static note: string;
@@ -11,6 +13,23 @@ class CollocationDetail {
         wordKey = wordKey;
         interception = interception;
     }
+
+    public static issueStr(): string {
+        return "issue";
+    }
+    public static collocationStr(): string {
+        return "collocation";
+    }
+    public static noteStr(): string {
+        return "note";
+    }
+    /**
+     * wordKeyName
+     */
+    public static wordKeyStr(): string {
+        return "wordKey";
+    }
+    public static interceptionStr(): string {
+        return "interception";
+    }
 }
-export default CollocationDetail;
-// In financial markets, options and futures are examples of zero-sum games, excluding transaction costs.

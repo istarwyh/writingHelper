@@ -21,7 +21,7 @@
 		"onLanguage:html",
 		"onLanguage:plaintext"
 	],
-	"main": "./out/extension.js",
+	"main": "./out/writingcat/extension.js",
 	"contributes": {
 		"commands": []
 	},

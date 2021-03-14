@@ -40,3 +40,45 @@ class Student{
     // 每个对象都有__proto__,Student其实是个对象而不是类
     // __proto__:Object
 }
+/**
+ * in JavaScript you can access the code of any function it and use a regex to extract the variable name.
+ * Like JVM Reflect
+ */
+var varExtractor = new RegExp("return (.*);");
+export function getVariableName<TResult>(name: () => TResult) {
+    var m = varExtractor.exec(name + "");
+    if (m == null) throw new Error("The function does not contain a statement matching 'return variableName;'");
+    return m[1];
+}
+
+var foo = "";
+console.log(getVariableName(() => foo));
+
+
+        // // params则是一个ts module
+        // const params: string = components[wordKey];
+        // if (params) {
+        //     // 提取出module中的key组成的数组
+        //     const properties = Object.keys(params);
+        //     // 按照传进去的函数的处理方式处理
+        //     // 回调循环将properties中的Key当作phraseKey提取出来传入函数并返回completionItem
+        //     // 最后返回completionItem[]
+        //     const completionItems: CompletionItem[] = properties.map((phraseKey) => {
+        //         const completionItem = new CompletionItem(phraseKey, CompletionItemKind.Text);
+        //         // params[prop]就是phraseKey对应的Interception部分
+        //         completionItem.documentation = new MarkdownString("&emsp;ExplanationExample&emsp;").appendCodeblock(params[phraseKey], 'typescript');
+        //         // completionItem.insertText = new SnippetString( prop+" "+"${1|is,am,are,was,were|}" );
+        //         // completionItem.insertText = new SnippetString( prop+" " );
+        //         completionItem.preselect = true;
+        //         completionItem.sortText = "L";
+        //         // console.log( _getName.position2String(position) );
+        //         // var inserting = new Range(position.line,10,position.line,20);
+        //         // var replacing = new Range(position.line,10,position.line,20);
+        //         // completionItem.range = {inserting,replacing};   
+        //         // completionItem.range = range;
+        //         return completionItem;
+        //     });
+
+        //     return completionItems;
+        // }
+        // return [];

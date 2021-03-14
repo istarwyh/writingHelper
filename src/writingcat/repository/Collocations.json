@@ -8,12 +8,13 @@
     "collocation": "zero-sum game",
     "wordKey": "zero",
     "note": "",
-    "interception": {
-      "1": {
+    "interception": [
+      {
+        "majority": "0",
         "Chinese": "零和博弈",
-        "English": "",
+        "English": "Zero-sum is a situation in game theory in which one person’s gain is equivalent to another’s loss.",
         "sentence": ""
       }
-    }
+    ]
   }
 ]

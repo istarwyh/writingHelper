@@ -4,9 +4,9 @@ import * as vscode from 'vscode';
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 	console.log("--------------start-----------------");
-	require('./WordsComple')(context);
+	require('./service/WordsComple')(context);
 	// 跳转到文件上部或下部
-	require('./move')(context);
+	require('./service/move')(context);
 }
 
 // this method is called when your extension is deactivated

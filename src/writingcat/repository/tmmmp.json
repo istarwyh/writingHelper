@@ -1,0 +1,19 @@
+[
+    {
+      "issue": [
+        "compete",
+        "work",
+        "竞争"
+      ],
+      "collocation": "zero-sum game",
+      "wordKey": "zero",
+      "note": "",
+      "interception": {
+        "1": {
+          "Chinese": "零和博弈",
+          "English": "",
+          "sentence": ""
+        }
+      }
+    }
+  ]

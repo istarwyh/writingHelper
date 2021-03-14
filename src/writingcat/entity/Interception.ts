@@ -1,12 +1,24 @@
-class Interception {
-    majority: number | null;
-    Chinese: string | null;
-    English: string | null;
-    sentence: string | null;
+/**
+ * See the structure of Collocations.json
+ */
+export class Interception {
+    static majority: number | null;
+    static Chinese: string | null;
+    static English: string | null;
+    static sentence: string | null;
     public constructor(majority: number, Chinese: string | null, English: string | null, sentence: string | null) {
-        this.majority = majority;
-        this.Chinese = Chinese;
-        this.English = English;
-        this.sentence = sentence;
+        majority = majority;
+        Chinese = Chinese;
+        English = English;
+        sentence = sentence;
+    }
+    public static ChineseStr(): string {
+        return "Chinese";
+    }
+    public static EnglishStr(): string {
+        return "English";
+    }
+    public static sentenceStr(): string {
+        return "sentence";
     }
 }

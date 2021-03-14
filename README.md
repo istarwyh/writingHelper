@@ -9,7 +9,7 @@ Just install me and write in a `.txt` file in English.
 
 **Enjoy!**
 
---------
+----------------
 
 # To Developer & Committer:
 ## What's in the folder
@@ -17,19 +17,21 @@ Just install me and write in a `.txt` file in English.
 * This folder contains all of the files necessary for your extension.
 * `package.json` - this is the manifest file in which you declare your extension and command.
   * The sample plugin registers a command and defines its title and command name. With this information VS Code can show the command in the command palette. It doesn’t yet need to load the plugin.
-* `src/extension.ts` - this is the main file where you will provide the implementation of your command.
+* `src/writingcat/extension.ts` - this is the main file where you will provide the implementation of your command.
   * The file exports one function, `activate`, which is called the very first time your extension is activated (in this case by executing the command). Inside the `activate` function we call `registerCommand`.
   * We pass the function containing the implementation of the command as the **second** parameter to `registerCommand`.
 
 ## Get up and running straight away
 
 * Press `F5` to open a new window with your extension loaded.
-* Set breakpoints in your code inside `src/extension.ts` to debug the extension.
+* Actually, it will run the command in "scripts" in package.json
+* `tsc` tools will behave like in tsconfig.json
+* Set breakpoints in your code inside `src/writingcat/extension.ts` to debug the extension.
 * Find output from your extension in the debug console.
 
 ## Make changes
 
-* You can relaunch the extension from the debug toolbar after changing code in `src/extension.ts`.
+* You can relaunch the extension from the debug toolbar after changing code in `src/writingcat/extension.ts`.
 * You can also reload (`Ctrl+R` or `Cmd+R` on Mac) the VS Code window with your extension to load your changes.
 
 

@@ -1,13 +1,15 @@
 {
+	// https://www.tutorialsteacher.com/typescript/typescript-compiling-project-and-tsconfig
 	"compilerOptions": {
 		"module": "commonjs",
 		"target": "es6",
-		"outDir": "out",
+		// compile to "out" folder
+		"outDir": "./out",
 		"lib": [
 			"es6"
 		],
 		"sourceMap": true,
-		"rootDir": "src",
+		"rootDir": "src/",
 		"strict": true,   /* enable all strict type-checking options */
 		/* Additional Checks */
 		"noImplicitReturns": false, /* Report error when not all code paths in function return a value. */
