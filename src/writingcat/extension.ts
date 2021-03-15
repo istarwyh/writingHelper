@@ -4,7 +4,7 @@ import * as vscode from 'vscode';
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 	console.log("--------------start-----------------");
-	require('./service/WordsComple')(context);
+	require('./service/PhrasesComple')(context);
 	// 跳转到文件上部或下部
 	require('./service/move')(context);
 }

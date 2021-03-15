@@ -1,12 +1,12 @@
 'use strict';
 import { TextDocument, languages, CompletionItem, Position, CompletionItemKind, Range, MarkdownString, SnippetString, TextLine } from 'vscode';
 // 下面这个语句导入一个文件夹模块,入口在index
-import components from '../params';
 import Line from '../utils/Line';
+// Phrases === CollocationDetails : CollocationDetail[]
 import Phrases from '../repository/Collocations.json';
 import CollocationDetail from '../entity/CollocationDetail';
 import { Interception } from '../entity/Interception';
-import StringUtils from '../utils/StringUtils';
+import Utils from '../utils/Utils';
 
 
 const completionTriggerChars = [" ", "\n", "@"];
@@ -16,7 +16,7 @@ const documentSelector = ['html', 'plainText', 'plaintext', 'txt'];
  */
 module.exports = function (context: { subscriptions: any[]; }) {
     context.subscriptions.push(
-        languages.registerCompletionItemProvider(documentSelector, { provideCompletionItems }, ...completionTriggerChars);
+        languages.registerCompletionItemProvider(documentSelector, { provideCompletionItems }, ...completionTriggerChars)
     );
 };
 
@@ -35,21 +35,31 @@ function provideCompletionItems(document: TextDocument, position: Position): Com
         return [];
     }
     const wordKey: string = Line.distillName(text, componentRegex);
-
-    var phrase = Phrases[0];
-    if (wordKey === phrase[CollocationDetail.wordKeyStr()]) {
-        console.log("------------------Completion------------------------");
-        const interception: Interception[] = phrase[CollocationDetail.interceptionStr()];
-        const collocation: string = phrase[CollocationDetail.collocationStr()];
-        return getCompletionItems(collocation, StringUtils.notNull(interception));;
+    return getCompletionItems(findMatchedPhrases(Phrases, wordKey));
+}
+/**
+ * 
+ * @param Phrases 应当等用户补全/写完了直接拿到wordKey,在此之前引导向已有的wordKey补全
+ * @param wordKey 
+ * @returns 
+ */
+function findMatchedPhrases(Phrases: CollocationDetail[], wordKey: string): CollocationDetail[] {
+    let phrases = new Array<CollocationDetail>();
+    for (let p of Phrases) {
+        if (wordKey === p[CollocationDetail.wordKeyStr()]) {
+            phrases.push(p);
+        }
     }
-
-    return [];
+    return phrases;
 }
 
-function getCompletionItems(collocation: string, interception: Interception[]): CompletionItem[] {
-    let completionItems = new Array();
-    completionItems.push(getCompletionItem(collocation, interception));
+function getCompletionItems(matchedphrases : CollocationDetail[]): CompletionItem[] {
+    let completionItems = new Array<CompletionItem>();
+    for (let phrase of matchedphrases) {
+        const interception: Interception[] = phrase[CollocationDetail.interceptionStr()];
+        const collocation: string = phrase[CollocationDetail.collocationStr()];
+        completionItems.push(getCompletionItem(collocation, Utils.notNull(interception)));
+    }
     return completionItems;
 }
 
