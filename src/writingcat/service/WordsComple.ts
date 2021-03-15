@@ -7,7 +7,19 @@ import Phrases from '../repository/Collocations.json';
 import CollocationDetail from '../entity/CollocationDetail';
 import { Interception } from '../entity/Interception';
 import StringUtils from '../utils/StringUtils';
-import { listenerCount } from 'process';
+
+
+const completionTriggerChars = [" ", "\n", "@"];
+const documentSelector = ['html', 'plainText', 'plaintext', 'txt'];
+/**
+ * todo: What is {provideCompletionItems}?CompletionItemProvider<CompletionItem>.provideCompletionItems?
+ */
+module.exports = function (context: { subscriptions: any[]; }) {
+    context.subscriptions.push(
+        languages.registerCompletionItemProvider(documentSelector, { provideCompletionItems }, ...completionTriggerChars);
+    );
+};
+
 
 function provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
     const start: Position = new Position(0, 0);
@@ -34,18 +46,19 @@ function provideCompletionItems(document: TextDocument, position: Position): Com
 
     return [];
 }
+
 function getCompletionItems(collocation: string, interception: Interception[]): CompletionItem[] {
     let completionItems = new Array();
     completionItems.push(getCompletionItem(collocation, interception));
-
     return completionItems;
 }
+
 function getCompletionItem(collocation: string, interception: Interception[]): CompletionItem {
     const completionItem = new CompletionItem(collocation, CompletionItemKind.Text);
     var appendTitle = "&emsp;<font color=\"skyblue\">Interception</font>&emsp;";
-    const englishIerception :string = interception[0][Interception.EnglishStr()];
+    const englishIerception: string = interception[0][Interception.EnglishStr()];
     const sentence = interception[Interception.sentenceStr()];
-    if (englishIerception || sentence ) {
+    if (englishIerception || sentence) {
         appendTitle = sentence ? sentence : englishIerception;
     }
     completionItem.documentation = new MarkdownString(appendTitle).appendCodeblock(interception[0][Interception.ChineseStr()], 'typescript');
@@ -53,14 +66,3 @@ function getCompletionItem(collocation: string, interception: Interception[]): C
     completionItem.sortText = "L";
     return completionItem;
 }
-
-const completionTriggerChars = [" ", "\n", "@"];
-const documentSelector = ['html', 'plainText', 'plaintext', 'txt'];
-const wordsComple = languages.registerCompletionItemProvider(documentSelector,
-    { provideCompletionItems }, ...completionTriggerChars);
-
-module.exports = function (context: { subscriptions: any[]; }) {
-    context.subscriptions.push(
-        wordsComple
-    );
-};

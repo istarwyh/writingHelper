@@ -1,5 +1,5 @@
 {
-	// https://www.tutorialsteacher.com/typescript/typescript-compiling-project-and-tsconfig
+	/* https://www.tutorialsteacher.com/typescript/typescript-compiling-project-and-tsconfig*/
 	"compilerOptions": {
 		"module": "commonjs",
 		"target": "es6",
