@@ -1,3 +1,4 @@
+import Node from "../entity/Node";
 
 export default class Utils {
     static notNull(o: any): any {
@@ -21,6 +22,10 @@ export default class Utils {
     }
 
     static notBlank(o: string): boolean {
-        return o === "" ? false : true;
+        return (o === "" || o.charAt(0) === " ") ? false : true;
+    }
+
+    static isBlank(o: string): boolean {
+        return !this.notBlank(o);
     }
 }

@@ -1,7 +1,7 @@
 /**
  * See the structure of Collocations.json
  */
-export class Interception {
+export class Interpretation {
     static majority: number | null;
     static Chinese: string | null;
     static English: string | null;

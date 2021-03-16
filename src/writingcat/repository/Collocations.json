@@ -8,7 +8,7 @@
     "collocation": "zero-sum game",
     "wordKey": "zero",
     "note": "",
-    "interception": [
+    "interpretation": [
       {
         "majority": "0",
         "Chinese": "零和博弈",
@@ -25,7 +25,7 @@
     "collocation": "communicate with ${}",
     "wordKey": "communicate",
     "note": "",
-    "interception": [
+    "interpretation": [
       {
         "majority": "0",
         "Chinese": "与...交谈",
@@ -42,7 +42,7 @@
     "collocation": "do the laundry",
     "wordKey": "do",
     "note": "",
-    "interception": [
+    "interpretation": [
       {
         "majority": "0",
         "Chinese": "洗衣服/做浣洗工作",
@@ -59,7 +59,7 @@
     "collocation": "do the errands",
     "wordKey": "do",
     "note": "",
-    "interception": [
+    "interpretation": [
       {
         "majority": "0",
         "Chinese": "出差",

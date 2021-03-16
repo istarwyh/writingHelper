@@ -5,7 +5,7 @@ import Line from '../utils/Line';
 // Phrases === CollocationDetails : CollocationDetail[]
 import Phrases from '../repository/Collocations.json';
 import CollocationDetail from '../entity/CollocationDetail';
-import { Interception } from '../entity/Interception';
+import { Interpretation } from '../entity/Interpretation';
 import Utils from '../utils/Utils';
 
 
@@ -56,22 +56,22 @@ function findMatchedPhrases(Phrases: CollocationDetail[], wordKey: string): Coll
 function getCompletionItems(matchedphrases : CollocationDetail[]): CompletionItem[] {
     let completionItems = new Array<CompletionItem>();
     for (let phrase of matchedphrases) {
-        const interception: Interception[] = phrase[CollocationDetail.interceptionStr()];
+        const interpretation: Interpretation[] = phrase[CollocationDetail.interpretationStr()];
         const collocation: string = phrase[CollocationDetail.collocationStr()];
-        completionItems.push(getCompletionItem(collocation, Utils.notNull(interception)));
+        completionItems.push(getCompletionItem(collocation, Utils.notNull(CollocationDetail.interpretationStr())));
     }
     return completionItems;
 }
 
-function getCompletionItem(collocation: string, interception: Interception[]): CompletionItem {
+function getCompletionItem(collocation: string, interpretation: Interpretation[]): CompletionItem {
     const completionItem = new CompletionItem(collocation, CompletionItemKind.Text);
-    var appendTitle = "&emsp;<font color=\"skyblue\">Interception</font>&emsp;";
-    const englishIerception: string = interception[0][Interception.EnglishStr()];
-    const sentence = interception[Interception.sentenceStr()];
+    var appendTitle = "&emsp;<font color=\"skyblue\">Interpretation</font>&emsp;";
+    const englishIerception: string = interpretation[0][Interpretation.EnglishStr()];
+    const sentence = interpretation[Interpretation.sentenceStr()];
     if (englishIerception || sentence) {
         appendTitle = sentence ? sentence : englishIerception;
     }
-    completionItem.documentation = new MarkdownString(appendTitle).appendCodeblock(interception[0][Interception.ChineseStr()], 'typescript');
+    completionItem.documentation = new MarkdownString(appendTitle).appendCodeblock(interpretation[0][Interpretation.ChineseStr()], 'typescript');
     completionItem.preselect = true;
     completionItem.sortText = "L";
     return completionItem;

@@ -1,17 +1,17 @@
-import { Interception } from "./Interception";
+import { Interpretation } from "./Interpretation";
 
 export default class CollocationDetail {
     static issue: [string];
     static collocation: string;
     static note: string;
     static wordKey: string;
-    static interception: [Interception];
-    public constructor(issue: [string], collocation: string, note: string, wordKey: string, interception: [Interception]) {
+    static interpretation: [Interpretation];
+    public constructor(issue: [string], collocation: string, note: string, wordKey: string, interpretation: [Interpretation]) {
         issue = issue;
         collocation = collocation;
         note = note;
         wordKey = wordKey;
-        interception = interception;
+        interpretation = interpretation;
     }
 
     public static issueStr(): string {
@@ -29,7 +29,7 @@ export default class CollocationDetail {
     public static wordKeyStr(): string {
         return "wordKey";
     }
-    public static interceptionStr(): string {
-        return "interception";
+    public static interpretationStr(): string {
+        return "interpretation";
     }
 }

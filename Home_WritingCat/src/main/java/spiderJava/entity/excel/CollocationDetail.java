@@ -20,8 +20,8 @@ public class CollocationDetail {
     private String area;
     @Excel( title = "Collocation")
     private String collocation;
-    @Excel( title = "Interception")
-    private String interception;
+    @Excel( title = "Interpretation")
+    private String interpretation;
     @Excel(title = "Note")
     private String note;
 }

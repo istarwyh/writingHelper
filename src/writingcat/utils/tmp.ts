@@ -65,7 +65,7 @@ console.log(getVariableName(() => foo));
         //     // 最后返回completionItem[]
         //     const completionItems: CompletionItem[] = properties.map((phraseKey) => {
         //         const completionItem = new CompletionItem(phraseKey, CompletionItemKind.Text);
-        //         // params[prop]就是phraseKey对应的Interception部分
+        //         // params[prop]就是phraseKey对应的Interpretation部分
         //         completionItem.documentation = new MarkdownString("&emsp;ExplanationExample&emsp;").appendCodeblock(params[phraseKey], 'typescript');
         //         // completionItem.insertText = new SnippetString( prop+" "+"${1|is,am,are,was,were|}" );
         //         // completionItem.insertText = new SnippetString( prop+" " );
