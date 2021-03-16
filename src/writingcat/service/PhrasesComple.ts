@@ -40,7 +40,7 @@ function provideCompletionItems(document: TextDocument, position: Position): Com
  * todo: how to add 'provideCompletionItems' in PhrasesComple?
  */
 class PhrasesComple extends abstractComple{
-    static completionTriggerChars = ["\t", "\n"];
+    static completionTriggerChars = ["\t","\n","    "];
 
     provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
         throw new Error('Method not implemented.');
@@ -55,7 +55,7 @@ class PhrasesComple extends abstractComple{
     /**
      * 
      * @param Phrases 等用户补全/写完了直接拿到wordKey,在此之前引导向已有的wordKey补全
-     * @param wordKey 
+     * @param wordKey 如果默认wordKey是浅醉,则Collocation可以减去它
      * @returns 
      */
     static findMatchedPhrases(Phrases: CollocationDetail[], wordKey: string): CollocationDetail[] {
@@ -91,5 +91,7 @@ function getCompletionItem(collocation: string, interpretation: Interpretation[]
     completionItem.documentation = new MarkdownString(appendTitle).appendCodeblock(interpretation[0][Interpretation.ChineseStr()], 'typescript');
     completionItem.preselect = true;
     completionItem.sortText = "L";
+    // completionItem.insertText = ;
+    // completionItem.detail = ;
     return completionItem;
 }
