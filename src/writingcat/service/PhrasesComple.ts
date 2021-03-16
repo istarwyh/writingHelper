@@ -7,16 +7,15 @@ import Phrases from '../repository/Collocations.json';
 import CollocationDetail from '../entity/CollocationDetail';
 import { Interpretation } from '../entity/Interpretation';
 import Utils from '../utils/Utils';
+import abstractComple from './interface/abstractComple';
 
 
-const completionTriggerChars = [" ", "\n", "@"];
-const documentSelector = ['html', 'plainText', 'plaintext', 'txt'];
 /**
  * todo: What is {provideCompletionItems}?CompletionItemProvider<CompletionItem>.provideCompletionItems?
  */
 module.exports = function (context: { subscriptions: any[]; }) {
     context.subscriptions.push(
-        languages.registerCompletionItemProvider(documentSelector, { provideCompletionItems }, ...completionTriggerChars)
+        languages.registerCompletionItemProvider(PhrasesComple.documentSelector, { provideCompletionItems }, ...PhrasesComple.completionTriggerChars)
     );
 };
 
@@ -35,22 +34,40 @@ function provideCompletionItems(document: TextDocument, position: Position): Com
         return [];
     }
     const wordKey: string = Line.distillName(text, componentRegex);
-    return getCompletionItems(findMatchedPhrases(Phrases, wordKey));
+    return getCompletionItems(PhrasesComple.findMatchedPhrases(Phrases, wordKey));
 }
 /**
- * 
- * @param Phrases 应当等用户补全/写完了直接拿到wordKey,在此之前引导向已有的wordKey补全
- * @param wordKey 
- * @returns 
+ * todo: how to add 'provideCompletionItems' in PhrasesComple?
  */
-function findMatchedPhrases(Phrases: CollocationDetail[], wordKey: string): CollocationDetail[] {
-    let phrases = new Array<CollocationDetail>();
-    for (let p of Phrases) {
-        if (wordKey === p[CollocationDetail.wordKeyStr()]) {
-            phrases.push(p);
-        }
+class PhrasesComple extends abstractComple{
+    static completionTriggerChars = ["\t", "\n"];
+
+    provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
+        throw new Error('Method not implemented.');
     }
-    return phrases;
+    getComples4CollocationDetail(matchedphrases: CollocationDetail[]): CompletionItem[] {
+        throw new Error('Method not implemented.');
+    }
+    getComples4Arr(arr: string[]): CompletionItem[] {
+        throw new Error('Method not implemented.');
+    }
+
+    /**
+     * 
+     * @param Phrases 等用户补全/写完了直接拿到wordKey,在此之前引导向已有的wordKey补全
+     * @param wordKey 
+     * @returns 
+     */
+    static findMatchedPhrases(Phrases: CollocationDetail[], wordKey: string): CollocationDetail[] {
+        let phrases = new Array<CollocationDetail>();
+        for (let p of Phrases) {
+            if (wordKey === p[CollocationDetail.wordKeyStr()]) {
+                phrases.push(p);
+            }
+        }
+        return phrases;
+    }
+
 }
 
 function getCompletionItems(matchedphrases : CollocationDetail[]): CompletionItem[] {

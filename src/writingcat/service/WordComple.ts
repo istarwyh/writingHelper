@@ -33,8 +33,7 @@ function provideCompletionItems(document: TextDocument, position: Position): Com
  * todo: don't konw how to add 'provideCompletionItems' in WordComple
  */
 class WordComple extends abstractComple {
-    static readonly completionTriggerChars = [" ", "\n", "@"];
-    static readonly documentSelector = ['html', 'plainText', 'plaintext', 'txt'];
+    static completionTriggerChars = [" ", "\n"];
 
     provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
         return provideCompletionItems(document, position);

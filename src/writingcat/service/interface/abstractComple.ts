@@ -5,6 +5,9 @@ import Utils from "../../utils/Utils";
 import { ComComple } from "./ComComple";
 
 export default abstract class abstractComple implements ComComple{
+    static completionTriggerChars : string[];
+    static readonly documentSelector = ['html', 'plainText', 'plaintext', 'txt'];
+
     abstract provideCompletionItems(document: TextDocument, position: Position): CompletionItem[];    
     abstract getComples4CollocationDetail(matchedphrases: CollocationDetail[]): CompletionItem[];
     abstract getComples4Arr(arr: string[]): CompletionItem[];
