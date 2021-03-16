@@ -58,7 +58,7 @@ function getCompletionItems(matchedphrases : CollocationDetail[]): CompletionIte
     for (let phrase of matchedphrases) {
         const interpretation: Interpretation[] = phrase[CollocationDetail.interpretationStr()];
         const collocation: string = phrase[CollocationDetail.collocationStr()];
-        completionItems.push(getCompletionItem(collocation, Utils.notNull(CollocationDetail.interpretationStr())));
+        completionItems.push(getCompletionItem(collocation, Utils.notNull(interpretation)));
     }
     return completionItems;
 }
@@ -66,10 +66,10 @@ function getCompletionItems(matchedphrases : CollocationDetail[]): CompletionIte
 function getCompletionItem(collocation: string, interpretation: Interpretation[]): CompletionItem {
     const completionItem = new CompletionItem(collocation, CompletionItemKind.Text);
     var appendTitle = "&emsp;<font color=\"skyblue\">Interpretation</font>&emsp;";
-    const englishIerception: string = interpretation[0][Interpretation.EnglishStr()];
+    const enInterpretation: string = interpretation[0][Interpretation.EnglishStr()];
     const sentence = interpretation[Interpretation.sentenceStr()];
-    if (englishIerception || sentence) {
-        appendTitle = sentence ? sentence : englishIerception;
+    if (enInterpretation || sentence) {
+        appendTitle = sentence ? sentence : enInterpretation;
     }
     completionItem.documentation = new MarkdownString(appendTitle).appendCodeblock(interpretation[0][Interpretation.ChineseStr()], 'typescript');
     completionItem.preselect = true;
