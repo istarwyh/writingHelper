@@ -40,7 +40,7 @@ function provideCompletionItems(document: TextDocument, position: Position): Com
  * todo: how to add 'provideCompletionItems' in PhrasesComple?
  */
 class PhrasesComple extends abstractComple{
-    static completionTriggerChars = ["\t","\n","    "];
+    static completionTriggerChars = [" ","\t","\n","    "];
 
     provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
         throw new Error('Method not implemented.');

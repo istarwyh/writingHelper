@@ -9,6 +9,8 @@ Just install me and write in a `.txt` file in English.
 
 **Enjoy!**
 
+## **Bug**:-(
+for word completion, after we use "tab" key, the collocation completion more than what we need. So now the word completion is just a hint.:-(
 ----------------
 
 # To Developer & Committer:

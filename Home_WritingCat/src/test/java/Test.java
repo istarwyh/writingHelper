@@ -7,12 +7,12 @@
 public class Test {
     @org.junit.jupiter.api.Test
     public void t1(){
-        TrieTree trieTree = new TrieTree();
-        trieTree.insert("dog");
-        trieTree.insert("dot");
-        trieTree.insert("do");
-        trieTree.insert("pump");
-        for( var s :trieTree.searchWords("do")){
+        TrieTree wordTree = new TrieTree();
+        wordTree.insert("dog");
+        wordTree.insert("dot");
+        wordTree.insert("do");
+        wordTree.insert("pump");
+        for( var s :wordTree.searchWords("do")){
             System.out.println(s);
 
         }

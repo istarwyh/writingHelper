@@ -7,7 +7,11 @@ import Initial from './controller/Initial';
 export function activate(context: vscode.ExtensionContext) {
 	console.log("--------------start-----------------");
 	Initial.buildSingleTrie();
-	// Initial.trieTree.print(Initial.trieTree.root);
+	// Initial.wordTree.print(Initial.wordTree.root);
+	/**
+	 * Issue/话题补全--主要是提示
+	 */
+	require('./service/IssueCue')(context);
 	/**
 	 * 单词补全--引导补全词伙单词
 	 */

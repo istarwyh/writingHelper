@@ -7,6 +7,8 @@ export default class TrieTree {
      */
     public readonly root: Node = new Node();
     public constructor() { }
+
+    
     public insert(word: string): void {
         let cur: Node = this.root;
         for (let i = 0; i < word.length; i++) {

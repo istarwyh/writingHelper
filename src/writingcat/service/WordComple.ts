@@ -18,22 +18,23 @@ function provideCompletionItems(document: TextDocument, position: Position): Com
     const line: TextLine = document.lineAt(position);
     const lineText: string = line.text.substring(0, position.character);
     const textRegex = /([a-zA-Z]+)/g;
-    if ( !textRegex.test(lineText) || lineText.lastIndexOf(" ") === lineText.length -1) {
+    var lastIndex = lineText.lastIndexOf(" ");
+    if ( !textRegex.test(lineText) || lastIndex === lineText.length -1) {
         return [];
     }
     const wordRegex = / /;
-    var chKey = wordRegex.test(lineText) ? lineText.substring(lineText.lastIndexOf(" ") + 1, lineText.length) : lineText;
+    var chKey = wordRegex.test(lineText) ? lineText.substring(lastIndex + 1, lineText.length) : lineText;
  
     var prefix = chKey;
-    var matchedKeys = Initial.trieTree.searchWordsByPrefix(prefix);
-    // todo:换成staic method or 传入wordComple ??
+    var matchedKeys = Initial.wordTree.searchWordsByPrefix(prefix);
+    // todo:换成staic method or 传入wordComple
     return new WordComple().getComples4Arr(Utils.notNull(matchedKeys));
 }
 /**
  * todo: don't konw how to add 'provideCompletionItems' in WordComple
  */
 class WordComple extends abstractComple {
-    static completionTriggerChars = [" ", "\n"];
+    static readonly completionTriggerChars = [" ", "\n"];
 
     provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
         return provideCompletionItems(document, position);
@@ -41,16 +42,5 @@ class WordComple extends abstractComple {
     getComples4CollocationDetail(matchedphrases: CollocationDetail[]): CompletionItem[] {
         throw new Error('Method not implemented.');
     }
-    getComples4Arr(ss: string[]): CompletionItem[] {
-        var completionItems = new Array<CompletionItem>();
-        ss.forEach(
-            (s) => {
-                const completionItem = new CompletionItem(s, CompletionItemKind.Keyword);
-                completionItem.preselect = true;
-                completionItem.sortText = "L";
-                completionItems.push(completionItem);
-            }
-        )
-        return completionItems;
-    }
+   
 }

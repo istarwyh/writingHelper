@@ -1,3 +1,0 @@
-class Dictionary{
-    public constructor(){}
-}

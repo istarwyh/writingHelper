@@ -5,15 +5,19 @@ import Phrases from "../repository/Collocations.json";
  * Initial controller class to prepare resouces and dispathch tasks 
  */
 export default class Initial {
-    public static trieTree: TrieTree;
-
+    public static wordTree: TrieTree;
+    public static issueTree: TrieTree;
     private constructor() {
-        Initial.trieTree = new TrieTree()
+        Initial.wordTree = new TrieTree();
+        Initial.issueTree = new TrieTree();
         Phrases.forEach(
             (phrase) => {
-                Initial.trieTree.insert(phrase[CollocationDetail.wordKeyStr()]);
+                Initial.wordTree.insert(phrase[CollocationDetail.wordKeyStr()]);
+                Initial.issueTree.insert(phrase[CollocationDetail.issueStr()][0]);
             }
         )
+
+        
     }
     /**
      * single process of JS runtime, so don't need lock
@@ -22,11 +26,12 @@ export default class Initial {
      * @returns 
      */
     public static buildSingleTrie(): TrieTree{
-    if (Initial.trieTree === undefined ||  Initial.trieTree === null) {
+        // 两个绑定在一起判断,因此省下两个判断
+    if (Initial.wordTree === undefined ||  Initial.issueTree === null) {
             new Initial();
-            return Initial.trieTree; 
+            return Initial.wordTree; 
         }else{
-            return this.trieTree;
+            return this.wordTree;
         }
     }
 }

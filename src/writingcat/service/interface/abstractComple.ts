@@ -4,13 +4,26 @@ import { Interpretation } from "../../entity/Interpretation";
 import Utils from "../../utils/Utils";
 import { ComComple } from "./ComComple";
 
-export default abstract class abstractComple implements ComComple{
-    static completionTriggerChars : string[];
+export default abstract class abstractComple implements ComComple {
+    static completionTriggerChars: string[];
     static readonly documentSelector = ['html', 'plainText', 'plaintext', 'txt'];
 
-    abstract provideCompletionItems(document: TextDocument, position: Position): CompletionItem[];    
+    abstract provideCompletionItems(document: TextDocument, position: Position): CompletionItem[];
     abstract getComples4CollocationDetail(matchedphrases: CollocationDetail[]): CompletionItem[];
-    abstract getComples4Arr(arr: string[]): CompletionItem[];
+    
+    getComples4Arr(ss: string[]): CompletionItem[] {
+        var completionItems = new Array<CompletionItem>();
+        ss.forEach(
+            (s) => {
+                const completionItem = new CompletionItem(s, CompletionItemKind.Keyword);
+                completionItem.preselect = true;
+                completionItem.sortText = "L";
+                completionItems.push(completionItem);
+            }
+        )
+        return completionItems;
+    }
+
     getCompletionItem(collocation: string, interpretation: Interpretation[]): CompletionItem {
         const completionItem = new CompletionItem(collocation, CompletionItemKind.Text);
         var appendTitle = "&emsp;<font color=\"skyblue\">Interpretation</font>&emsp;";
