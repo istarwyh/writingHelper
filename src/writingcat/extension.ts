@@ -11,15 +11,15 @@ export function activate(context: vscode.ExtensionContext) {
 	/**
 	 * Issue/话题补全--主要是提示
 	 */
-	require('./service/IssueCue')(context);
+	require('./service/impl/IssueCue')(context);
 	/**
 	 * 单词补全--引导补全词伙单词
 	 */
-	require('./service/WordComple')(context);
+	require('./service/impl/WordComple')(context);
 	/**
 	 * 词伙补全
 	 */
-	require('./service/PhrasesComple')(context);
+	require('./service/impl/PhrasesComple')(context);
 	/**
 	 * 跳转到文件上部或下部
 	 */

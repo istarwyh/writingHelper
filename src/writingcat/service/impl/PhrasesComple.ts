@@ -1,13 +1,13 @@
 'use strict';
 import { TextDocument, languages, CompletionItem, Position, CompletionItemKind, Range, MarkdownString, SnippetString, TextLine } from 'vscode';
 // 下面这个语句导入一个文件夹模块,入口在index
-import Line from '../utils/Line';
+import Line from '../../utils/impl/Line';
 // Phrases === CollocationDetails : CollocationDetail[]
-import Phrases from '../repository/Collocations.json';
-import CollocationDetail from '../entity/CollocationDetail';
-import { Interpretation } from '../entity/Interpretation';
-import Utils from '../utils/Utils';
-import abstractComple from './interface/abstractComple';
+import Phrases from '../../repository/Collocations.json';
+import CollocationDetail from '../../entity/CollocationDetail';
+import { Interpretation } from '../../entity/Interpretation';
+import Utils from '../../utils/Utils';
+import abstractComple from '../abstractComple';
 
 
 /**

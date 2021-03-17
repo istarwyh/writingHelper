@@ -1,10 +1,9 @@
 import { TextDocument, Position, CompletionItem, MarkdownString, CompletionItemKind } from "vscode";
-import CollocationDetail from "../../entity/CollocationDetail";
-import { Interpretation } from "../../entity/Interpretation";
-import Utils from "../../utils/Utils";
-import { ComComple } from "./ComComple";
+import CollocationDetail from "../entity/CollocationDetail";
+import { Interpretation } from "../entity/Interpretation";
+import { IComComple } from "./IComComple";
 
-export default abstract class abstractComple implements ComComple {
+export default abstract class abstractComple implements IComComple {
     static completionTriggerChars: string[];
     static readonly documentSelector = ['html', 'plainText', 'plaintext', 'txt'];
 

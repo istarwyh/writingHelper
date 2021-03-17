@@ -1,4 +1,4 @@
-import { ILine } from "./interface/ILine";
+import { ILine } from "../ILine";
 import { Range, Position } from 'vscode';
 
 class Line implements ILine {

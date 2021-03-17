@@ -1,8 +1,8 @@
 import { CompletionItem, Position, TextDocument } from "vscode";
-import CollocationDetail from "../../entity/CollocationDetail";
-import { Interpretation } from "../../entity/Interpretation";
+import CollocationDetail from "../entity/CollocationDetail";
+import { Interpretation } from "../entity/Interpretation";
 
-export interface ComComple {
+export interface IComComple {
     /**
      * 主方法
      * @param document 

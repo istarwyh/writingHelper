@@ -1,10 +1,10 @@
 'use strict';
 import { TextDocument, languages, CompletionItem, Position, CompletionItemKind, Range, MarkdownString, SnippetString, TextLine } from 'vscode';
-import Initial from '../controller/Initial';
-import CollocationDetail from "../entity/CollocationDetail";
-import Utils from '../utils/Utils';
-import abstractComple from "./interface/abstractComple";
-import Phrases from '../repository/Collocations.json';
+import Initial from '../../controller/Initial';
+import CollocationDetail from "../../entity/CollocationDetail";
+import Utils from '../../utils/Utils';
+import abstractComple from "../abstractComple";
+import Phrases from '../../repository/Collocations.json';
 
 module.exports = function (context: { subscriptions: any[]; }) {
     context.subscriptions.push(
