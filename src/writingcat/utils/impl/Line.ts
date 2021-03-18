@@ -15,7 +15,7 @@ class Line implements ILine {
         // // var preWord = RegExp[Symbol.match](text);
         // console.log("<"+preWord+">");    
         if (matches !== null) {
-            console.log("THE KEY:\n"+"<" + matches[matches.length - 1] + ">");
+            console.log("THE KEY:\n" + "<" + matches[matches.length - 1] + ">");
             // console.log("<" + matches[0] + ">");
             // console.log("<" + matches[1] + ">");
             // console.log("<" + matches[2] + ">");
@@ -23,6 +23,10 @@ class Line implements ILine {
         } else {
             return "";
         }
+    }
+
+    public static distillKey(lineText: string, wordRegex: RegExp,...triggerIndex:number[]): string {
+        return wordRegex.test(lineText) ? lineText.substring(triggerIndex[0] + 1, lineText.length) : lineText;
     }
     public static position2String(position: Position): string {
         return `{Line: ${position.line}, Character: ${position.character}}`;

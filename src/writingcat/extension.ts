@@ -22,7 +22,7 @@ export function activate(context: vscode.ExtensionContext) {
 	/**
 	 * 单词补全--引导补全词伙单词
 	 */
-	require('./service/impl/WordComple')(context);
+	// require('./service/impl/WordComple')(context);
 	/**
 	 * 词伙补全
 	 */

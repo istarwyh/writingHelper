@@ -18,7 +18,6 @@ export default class IssueCue extends abstractComple {
     }
 
     public getIssueCue(lineText: string, ...triggerIndex:number[]): CompletionItem[] {
-
         var issueKey = lineText.substring(triggerIndex[0] + 1, lineText.length-1);
         var matchedKeys = new Array<string>();
         // filter返回的是满足条件的元素,map返回的是满足条件后的boolean值
