@@ -1,4 +1,4 @@
-import Node from "../entity/Node";
+import Node from "../dto/Node";
 
 export default class Utils {
     static notNull(o: any): any {

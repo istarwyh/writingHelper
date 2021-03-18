@@ -3,12 +3,7 @@ import CollocationDetail from "../entity/CollocationDetail";
 import { Interpretation } from "../entity/Interpretation";
 
 export interface IComComple {
-    /**
-     * 主方法
-     * @param document 
-     * @param position 
-     */
-    provideCompletionItems(document: TextDocument, position: Position): CompletionItem[];
+
     /**
      * CollocationDetail[] provide CompletionItems
      * @param matchedphrases 

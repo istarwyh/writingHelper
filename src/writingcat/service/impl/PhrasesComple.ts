@@ -42,9 +42,6 @@ function provideCompletionItems(document: TextDocument, position: Position): Com
 class PhrasesComple extends abstractComple{
     static completionTriggerChars = [" ","\t","\n","    "];
 
-    provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
-        throw new Error('Method not implemented.');
-    }
     getComples4CollocationDetail(matchedphrases: CollocationDetail[]): CompletionItem[] {
         throw new Error('Method not implemented.');
     }

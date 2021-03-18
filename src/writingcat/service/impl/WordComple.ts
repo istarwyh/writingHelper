@@ -36,9 +36,6 @@ function provideCompletionItems(document: TextDocument, position: Position): Com
 class WordComple extends abstractComple {
     static readonly completionTriggerChars = [" ", "\n"];
 
-    provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
-        return provideCompletionItems(document, position);
-    }
     getComples4CollocationDetail(matchedphrases: CollocationDetail[]): CompletionItem[] {
         throw new Error('Method not implemented.');
     }

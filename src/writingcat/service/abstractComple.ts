@@ -7,7 +7,6 @@ export default abstract class abstractComple implements IComComple {
     static completionTriggerChars: string[];
     static readonly documentSelector = ['html', 'plainText', 'plaintext', 'txt'];
 
-    abstract provideCompletionItems(document: TextDocument, position: Position): CompletionItem[];
     abstract getComples4CollocationDetail(matchedphrases: CollocationDetail[]): CompletionItem[];
     
     getComples4Arr(ss: string[]): CompletionItem[] {

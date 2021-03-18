@@ -1,5 +1,5 @@
 import CollocationDetail from "./entity/CollocationDetail";
-import TrieTree from "./entity/TrieTree";
+import TrieTree from "./dto/TrieTree";
 import Phrases from "./repository/Collocations.json";
 /**
  * AutoLoader controller class to prepare resouces and dispathch tasks 
