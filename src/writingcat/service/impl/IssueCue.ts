@@ -1,6 +1,6 @@
 'use strict';
 import { TextDocument, languages, CompletionItem, Position, CompletionItemKind, Range, MarkdownString, SnippetString, TextLine } from 'vscode';
-import Initial from '../../controller/Initial';
+import AutoLoader from '../../AutoLoader';
 import CollocationDetail from "../../entity/CollocationDetail";
 import Utils from '../../utils/Utils';
 import abstractComple from "../abstractComple";

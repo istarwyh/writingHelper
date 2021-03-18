@@ -2,7 +2,7 @@
 import { TextDocument, languages, CompletionItem, Position, CompletionItemKind, Range, MarkdownString, SnippetString, TextLine } from 'vscode';
 import CollocationDetail from '../../entity/CollocationDetail';
 import Utils from '../../utils/Utils';
-import Initial from '../../controller/Initial';
+import AutoLoader from '../../AutoLoader';
 import abstractComple from '../abstractComple';
 
 
@@ -26,7 +26,7 @@ function provideCompletionItems(document: TextDocument, position: Position): Com
     var chKey = wordRegex.test(lineText) ? lineText.substring(lastIndex + 1, lineText.length) : lineText;
  
     var prefix = chKey;
-    var matchedKeys = Initial.wordTree.searchWordsByPrefix(prefix);
+    var matchedKeys = AutoLoader.wordTree.searchWordsByPrefix(prefix);
     // todo:换成staic method or 传入wordComple
     return new WordComple().getComples4Arr(Utils.notNull(matchedKeys));
 }

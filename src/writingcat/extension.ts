@@ -1,13 +1,13 @@
 'use strict';
 import * as vscode from 'vscode';
-import Initial from './controller/Initial';
+import AutoLoader from './AutoLoader';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
 	console.log("--------------start-----------------");
-	Initial.buildSingleTrie();
-	// Initial.wordTree.print(Initial.wordTree.root);
+	AutoLoader.buildSingleTrie();
+	// AutoLoader.wordTree.print(AutoLoader.wordTree.root);
 	/**
 	 * Issue/话题补全--主要是提示
 	 */
