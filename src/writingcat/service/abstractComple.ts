@@ -13,7 +13,7 @@ export default abstract class abstractComple implements IComComple {
         var completionItems = new Array<CompletionItem>();
         ss.forEach(
             (s) => {
-                const completionItem = new CompletionItem(s, CompletionItemKind.Keyword);
+                const completionItem = new CompletionItem(s, CompletionItemKind.Reference);
                 completionItem.preselect = true;
                 completionItem.sortText = "L";
                 completionItems.push(completionItem);

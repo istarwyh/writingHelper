@@ -52,7 +52,7 @@ class PhrasesComple extends abstractComple{
     /**
      * 
      * @param Phrases 等用户补全/写完了直接拿到wordKey,在此之前引导向已有的wordKey补全
-     * @param wordKey 如果默认wordKey是浅醉,则Collocation可以减去它
+     * @param wordKey 如果默认wordKey是prefix,则Collocation可以减去它
      * @returns 
      */
     static findMatchedPhrases(Phrases: CollocationDetail[], wordKey: string): CollocationDetail[] {
@@ -64,7 +64,6 @@ class PhrasesComple extends abstractComple{
         }
         return phrases;
     }
-
 }
 
 function getCompletionItems(matchedphrases : CollocationDetail[]): CompletionItem[] {
