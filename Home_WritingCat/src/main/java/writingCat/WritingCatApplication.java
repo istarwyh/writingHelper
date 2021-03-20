@@ -1,4 +1,4 @@
-package spiderJava;
+package writingCat;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
