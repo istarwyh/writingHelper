@@ -10,6 +10,7 @@ import writingCat.entity.CollocationDetail;
 import writingCat.service.STransfer;
 
 import javax.annotation.Resource;
+import java.io.File;
 
 /**
  * @Description: HomeController
@@ -40,10 +41,12 @@ public class HomeController {
     @PostMapping(value = "/upload")
     @ResponseBody
     public String postFile(@RequestParam(value = "file") MultipartFile file) throws Exception {
-        sTransfer.persistence(sTransfer.excel2Json(file),"./repository/CollocationJson1.json");
-        return "<br><h3><font color=\"skyblue\">We will build our collocation repositories.<br>           Write essays" +
+        String filePath = "./repository/CollocationJson.json";
+        String filePath2 = "./repository/CollocationJson.json";
+        sTransfer.stringPersistence(sTransfer.mergeFileAndList(new File(filePath), sTransfer.tExcel2tList(file)),
+                new File(filePath2));
+        return "<br><h3><font color=\"skyblue\">We will build our collocation repositories.<br>           Write " +
+                "essays" +
                 " increasingly smartly and freely! :-)</font></h3>";
     }
-
-
 }
