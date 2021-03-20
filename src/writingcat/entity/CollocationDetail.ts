@@ -30,6 +30,6 @@ export default class CollocationDetail {
         return "wordKeys";
     }
     public static interpretationStr(): string {
-        return "interpretation";
+        return "interpretations";
     }
 }

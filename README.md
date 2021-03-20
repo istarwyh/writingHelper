@@ -7,10 +7,14 @@ If you have not yet reliazed word collocation, you can see [here](https://www.th
 ## how to activate me 
 Just install me and write in a `.txt` file in English.
 
+## **Bug**:-(
+
+for word completion, after we use "tab" key, the result of collocation completion more than what we need.:-(
+Currently, we can use "tab" key and use "Backspace" key and use "tab"/"<-" Key to resolve this problem.
+Welcome to report more problems or give me more issues~The 
 **Enjoy!**
 
-## **Bug**:-(
-for word completion, after we use "tab" key, the collocation completion more than what we need. So now the word completion is just a hint.:-(
+
 ----------------
 
 # To Developer & Committer:

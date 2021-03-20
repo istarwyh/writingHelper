@@ -58,6 +58,7 @@ class PhrasesComple extends abstractComple{
     static findMatchedPhrases(Phrases: CollocationDetail[], wordKey: string): CollocationDetail[] {
         let phrases = new Array<CollocationDetail>();
         for (let p of Phrases) {
+            // todo:改成词语相似度计算方法
             if (wordKey === p[CollocationDetail.wordKeyStr()][0]) {
                 phrases.push(p);
             }
@@ -69,22 +70,27 @@ class PhrasesComple extends abstractComple{
 function getCompletionItems(matchedphrases : CollocationDetail[]): CompletionItem[] {
     let completionItems = new Array<CompletionItem>();
     for (let phrase of matchedphrases) {
-        const interpretation: Interpretation[] = phrase[CollocationDetail.interpretationStr()];
+        const interpretations: Interpretation[] = phrase[CollocationDetail.interpretationStr()];
         const collocation: string = phrase[CollocationDetail.collocationStr()];
-        completionItems.push(getCompletionItem(collocation, Utils.notNull(interpretation)));
+        completionItems.push(getCompletionItem(collocation, Utils.notNull(interpretations)));
     }
     return completionItems;
 }
 
-function getCompletionItem(collocation: string, interpretation: Interpretation[]): CompletionItem {
+function getCompletionItem(collocation: string, interpretations: Interpretation[]): CompletionItem {
     const completionItem = new CompletionItem(collocation, CompletionItemKind.Text);
     var appendTitle = "&emsp;<font color=\"skyblue\">Interpretation</font>&emsp;";
-    const enInterpretation: string = interpretation[0][Interpretation.EnglishStr()];
-    const sentence = interpretation[Interpretation.sentenceStr()];
+    var obj = interpretations[0];var enInterpretation;var sentence;
+    if(obj.hasOwnProperty(Interpretation.EnglishStr())){
+        enInterpretation = obj[Interpretation.EnglishStr()];
+    }
+    if(obj.hasOwnProperty(Interpretation.sentenceStr())){
+        sentence = obj[Interpretation.sentenceStr()];
+    }
     if (enInterpretation || sentence) {
         appendTitle = sentence ? sentence : enInterpretation;
     }
-    completionItem.documentation = new MarkdownString(appendTitle).appendCodeblock(interpretation[0][Interpretation.ChineseStr()], 'typescript');
+    completionItem.documentation = new MarkdownString(appendTitle).appendCodeblock(interpretations[0][Interpretation.ChineseStr()], 'typescript');
     completionItem.preselect = true;
     completionItem.sortText = "L";
     // completionItem.insertText = ;
