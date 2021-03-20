@@ -1,0 +1,71 @@
+[
+    {
+      "issue": [
+        "compete",
+        "work",
+        "竞争"
+      ],
+      "collocation": "zero-sum game",
+      "wordKey": "zero",
+      "note": "",
+      "interpretation": [
+        {
+          "majority": "0",
+          "Chinese": "零和博弈",
+          "English": "Zero-sum is a situation in game theory in which one person’s gain is equivalent to another’s loss.",
+          "sentence": ""
+        }
+      ]
+    },{
+      "issue": [
+        "life",
+        "work",
+        "生活"
+      ],
+      "collocation": "communicate with ",
+      "wordKey": "communicate",
+      "note": "",
+      "interpretation": [
+        {
+          "majority": "0",
+          "Chinese": "与...交谈",
+          "English": "Language is learned primarily through communication with other people.",
+          "sentence": ""
+        }
+      ]
+    },
+    {
+      "issue": [
+        "life",
+        "生活"
+      ],
+      "collocation": "do the laundry",
+      "wordKey": "do",
+      "note": "",
+      "interpretation": [
+        {
+          "majority": "0",
+          "Chinese": "洗衣服/做浣洗工作",
+          "English": "",
+          "sentence": ""
+        }
+      ]
+    },
+    {
+      "issue": [
+        "work",
+        "工作"
+      ],
+      "collocation": "do the errands",
+      "wordKey": "do",
+      "note": "",
+      "interpretation": [
+        {
+          "majority": "0",
+          "Chinese": "出差",
+          "English": "",
+          "sentence": ""
+        }
+      ]
+    }
+  ]

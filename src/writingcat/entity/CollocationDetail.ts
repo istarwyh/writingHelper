@@ -15,7 +15,7 @@ export default class CollocationDetail {
     }
 
     public static issueStr(): string {
-        return "issue";
+        return "issues";
     }
     public static collocationStr(): string {
         return "collocation";
@@ -27,7 +27,7 @@ export default class CollocationDetail {
      * wordKeyName
      */
     public static wordKeyStr(): string {
-        return "wordKey";
+        return "wordKeys";
     }
     public static interpretationStr(): string {
         return "interpretation";

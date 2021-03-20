@@ -12,7 +12,7 @@ export default class AutoLoader {
         AutoLoader.issueTree = new TrieTree();
         Phrases.forEach(
             (phrase) => {
-                AutoLoader.wordTree.insert(phrase[CollocationDetail.wordKeyStr()]);
+                AutoLoader.wordTree.insert(phrase[CollocationDetail.wordKeyStr()][0]);
                 AutoLoader.issueTree.insert(phrase[CollocationDetail.issueStr()][0]);
             }
         )

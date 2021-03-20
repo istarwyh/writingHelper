@@ -24,6 +24,7 @@ function provideCompletionItems(document: TextDocument, position: Position): Com
     const atRegex = /@/;
     var atIndex = lineText.lastIndexOf("@");
     var spaceIndex = lineText.lastIndexOf(" ");
+    // todo:使用策略模式改写    
     if (!textRegex.test(lineText)) {
         return [];
     }else if( atRegex.test(lineText) && atIndex === -1){

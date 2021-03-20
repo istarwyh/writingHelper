@@ -3,3 +3,4 @@ vsc-extension-quickstart.md
 out
 writinghelper-0.0.1.vsix
 src/test
+*.class

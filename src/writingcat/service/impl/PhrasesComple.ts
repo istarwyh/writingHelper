@@ -58,7 +58,7 @@ class PhrasesComple extends abstractComple{
     static findMatchedPhrases(Phrases: CollocationDetail[], wordKey: string): CollocationDetail[] {
         let phrases = new Array<CollocationDetail>();
         for (let p of Phrases) {
-            if (wordKey === p[CollocationDetail.wordKeyStr()]) {
+            if (wordKey === p[CollocationDetail.wordKeyStr()][0]) {
                 phrases.push(p);
             }
         }
