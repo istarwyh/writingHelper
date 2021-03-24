@@ -1,6 +1,7 @@
 package writingCat.service;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.lkx.util.ExcelUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,7 +23,10 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 @Service
 public class STransfer<T> {
-    private static final Gson GSON = new Gson();
+    /**
+     * 关于gson将特殊字符转为utf编码问题: https://my.oschina.net/u/998693/blog/423658
+     */
+    private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
 
     /**
      * @param file MultipartFile是Spring提供的一个接口，用来接收multipart／form-data类型 请求方式中即将上传的文件，为处理或保存文件
@@ -35,6 +39,7 @@ public class STransfer<T> {
         var cd = new ArrayList<CollocationDetail>(128);
         AtomicInteger i = new AtomicInteger();
         excelList.forEach(row -> {
+//            为了符合interpretations的定义,方便最后在被读取的时候合并
             var tmpArray = new Interpretation[1];
             tmpArray[0] =
                     Interpretation.builder()
@@ -79,7 +84,7 @@ public class STransfer<T> {
             if (i < 1024) {
                 buffer[i++] = (char) ch;
             } else {
-                sb.append(buffer);
+                sb.append(buffer).append((char) ch);
                 i = 0;
 //                    new一个和逐个为空,一个消耗内存,一个消耗资源吧
                 buffer = new char[1024];
@@ -97,7 +102,6 @@ public class STransfer<T> {
         sb.append(",");
         return sb.toString();
     }
-
 
     /**
      * gson序列化的实体类不需要使用annotation来标识需要序列化的字段，同时gson又可以通过使用annotation来灵活配置需要序列化的字段。

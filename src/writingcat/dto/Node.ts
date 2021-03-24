@@ -1,4 +1,5 @@
 export default class Node {
+    // todo: private?
     public children: Map<string, Node>;
     public leaf: boolean;
     public constructor() {

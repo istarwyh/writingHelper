@@ -14,7 +14,11 @@ public class Test {
         wordTree.insert("pump");
         for( var s :wordTree.searchWords("do")){
             System.out.println(s);
-
         }
+    }
+    @org.junit.jupiter.api.Test
+    public void t2(){
+        String s = "work's closely with";
+        System.out.println(s.charAt(4));
     }
 }

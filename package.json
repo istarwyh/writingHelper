@@ -1,9 +1,9 @@
 {
-	"name": "writingcat",
-	"displayName": "writingCat",
+	"name": "writinghelper",
+	"displayName": "writingHelper",
 	"description": "get all the benefits of Grammarly & Linggle",
-	"version": "0.0.1",
-	"publisher": "wx:istarwyh",
+	"version": "0.0.9",
+	"publisher": "istarwyh",
 	"keywords": [
 		"writing",
 		"english",
@@ -18,12 +18,23 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onLanguage:html",
-		"onLanguage:plaintext"
+		"onLanguage:plaintext",
+		"onCommand:extension.moveEnding"
 	],
 	"main": "./out/writingcat/extension.js",
 	"contributes": {
-		"commands": []
+		"commands": [
+			{
+				"command": "extension.moveEnding",
+				"title": "move-Ending"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "extension.moveEnding",
+				"key": "Ctrl+D"
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",

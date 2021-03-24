@@ -11,7 +11,8 @@ Just install me and write in a `.txt` file in English.
 
 for word completion, after we use "tab" key, the result of collocation completion more than what we need.:-(
 Currently, we can use "tab" key and use "Backspace" key and use "tab"/"<-" Key to resolve this problem.
-Welcome to report more problems or give me more issues:-)My contact details is on this page!
+Welcome to report more problems or give me more issues:-)My contact details(weixin) is on this page!
+
 **Enjoy!**
 
 

@@ -1,79 +1,17 @@
 [
   {
     "issues": [
-      "compete",
-      "work",
-      "竞争"
+      "work"
     ],
     "collocation": "zero-sum game",
     "wordKeys": [
       "zero"
     ],
-    "note": "",
     "interpretations": [
       {
         "majority": "0",
-        "Chinese": "零和博弈",
-        "English": "Zero-sum is a situation in game theory in which one person’s gain is equivalent to another’s loss.",
-        "sentence": ""
-      }
-    ]
-  },
-  {
-    "issues": [
-      "life",
-      "work",
-      "生活"
-    ],
-    "collocation": "communicate with ",
-    "wordKeys": [
-      "communicate"
-    ],
-    "note": "",
-    "interpretations": [
-      {
-        "majority": "0",
-        "Chinese": "与...交谈",
-        "English": "Language is learned primarily through communication with other people.",
-        "sentence": ""
-      }
-    ]
-  },
-  {
-    "issues": [
-      "life",
-      "生活"
-    ],
-    "collocation": "do the laundry",
-    "wordKeys": [
-      "do"
-    ],
-    "note": "",
-    "interpretations": [
-      {
-        "majority": "0",
-        "Chinese": "洗衣服/做浣洗工作",
-        "English": "",
-        "sentence": ""
-      }
-    ]
-  },
-  {
-    "issues": [
-      "work",
-      "工作"
-    ],
-    "collocation": "do the errands",
-    "wordKeys": [
-      "do"
-    ],
-    "note": "",
-    "interpretations": [
-      {
-        "majority": "0",
-        "Chinese": "出差",
-        "English": "",
-        "sentence": ""
+        "Chinese": "零和游戏",
+        "English": "Zero-sum is a situation in game theory in which one person’s gain is equivalent to another’s loss."
       }
     ]
   },
@@ -402,7 +340,7 @@
     "issues": [
       "efficient"
     ],
-    "collocation": "influence people\u0027s opinions",
+    "collocation": "influence people's opinions",
     "wordKeys": [
       "influence"
     ],
@@ -636,7 +574,7 @@
     "issues": [
       "duty"
     ],
-    "collocation": "meet student\u0027s needs",
+    "collocation": "meet student's needs",
     "wordKeys": [
       "meet",
       "needs"
@@ -1214,6 +1152,310 @@
       {
         "majority": "0",
         "Chinese": "在一个虚拟的世界里"
+      }
+    ]
+  },
+  {
+    "issues": [
+      "work"
+    ],
+    "collocation": "do businness with",
+    "wordKeys": [
+      "do"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "与…谈生意"
+      }
+    ]
+  },
+  {
+    "issues": [
+      "life"
+    ],
+    "collocation": "do a chore",
+    "wordKeys": [
+      "do"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "做家务"
+      }
+    ]
+  },
+  {
+    "issues": [
+      "fun"
+    ],
+    "collocation": "do the shopping",
+    "wordKeys": [
+      "do"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "买买买"
+      }
+    ]
+  },
+  {
+    "issues": [
+      "duty"
+    ],
+    "collocation": "do voluntary work",
+    "wordKeys": [
+      "do"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "做志愿工作"
+      }
+    ]
+  },
+  {
+    "issues": [
+      "link"
+    ],
+    "collocation": "it is no surprise that",
+    "wordKeys": [
+      "it"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "毫无疑问的是…"
+      }
+    ]
+  },
+  {
+    "issues": [
+      "link"
+    ],
+    "collocation": "it is believed that",
+    "wordKeys": [
+      "it"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "可以被相信的是…"
+      }
+    ]
+  },
+  {
+    "issues": [
+      "skill"
+    ],
+    "collocation": "life skills",
+    "wordKeys": [
+      "life"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "生活技能"
+      }
+    ]
+  },
+  {
+    "issues": [
+      "life"
+    ],
+    "collocation": "make a cup of coffee",
+    "wordKeys": [
+      "make"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "制作一杯咖啡"
+      }
+    ]
+  },
+  {
+    "issues": [
+      "life"
+    ],
+    "collocation": "make a cup of tea",
+    "wordKeys": [
+      "make"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "泡一杯茶"
+      }
+    ]
+  },
+  {
+    "issues": [
+      "life"
+    ],
+    "collocation": "make noise",
+    "wordKeys": [
+      "make"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "制造噪音"
+      }
+    ]
+  },
+  {
+    "issues": [
+      "life"
+    ],
+    "collocation": "make the bed",
+    "wordKeys": [
+      "make"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "整理睡觉的床"
+      }
+    ]
+  },
+  {
+    "issues": [
+      "work"
+    ],
+    "collocation": "make a business deal",
+    "wordKeys": [
+      "make"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "做生意"
+      }
+    ]
+  },
+  {
+    "issues": [
+      "life"
+    ],
+    "collocation": "make a fuss",
+    "wordKeys": [
+      "make"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "大惊小怪"
+      }
+    ]
+  },
+  {
+    "issues": [
+      "life"
+    ],
+    "collocation": "make sense",
+    "wordKeys": [
+      "make"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "使…有意义",
+        "sentence": "Religion wants make sense of the world."
+      }
+    ]
+  },
+  {
+    "issues": [
+      "life"
+    ],
+    "collocation": "make sense",
+    "wordKeys": [
+      "make"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "好理解的",
+        "sentence": "I feel like a lot of how you structure things make sense to me."
+      }
+    ]
+  },
+  {
+    "issues": [
+      "life"
+    ],
+    "collocation": "make sense",
+    "wordKeys": [
+      "make"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "合情合理的",
+        "sentence": "It seemed to make sense."
+      }
+    ]
+  },
+  {
+    "issues": [
+      "life"
+    ],
+    "collocation": "make sense",
+    "wordKeys": [
+      "make"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "意味着",
+        "sentence": "it make sense that we are special!"
+      }
+    ]
+  },
+  {
+    "issues": [
+      "work"
+    ],
+    "collocation": "make time for",
+    "wordKeys": [
+      "make"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "为...安排/腾出时间"
+      }
+    ]
+  },
+  {
+    "issues": [
+      "skill"
+    ],
+    "collocation": "manage their time",
+    "wordKeys": [
+      "manage"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "管理他们的时间"
+      }
+    ]
+  },
+  {
+    "issues": [
+      "skill"
+    ],
+    "collocation": "improve their organization skills",
+    "wordKeys": [
+      "improve"
+    ],
+    "interpretations": [
+      {
+        "majority": "0",
+        "Chinese": "提高他们的组织能力"
       }
     ]
   }

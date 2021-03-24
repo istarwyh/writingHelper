@@ -16,8 +16,6 @@ export default class AutoLoader {
                 AutoLoader.issueTree.insert(phrase[CollocationDetail.issueStr()][0]);
             }
         )
-
-        
     }
     /**
      * single process of JS runtime, so don't need lock
