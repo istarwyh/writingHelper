@@ -5,36 +5,22 @@ import CollocationDetail from "../../entity/CollocationDetail";
 import Utils from '../../utils/Utils';
 import abstractComple from "../abstractComple";
 import Phrases from '../../repository/Collocations.json';
-
-// module.exports = function (context: { subscriptions: any[]; }) {
-//     context.subscriptions.push(
-//         languages.registerCompletionItemProvider(IssueCue.documentSelector, { provideCompletionItems }, ...IssueCue.completionTriggerChars)
-//     );
-// };
+import Line from '../../utils/impl/Line';
 
 export default class IssueCue extends abstractComple {
-    public constructor(){
-        super();
-    }
-
-    public getIssueCue(lineText: string, ...triggerIndex:number[]): CompletionItem[] {
-        var issueKey = lineText.substring(triggerIndex[0] + 1, lineText.length-1);
+    public provideCompletionItems(lineText: string, ...regExps: string[]): CompletionItem[] {
         var matchedKeys = new Array<string>();
+        const issueKey = Line.cutLastWord(lineText, regExps[0]);
         // filter返回的是满足条件的元素,map返回的是满足条件后的boolean值
         // forEach是对结点进行函数式处理
         Phrases.filter(
-            (phrase)=>{
+            (phrase) => {
                 return issueKey === phrase[CollocationDetail.issueStr()][0]
             }
-        ).forEach( matchedphrase => {
+        ).forEach(matchedphrase => {
             matchedKeys.push(matchedphrase[CollocationDetail.collocationStr()]);
         });
-        
+
         return this.getComples4Arr(Utils.notNull(matchedKeys));
     }
-
-    getComples4CollocationDetail(matchedphrases: CollocationDetail[]): CompletionItem[] {
-        throw new Error("Method not implemented.");
-    }
-    
 }

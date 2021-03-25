@@ -8,20 +8,11 @@ import Line from '../../utils/impl/Line';
 
 
 class WordComple extends abstractComple {
-    static readonly completionTriggerChars = [" ", "\n"];
-
-    public getWordComple(lineText: string, spaceIndex: number): CompletionItem[] {
-        const wordRegex = / /;
-        let chKey = Line.distillKey(lineText, wordRegex, spaceIndex);
+    public provideCompletionItems(lineText: string,chKey: string): CompletionItem[] {
         var prefix = chKey;
         var matchedKeys = AutoLoader.wordTree.searchWordsByPrefix(prefix);
         // todo:换成staic method or 传入wordComple
         return this.getComples4Arr(Utils.notNull(matchedKeys));
     }
-
-    getComples4CollocationDetail(matchedphrases: CollocationDetail[]): CompletionItem[] {
-        throw new Error('Method not implemented.');
-    }
-
 }
 export default WordComple;

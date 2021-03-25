@@ -15,7 +15,7 @@ export interface IComComple {
      */
     getComples4Arr(arr: Array<string>): CompletionItem[];
     /**
-     * collocation & interpretation getCompletionItem
+     * collocation & interpretation polish CompletionItem
      * @param collocation 
      * @param interpretation 
      */

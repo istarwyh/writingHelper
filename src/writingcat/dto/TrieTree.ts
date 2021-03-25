@@ -1,3 +1,4 @@
+import { TreeViewExpansionEvent } from "vscode";
 import Utils from "../utils/Utils";
 import Node from "./Node";
 
@@ -8,7 +9,7 @@ export default class TrieTree {
     public readonly root: Node = new Node();
     public constructor() { }
 
-    
+
     public insert(word: string): void {
         let cur: Node = this.root;
         for (let i = 0; i < word.length; i++) {
@@ -20,10 +21,34 @@ export default class TrieTree {
         }
         cur.leaf = true;
     }
+
+    public has(str: string): boolean {
+        if (Utils.isBlank(str)) return false;
+        const r = this.retrieveWord(str);
+        return r !== null && r.leaf;
+    }
+
+    /**
+     * see if the char of str can walk away
+     */
+    private retrieveWord(str: string): Node | null {
+        if (str === null) return null;
+        var curNode = this.root;
+        for (let i = 0; i < str.length; i++) {
+            let ch = str.charAt(i);
+            if (curNode.children.has(ch)) {
+                curNode = Utils.notUndefined(curNode.children.get(ch));
+            } else {
+                return null;
+            }
+        }
+        return curNode;
+    }
+
     /**
      * 先确定最公共的Prefix,以减少查询时间
      * @param prefix 
-     * @returns 所有完整的单词
+     * @returns 所有以prefix为prefix的完整的单词
      */
     public searchWordsByPrefix(prefix: string): Array<string> | null {
         let cur: Node = this.root;
@@ -43,6 +68,7 @@ export default class TrieTree {
     }
 
     private dfs(node: Node, prefix: string, list: string[]) {
+        if (Utils.isBlank(prefix)) return;
         if (node.leaf) {
             list.push(prefix);
         }
@@ -54,13 +80,13 @@ export default class TrieTree {
         )
     }
 
-    public print(cur : Node):void{
-        if( cur == null ){
+    public print(cur: Node): void {
+        if (cur == null) {
             return;
         }
         console.log(cur.toString());
         cur.children.forEach(
-            (v,k)=>{
+            (v, k) => {
                 this.print(v);
             }
         )

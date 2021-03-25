@@ -1,6 +1,6 @@
 'use strict';
 // vscode 是内置模块
-import {window,ExtensionContext,languages, Disposable} from 'vscode';
+import {ExtensionContext} from 'vscode';
 import AutoLoader from './AutoLoader';
 import CComple from './controller/CComple'
 import CHome from './controller/CHome';
@@ -14,21 +14,15 @@ export function activate(context: ExtensionContext) {
 	console.log("--------------start-----------------");
 	AutoLoader.buildSingleTrie();
 	// AutoLoader.wordTree.print(AutoLoader.wordTree.root);
-
 	const subscriptions_ = context.subscriptions;
-	/**
-	 * Issue/话题补全--主要是提示
-	 */
-	 subscriptions_.push(CComple.buildComple());
-
 	/**
 	 * 词伙补全
 	 */
-	require('./service/impl/PhrasesComple')(context);
+	subscriptions_.push(CComple.buildComple());
 	/**
 	 * 跳转到文件末尾
 	 */
-	 subscriptions_.push(Move.buildMove());
+	subscriptions_.push(Move.buildMove());
 	/**
 	 * 提示用户writingCat已激活
 	 */

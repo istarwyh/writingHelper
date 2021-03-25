@@ -6,28 +6,31 @@ class Line implements ILine {
     /**
      * Have verified by test(), so no verification required here( like verifing non-null) in fact.
      * @param text 
-     * @param componentRegex 
+     * @param wordRegex 
      * @returns key
      */
-    public static distillName(text: string, componentRegex: RegExp): string {
-        var matches = text.match(componentRegex);
+    public static distillNameOfArray(text: string, wordStr: string): string {
+        // global can enable the whole paragraph being matched
+        var matches = text.match(new RegExp(wordStr,"g"));
         // let preWord = RegExp.$1.substring(-1);
         // // var preWord = RegExp[Symbol.match](text);
         // console.log("<"+preWord+">");    
-        if (matches !== null) {
-            console.log("THE KEY:\n" + "<" + matches[matches.length - 1] + ">");
-            // console.log("<" + matches[0] + ">");
-            // console.log("<" + matches[1] + ">");
-            // console.log("<" + matches[2] + ">");
-            return matches[matches.length - 1];
-        } else {
-            return "";
-        }
+        return matches === null ? "" : matches[matches.length - 1];
+    }
+    
+    public static cutLastWord(lineText: string, wordStr: string) :string{
+        return lineText.substring(lineText.lastIndexOf(wordStr)+ 1, lineText.length).trim();
+    }
+    public static distillKey(lineText: string, wordRegex: string): string {
+        return new RegExp(wordRegex).test(lineText) ?  Line.cutLastWord(lineText,wordRegex): lineText;
+    }
+    
+    public static validText(text:string):boolean{
+        // /([a-zA-Z0-9-]+){1}\b/;    
+        const textRegex = /([a-zA-Z0-9-]+)/g;
+        return textRegex.test(text);
     }
 
-    public static distillKey(lineText: string, wordRegex: RegExp,...triggerIndex:number[]): string {
-        return wordRegex.test(lineText) ? lineText.substring(triggerIndex[0] + 1, lineText.length) : lineText;
-    }
     public static position2String(position: Position): string {
         return `{Line: ${position.line}, Character: ${position.character}}`;
     }
