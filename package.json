@@ -19,19 +19,19 @@
 	],
 	"activationEvents": [
 		"onLanguage:plaintext",
-		"onCommand:extension.moveEnding"
+		"onCommand:move2End"
 	],
 	"main": "./out/writingcat/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.moveEnding",
-				"title": "move-Ending"
+				"command": "move2End",
+				"title": "move2End"
 			}
 		],
 		"keybindings": [
 			{
-				"command": "extension.moveEnding",
+				"command": "move2End",
 				"key": "Ctrl+D"
 			}
 		]

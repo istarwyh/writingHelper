@@ -1,10 +1,10 @@
 'use strict';
 // vscode 是内置模块
-import {window,ExtensionContext} from 'vscode';
+import {window,ExtensionContext,languages, Disposable} from 'vscode';
 import AutoLoader from './AutoLoader';
 import CComple from './controller/CComple'
-
-
+import CHome from './controller/CHome';
+import Move from './service/move';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 // http://www.ruanyifeng.com/blog/2020/08/how-nodejs-use-es6-module.html ECMAScript vs CommonJS module
@@ -14,24 +14,29 @@ export function activate(context: ExtensionContext) {
 	console.log("--------------start-----------------");
 	AutoLoader.buildSingleTrie();
 	// AutoLoader.wordTree.print(AutoLoader.wordTree.root);
+
+	const subscriptions_ = context.subscriptions;
 	/**
 	 * Issue/话题补全--主要是提示
 	 */
-	let comple = new CComple();
-	comple.registor(context.subscriptions);
+	 subscriptions_.push(CComple.buildComple());
+
 	/**
 	 * 词伙补全
 	 */
 	require('./service/impl/PhrasesComple')(context);
 	/**
-	 * 跳转到文件上部或下部
+	 * 跳转到文件末尾
 	 */
-	require('./service/move')(context);
-	window.showInformationMessage("Your writingHelper--writingCat has launched successfully! :-)");
+	 subscriptions_.push(Move.buildMove());
+	/**
+	 * 提示用户writingCat已激活
+	 */
+	CHome.sayHello();
 }
 
 // this method is called when your extension is deactivated
 export function deactivate() {
-	window.showInformationMessage("Good Bye! :-)");
+	CHome.sayBye();
 	console.log("---------------end------------------");
 }

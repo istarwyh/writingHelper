@@ -1,15 +1,13 @@
-import * as vscode from 'vscode';
+import { commands, Disposable } from 'vscode';
 
-function moveBeginning(): void {
-    vscode.commands.executeCommand('cursorTop');
+export default class buildMove {
+    /**
+     * 移动到文本末尾
+     * @returns 
+     */
+    public static buildMove(): Disposable {
+        return commands.registerCommand('move2End', () => {
+            commands.executeCommand('cursorBottom');
+        });
+    }
 }
-function moveEnding(): void {
-    vscode.commands.executeCommand('cursorBottom');
-}
-
-const disposable_begin = vscode.commands.registerCommand('extension.moveBeginning', moveBeginning);
-const disposable_end = vscode.commands.registerCommand('extension.moveEnding', moveEnding);
-module.exports = function(context: { subscriptions: any[]; }){
-    context.subscriptions.push(disposable_begin);
-    context.subscriptions.push(disposable_end);
-};

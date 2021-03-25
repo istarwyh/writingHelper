@@ -1,16 +1,17 @@
-import { TextDocument, languages, CompletionItem, Position, CompletionItemKind, Range, MarkdownString, SnippetString, TextLine, CompletionItemProvider, CancellationToken, CompletionContext, CompletionList, ProviderResult } from 'vscode';
+import { TextDocument, languages, CompletionItem, Position, CompletionItemKind, Range, MarkdownString, SnippetString, TextLine, CompletionItemProvider, CancellationToken, CompletionContext, CompletionList, ProviderResult, Disposable } from 'vscode';
 import IssueCue from '../service/impl/IssueCue';
 import WordComple from '../service/impl/WordComple';
 class CComple {
     // todo: 触发字符是@和.,怎么样让触发字符消失,这肯定是要改的
     static readonly completionTriggerChars = ["@", "."];
-    static readonly documentSelector = ['html', 'plainText', 'plaintext', 'txt'];
-    public constructor() { }
+    static readonly documentSelector = ['plainText', 'plaintext', 'txt'];
 
-    public registor(subscriptions: { dispose(): any }[]): void {
-        subscriptions.push(languages.registerCompletionItemProvider(CComple.documentSelector, { provideCompletionItems }, ...CComple.completionTriggerChars))
+    public static buildComple(): Disposable {
+        return languages.registerCompletionItemProvider(CComple.documentSelector, { provideCompletionItems }, ...CComple.completionTriggerChars);
     }
+
 }
+
 /**
  * 初步理解{provideCompletionItems} 为实现了CompletionItemProvider接口的匿名函数
  * @param document 全部文本
@@ -27,15 +28,15 @@ function provideCompletionItems(document: TextDocument, position: Position): Com
     // todo:使用策略模式改写    
     if (!textRegex.test(lineText)) {
         return [];
-    }else if( atRegex.test(lineText) && atIndex === -1){
+    } else if (atRegex.test(lineText) && atIndex === -1) {
         return [];
-    }else if (spaceIndex === lineText.length - 1){
+    } else if (spaceIndex === lineText.length - 1) {
         // 代表不需要补全wordKey了
         return [];
-    }else if(atRegex.test(lineText)){
+    } else if (atRegex.test(lineText)) {
         return new IssueCue().getIssueCue(lineText, atIndex);
-    }else{
-        return new WordComple().getWordComple(lineText,spaceIndex);
+    } else {
+        return new WordComple().getWordComple(lineText, spaceIndex);
     }
 }
 
