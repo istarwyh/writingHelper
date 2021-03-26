@@ -4,10 +4,11 @@ import WordComple from '../service/impl/WordComple';
 import PhrasesComple from '../service/impl/PhrasesComple';
 import Line from '../utils/impl/Line';
 import AutoLoader from '../AutoLoader';
+import abstractComple from '../service/abstractComple';
 class CComple {
     // todo: 触发字符是@和.,怎么样让触发字符消失,这肯定是要改的
-    static readonly completionTriggerChars = ["ff", " ", "\t", "\n"];
-    static readonly documentSelector = ['plainText', 'plaintext', 'txt'];
+    static readonly completionTriggerChars = [" ", "\t"];
+    static readonly documentSelector = ['plaintext'];
     static readonly issueCue = new IssueCue();
     static readonly wordComple = new WordComple();
     static readonly phrasesComple = new PhrasesComple();
@@ -32,27 +33,27 @@ class CComple {
  * @returns todo: don't konw how to add 'provideCompletionItems' in WordComple
  */
 function provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
-    const line: TextLine = document.lineAt(position);
     /* 减少检索范围，仅检索光标所在行 */
-    const lineText: string = line.text;
+    const lineText: string = document.lineAt(position).text;
     if (!Line.validText(lineText)) {
         return [];
     }
-    const wordRegex = "([a-zA-Z]+)";
+    // global can enable the whole paragraph being matched
+    const wordRegex = /([a-zA-Z]+)/g;
     const lastWord: string = Line.distillNameOfArray(lineText, wordRegex);
     // console.log("THE wordKey:\n" + "<" + lastWord + ">");
-    const issueRegex= "ff";
-    var chKey = Line.distillKey(lastWord, issueRegex);
-    const ffRegex = /^ff/;
-    if(CComple.isIssues(lastWord, ffRegex)){
-        return CComple.issueCue.provideCompletionItems(chKey);
-    }else{
-        if(AutoLoader.wordTree.has(chKey)){
-            return CComple.phrasesComple.provideCompletionItems(chKey);
-        }else{
-            return CComple.wordComple.provideCompletionItems(chKey);
-        }
-    }
+    const issueRegex = /^ff/;
+    const issueStr = "ff";
+    const chKey = Line.distillKey(lastWord, issueRegex, issueStr);
+    // ```mermaid
+    // graph LR
+    // id1(lineText)--基础校验-->id2[validText]--业务校验-->id7{是否是issue查找}
+    // id7--是-->id4[issue补全]--补全词伙-->id6[词伙补全]
+    // id7--否-->id3{关键词是否已经补全}--是-->id6
+    // id3--否-->id5[关键词补全]--补全关键词-->id7```
+    var compleObject: abstractComple = CComple.isIssues(lastWord, issueRegex) ? CComple.issueCue :
+        (AutoLoader.wordTree.has(chKey) ? CComple.phrasesComple : CComple.wordComple);
+    return compleObject.provideCompletionItems(chKey);
 }
 
 // https://www.jianshu.com/p/f1e54dde30c8
