@@ -13,7 +13,7 @@ export default abstract class abstractComple implements IComComple {
      * @param lineText
      * @param regExps 
      */
-    protected provideCompletionItems(lineText: string, ...regExps: string[]): CompletionItem[] {
+    protected provideCompletionItems(...regExps: string[]): CompletionItem[] {
         throw new Error("abstractComple can not provide CompletionItems");
     }
     

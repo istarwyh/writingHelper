@@ -10,7 +10,12 @@ export interface ILineBuilder<T extends ILine> {
      * @param componentRegex 用以匹配以name作Key的正则条件
      */
     distillName(text: string, regExp: string): string;
-
+    /**
+     * 以wordRegex为起始点切割出剩余字符,如果没有wordRegex则从最后一个空格开始切割
+     * @param lineText 
+     * @param wordRegex 
+     */
+    distillKey(lineText: string, wordRegex: string):string;
     /**
      * 切割出char到最后的部分,不包括char本身
      * @param text 

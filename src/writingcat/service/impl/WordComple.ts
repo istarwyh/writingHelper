@@ -8,8 +8,8 @@ import Line from '../../utils/impl/Line';
 
 
 class WordComple extends abstractComple {
-    public provideCompletionItems(lineText: string,chKey: string): CompletionItem[] {
-        var prefix = chKey;
+    public provideCompletionItems(...chKeys: string[]): CompletionItem[] {
+        var prefix = chKeys[0];
         var matchedKeys = AutoLoader.wordTree.searchWordsByPrefix(prefix);
         // todo:换成staic method or 传入wordComple
         return this.getComples4Arr(Utils.notNull(matchedKeys));

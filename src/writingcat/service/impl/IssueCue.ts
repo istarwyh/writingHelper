@@ -8,14 +8,14 @@ import Phrases from '../../repository/Collocations.json';
 import Line from '../../utils/impl/Line';
 
 export default class IssueCue extends abstractComple {
-    public provideCompletionItems(lineText: string, ...regExps: string[]): CompletionItem[] {
+    public provideCompletionItems(...chKeys: string[]): CompletionItem[] {
         var matchedKeys = new Array<string>();
-        const issueKey = Line.cutLastWord(lineText, regExps[0]);
+        const issueKey = chKeys[0];
         // filter返回的是满足条件的元素,map返回的是满足条件后的boolean值
         // forEach是对结点进行函数式处理
         Phrases.filter(
             (phrase) => {
-                return issueKey === phrase[CollocationDetail.issueStr()][0]
+                return issueKey == phrase[CollocationDetail.issueStr()][0]
             }
         ).forEach(matchedphrase => {
             matchedKeys.push(matchedphrase[CollocationDetail.collocationStr()]);

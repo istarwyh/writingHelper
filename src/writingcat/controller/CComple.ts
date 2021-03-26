@@ -19,9 +19,9 @@ class CComple {
     /**
      * Determine whether it is looking for an issue
      */
-    public static isIssues(text: string, ffRegex: RegExp): boolean {
+    public static isIssues(word: string, ffRegex: RegExp): boolean {
         // const ffIndex = text.lastIndexOf("ff");
-        return ffRegex.test(text);
+        return ffRegex.test(word);
     }
 }
 
@@ -34,23 +34,23 @@ class CComple {
 function provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
     const line: TextLine = document.lineAt(position);
     /* 减少检索范围，仅检索光标所在行 */
-    const lineText: string = line.text.substring(0, position.character);
-    const ffRegex = /^ff/;
-    console.log("text:\n" + lineText);
+    const lineText: string = line.text;
     if (!Line.validText(lineText)) {
         return [];
     }
-    var wordRegex= " ";
-    const chKey = Line.distillKey(lineText, wordRegex);
-    if (AutoLoader.wordTree.has(chKey)) {
-        wordRegex = "([a-zA-Z]+)";
-        return CComple.phrasesComple.provideCompletionItems(lineText, wordRegex);
-    } else {
-        if(CComple.isIssues(lineText, ffRegex)){
-            wordRegex = "ff";
-            return CComple.issueCue.provideCompletionItems(lineText, wordRegex);
+    const wordRegex = "([a-zA-Z]+)";
+    const lastWord: string = Line.distillNameOfArray(lineText, wordRegex);
+    // console.log("THE wordKey:\n" + "<" + lastWord + ">");
+    const issueRegex= "ff";
+    var chKey = Line.distillKey(lastWord, issueRegex);
+    const ffRegex = /^ff/;
+    if(CComple.isIssues(lastWord, ffRegex)){
+        return CComple.issueCue.provideCompletionItems(chKey);
+    }else{
+        if(AutoLoader.wordTree.has(chKey)){
+            return CComple.phrasesComple.provideCompletionItems(chKey);
         }else{
-            return CComple.wordComple.provideCompletionItems(lineText, chKey);
+            return CComple.wordComple.provideCompletionItems(chKey);
         }
     }
 }

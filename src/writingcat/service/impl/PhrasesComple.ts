@@ -12,14 +12,11 @@ export default class PhrasesComple extends abstractComple{
      * @param regExp 
      * @returns 
      */
-    public provideCompletionItems(text: string,...regExp: string[]): CompletionItem[] {
-        const wordKey: string = Line.distillNameOfArray(text, regExp[0]);
-        console.log("THE wordKey:\n" + "<" + wordKey + ">");
-
+    public provideCompletionItems(...wordKeys: string[]): CompletionItem[] {
         let phrases = new Array<CollocationDetail>();
         for (let p of Phrases) {
             // todo:改成词语相似度计算方法
-            if (wordKey === p[CollocationDetail.wordKeyStr()][0]) {
+            if (wordKeys[0] === p[CollocationDetail.wordKeyStr()][0]) {
                 phrases.push(p);
             }
         }

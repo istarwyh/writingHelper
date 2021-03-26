@@ -39,7 +39,7 @@ export default class TrieTree {
             if (curNode.children.has(ch)) {
                 curNode = Utils.notUndefined(curNode.children.get(ch));
             } else {
-                return null;
+                return null;    
             }
         }
         return curNode;
