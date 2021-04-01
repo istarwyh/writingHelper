@@ -4,3 +4,4 @@ out
 *.vsix
 src/test
 *.class
+*.zip

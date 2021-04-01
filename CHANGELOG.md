@@ -1,10 +1,14 @@
-## [1.0.0] - 2017-06-20
+
+## [0.1.0] - 2021-4-1
 ### Added
-- See:
+- more collocations hint
+- Continous Writing Experience
+- ![rainbowcat](https://gitee.com/istarwyh/images/raw/master/1617025579_20210329214515706_12235.gif)
 
-### Changed
+Welcome to contact me: istarwyh
+
+### Fixed
 - Fix some completions error
-
 ## [0.0.9] - 2021-3-19
 ### Added
 - more collocations hint
