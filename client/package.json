@@ -1,5 +1,5 @@
 {
-	"name": "writingcat",
+	"name": "writingcat-client",
 	"description": "A English language Client",
 	"license": "MIT",
 	"dependencies": {

@@ -4,8 +4,9 @@
 	"description": "get all the benefits of Grammarly & Linggle",
 	"author": "istarwyh",
 	"license": "MIT",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"publisher": "istarwyh",
+	"categories":["Snippets", "Notebooks", "Other"],
 	"keywords": [
 		"writing",
 		"english",
@@ -17,7 +18,6 @@
 		"type": "git",
 		"url": "https://github.com/istarwyh/writingHelper"
 	},
-	"categories": [],
 	"engines": {
 		"vscode": "^1.43.0"
 	},
