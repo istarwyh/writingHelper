@@ -1,9 +1,6 @@
 {
 	"name": "writingcat-server",
 	"description": "Implementation of an English language server in node.",
-	"version": "1.0.0",
-	"author": "Microsoft Corporation",
-	"license": "MIT",
 	"engines": {
 		"node": "*"
 	},

@@ -622,22 +622,6 @@
 	  "issues": [
 		"duty"
 	  ],
-	  "collocation": "do voluntary work",
-	  "wordKeys": [
-		"do",
-		"volunteer"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "做义工"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"duty"
-	  ],
 	  "collocation": "improve public services",
 	  "wordKeys": [
 		"improve",
@@ -1211,7 +1195,7 @@
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "做志愿工作"
+		  "Chinese": "做志愿工作/做义工"
 		}
 	  ]
 	},

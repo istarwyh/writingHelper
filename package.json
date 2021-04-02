@@ -1,25 +1,32 @@
 {
-	"name": "writingcat",
+	"name": "writinghelper",
+	"displayName": "writingHelper",
 	"description": "get all the benefits of Grammarly & Linggle",
 	"author": "istarwyh",
 	"license": "MIT",
-	"version": "1.0.0",
+	"version": "0.1.2",
+	"publisher": "istarwyh",
+	"keywords": [
+		"writing",
+		"english",
+		"ielts",
+		"helper"
+	],
+	"icon": "images/writingcatlogo.png",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/istarwyh/writingHelper"
 	},
-	"publisher": "istarwyh",
 	"categories": [],
-	"keywords": [
-		"multi-root ready"
-	],
 	"engines": {
 		"vscode": "^1.43.0"
 	},
 	"activationEvents": [
-		"onLanguage:plaintext"
+		"onLanguage:plaintext",
+		"onLanguage:markdown",
+		"onlanguage:latex"
 	],
-	"main": "./client/out/writingcat/extension",
+	"main": "./client/out/extension",
 	"contributes": {
 		"configuration": {
 			"type": "object",
@@ -33,7 +40,7 @@
 						"messages",
 						"verbose"
 					],
-					"default": "messages",
+					"default": "off",
 					"description": "Traces the communication between VS Code and the language server."
 				}
 			}

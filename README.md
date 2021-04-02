@@ -6,6 +6,7 @@ If you have not yet reliazed word collocation, you can see [here](https://www.th
 
 ## how to activate me 
 Just install me and write in a `.txt` file in English.
+![](https://gitee.com/istarwyh/images/raw/master/1617350677_20210402160432489_31927.png)
 
 ## **Bug**:-(
 
@@ -14,7 +15,6 @@ Currently, we can use "tab" key and use "Backspace" key and use "tab"/"<-" Key t
 Welcome to report more problems or give me more issues:-)My contact details(weixin) is on this page!
 
 **Enjoy!**
-
 
 ----------------
 

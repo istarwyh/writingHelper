@@ -1,6 +1,6 @@
 import { Server } from 'http';
 import { Position, CompletionItem, MarkupContent, CompletionItemKind, InsertTextFormat, MarkupKind } from "vscode-languageserver";
-import WritingCatServer from '../../server';
+// import WritingCatServer from '../server';
 import CollocationDetail from "../entity/CollocationDetail";
 import { Interpretation } from "../entity/Interpretation";
 import UserSettings from '../UserSettings';
@@ -59,9 +59,10 @@ export default abstract class abstractComple implements IComComple {
         // 对于Java打开网络:in = new BufferedReader(new InputStreamReader(new URL(urlStr).openStream(),"UTF-8") ); 
         if (UserSettings.getNetWorkState()) {
             appendTitle = "![rainbowcat](https://gitee.com/istarwyh/images/raw/master/1617025579_20210329214515706_12235.gif)";
-        } else {
-            setTimeout(() => WritingCatServer.userSeter.refreshNetWorkState(), 5000);
         }
+        //  else {
+        //     setTimeout(() => WritingCatServer.userSeter.refreshNetWorkState(), 5000);
+        // }
         var obj = interpretation; var enInterpretation; var sentence;
         if (obj.hasOwnProperty(Interpretation.EnglishStr())) {
             enInterpretation = obj[Interpretation.EnglishStr()];

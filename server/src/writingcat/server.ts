@@ -5,16 +5,17 @@ import {
 	WorkspaceChange,
 	WorkspaceEdit,
 } from 'vscode-languageserver/node';
-import AutoLoader from './writingcat/AutoLoader';
-import Connection from './writingcat/Connection';
-import CComple, { provideCompletionItems } from './writingcat/controller/CComple';
-import { Document } from './writingcat/utils/impl/Document';
-import UserSettings from './writingcat/UserSettings';
+import AutoLoader from './AutoLoader';
+import Connection from './Connection';
+import CComple, { provideCompletionItems } from './controller/CComple';
+import { Document } from './utils/impl/Document';
+import UserSettings from './UserSettings';
 
-export default class WritingCatServer {
-	static userSeter = UserSettings.iniUserSettings();
-}
+// export default class WritingCatServer {
+// 	static userSeter = UserSettings.iniUserSettings();
+// }
 const connection = Connection.buildConnection();
+UserSettings.iniUserSettings();
 AutoLoader.buildSingleTrie();
 /**
  * 词伙补全响应Completion的请求执行回调函数: the initial list of the completion items handler

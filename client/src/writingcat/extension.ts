@@ -14,11 +14,11 @@ export function activate(context: ExtensionContext) {
 	console.log("--------------LanguageClient Start-----------------");
 	// Start the client. This will also launch the server
 	WritingCatClient.buildWritingCatClient(context, 6009, "writingcat").start();
-	const subscriptions_ = context.subscriptions;
+	// const subscriptions_ = context.subscriptions;
 	/**
 	 * 跳转到文件末尾
 	 */
-	subscriptions_.push(Move.buildMove());
+	// subscriptions_.push(Move.buildMove());
 }
 
 // this method is called when your extension is deactivated

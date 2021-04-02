@@ -1,7 +1,9 @@
 import { ILine } from "../ILine";
 import { Range, Position } from 'vscode-languageserver';
+import Transfer from './Transfer';
 
 class Line implements ILine {
+    public static transer = new Transfer("");
     public constructor() { }
     /**
      * Have verified by test(), so no verification required here( like verifing non-null) in fact.
@@ -22,7 +24,8 @@ class Line implements ILine {
     }
 
     public static distillKey(lineText: string, wordRegex: RegExp, wordStr: string): string {
-        return wordRegex.test(lineText) ? Line.cutLastWord(lineText, wordStr) : lineText;
+        let str = wordRegex.test(lineText) ? Line.cutLastWord(lineText, wordStr) : lineText;
+        return Line.transer.builder(str).upper2proto().ing2proto().passive2proto().toString();
     }
 
     public static validText(text: string): boolean {

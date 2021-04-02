@@ -10,7 +10,7 @@ import { CompletionItem, Position, Range } from 'vscode-languageserver';
 import IssueComple from '../service/impl/IssueComple';
 class CComple {
     // todo: 触发字符是@和.,怎么样让触发字符消失,这肯定是要改的
-    static readonly completionTriggerChars: string[] = ['.', ' ', '\t', ',', 'a',
+    static readonly completionTriggerChars: string[] = [' ', '\t', 'a',
         'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
         'u', 'v', 'w', 'x', 'y', 'z'];
     // https://code.visualstudio.com/docs/languages/identifiers

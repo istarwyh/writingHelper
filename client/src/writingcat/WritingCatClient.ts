@@ -39,8 +39,11 @@ export default class WritingCatClient {
 			}
 		};
 		this.clientOptions = {
-			// Register the server for plain text documents
-			documentSelector: [{ scheme: 'file', language: 'plaintext' }],
+			documentSelector: [
+				{ scheme: 'file', language: 'plaintext' },
+				{ scheme: 'file', language: 'markdown' },
+				{ scheme: 'file', language: 'latex' },
+			],
 			synchronize: {
 				// Notify the server about file changes to '.clientrc files contained in the workspace
 				fileEvents: workspace.createFileSystemWatcher('**/.clientrc')
