@@ -16,7 +16,8 @@ Hi, I am a VS Code Extension of IELTS English Writing, which can provide profess
 If you have not yet reliazed word collocation, you can see [here](https://www.thoughtco.com/what-is-collocation-1211244#:~:text=Collocation%20refers%20to%20a%20group%20of%20two%20or,place.%20Collocation%E2%80%8Bs%20are%20words%20that%20are%20located%20together.) for more information.
 
 ## 💡 演示
-![](https://gitee.com/istarwyh/images/raw/master/1617350677_20210402160432489_31927.png)
+<img  src="https://gitee.com/istarwyh/images/raw/master/1617350677_20210402160432489_31927.png" width="550px" height="80px"/>
+
 
 ## 📝使用说明 
 Just install me and write in a `.txt` / `.md`  file in English.
@@ -39,14 +40,16 @@ Just install me and write in a `.txt` / `.md`  file in English.
 # To Developer & Committer
 ## ✨ 实现原理
 waiting...
+
 ## ⚠️🐞
 - [ ] Circular Dependency in server.js
-## 🚩Todo
 
+## 🚩Todo
 - [ ] count words number
 - [ ] work with time limit
 - [ ] hover
 - [ ] if neccesary, don't launch this programm.(Will the extension be launced when VSC open a file every time?)
+
 ## 📣note
 >This is a part of my graduation dissertation, so now writingCat/writingHelper is not open. If you have any problems or issues,
 **you jsut contact me with wechat: `istarwyh`** or **email:** `yihui.wang@pku.edu.cn` :-)
