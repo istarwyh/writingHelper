@@ -3,7 +3,8 @@
 	"tslint.enable": true,
 	"typescript.tsc.autoDetect": "off",
 	"typescript.preferences.quoteStyle": "single",
-	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": true
+	"search.exclude": {
+		"**/node_modules": false
 	}
+
 }

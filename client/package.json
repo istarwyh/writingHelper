@@ -2,15 +2,16 @@
 	"name": "writingcat-client",
 	"description": "A English language Client",
 	"license": "MIT",
-	"dependencies": {
-		"vscode-languageclient": "^7.0.0"
-	},
-	"devDependencies": {
-		"@types/vscode": "^1.52.0",
-		"vscode-test": "^1.3.0"
-	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/istarwyh/writingHelper"
+	},
+	"dependencies": {
+		"vscode-languageclient": "^6.1.3"
+	},
+	"devDependencies": {
+		"@types/node": "^14.14.37",
+		"@types/vscode": "1.43.0",
+		"vscode-test": "^1.3.0"
 	}
 }

@@ -1,12 +1,13 @@
 import * as path from 'path';
 import { workspace, ExtensionContext } from 'vscode';
-
+import * as vscode from 'vscode';
+import * as lsp from 'vscode-languageclient';
 import {
 	LanguageClient,
 	LanguageClientOptions,
 	ServerOptions,
 	TransportKind
-} from 'vscode-languageclient/node';
+} from 'vscode-languageclient';
 
 export default class WritingCatClient {
 	static client: LanguageClient;
@@ -16,8 +17,8 @@ export default class WritingCatClient {
 	 * If the extension is launched in debug mode then the debug server options are used
 	   Otherwise the run options are used
 	 */
-	serverOptions: ServerOptions;
-	clientOptions: LanguageClientOptions;
+	serverOptions: lsp.ServerOptions;
+	clientOptions: lsp.LanguageClientOptions;
 
 	/**
 	 * 
@@ -36,7 +37,8 @@ export default class WritingCatClient {
 				module: this.serverModule,
 				transport: TransportKind.ipc,
 				options: this.debugOptions
-			}
+			},
+			
 		};
 		this.clientOptions = {
 			documentSelector: [
@@ -46,10 +48,14 @@ export default class WritingCatClient {
 			],
 			synchronize: {
 				// Notify the server about file changes to '.clientrc files contained in the workspace
-				fileEvents: workspace.createFileSystemWatcher('**/.clientrc')
-			}
+				// fileEvents: vscode.workspace.createFileSystemWatcher('**/.clientrc')
+				/* 为什么这个地方要用tsconfig? */ 
+				fileEvents: vscode.workspace.createFileSystemWatcher('**/tsconfig.json')
+			},
+		
+			revealOutputChannelOn: lsp.RevealOutputChannelOn.Never,
 		};
-		WritingCatClient.client = new LanguageClient(
+		WritingCatClient.client = new lsp.LanguageClient(
 			'writingcat',
 			logPanelName,
 			this.serverOptions,

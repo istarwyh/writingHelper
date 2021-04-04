@@ -1,6 +1,8 @@
 // A launch configuration that compiles the extension and then opens it inside a new window
 {
+
 	"version": "0.2.0",
+	"outputCapture": "std",
 	"configurations": [
 		{
 			"type": "extensionHost",
@@ -29,7 +31,7 @@
 			"runtimeExecutable": "${execPath}",
 			"args": [
 				"--extensionDevelopmentPath=${workspaceRoot}",
-				"--extensionTestsPath=${workspaceRoot}/client/out/test/index",
+				"--extensionTestsPath=${workspaceRoot}/client/out/test",
 				"${workspaceRoot}/client/testFixture"
 			],
 			"outFiles": ["${workspaceRoot}/client/out/test/**/*.js"]
@@ -40,5 +42,6 @@
 			"name": "Client + Server",
 			"configurations": ["Launch Client", "Attach to Server"]
 		}
-	]
+	],
+
 }

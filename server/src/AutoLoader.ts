@@ -2,6 +2,8 @@ import CollocationDetail from "./entity/CollocationDetail";
 import TrieTree from "./dto/TrieTree";
 import Phrases from "./repository/Collocations.json";
 import Utils from './utils/Utils';
+import { Logger } from 'log4js';
+
 /**
  * AutoLoader controller class to prepare resouces and dispathch tasks 
  */
@@ -9,10 +11,13 @@ export default class AutoLoader {
     public static wordTree: TrieTree;
     public static issueTree: TrieTree;
     public static phraseMap: Map<string, string>;
+    public static logger: Logger;
     private constructor() {
         AutoLoader.wordTree = new TrieTree();
         AutoLoader.issueTree = new TrieTree();
+        AutoLoader.logger = Utils.createLogger("writingcat");
         AutoLoader.phraseMap = new Map<string, string>();
+
         var w = CollocationDetail.wordKeyStr();
         var i = CollocationDetail.issueStr();
         Phrases.forEach(

@@ -1,3 +1,4 @@
+##
 .vscode/**
 **/*.ts
 **/*.map
@@ -6,12 +7,21 @@
 **/tsconfig.base.json
 contributing.md
 .travis.yml
+
+##
+node_modules/**
 client/node_modules/**
 !client/node_modules/vscode-jsonrpc/**
 !client/node_modules/vscode-languageclient/**
 !client/node_modules/vscode-languageserver-protocol/**
 !client/node_modules/vscode-languageserver-types/**
 !client/node_modules/semver/**
+
+##
 Home_WritingCat
 client/src/testFixture
 server/src/repository
+scripts
+Release/**
+rollup.config
+tslint.json

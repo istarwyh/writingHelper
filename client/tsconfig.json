@@ -1,14 +1,10 @@
 {
 	"compilerOptions": {
 		"module": "commonjs",
-		"target": "es2019",
-		"lib": ["ES2019"],
+		"target": "es6",
 		"outDir": "out",
-		"rootDir": "src/writingcat",
-		"sourceMap": true,
-		"suppressImplicitAnyIndexErrors": true,
-		"resolveJsonModule": true,
-		"esModuleInterop": true
+		"rootDir": "src",
+		"sourceMap": true
 	},
 	"include": ["src"],
 	"exclude": ["node_modules", ".vscode-test"]

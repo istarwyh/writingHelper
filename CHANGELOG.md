@@ -1,11 +1,19 @@
+This is a part of my graduation dissertation, so now writingCat/writingHelper is not open. If you have any problems or issues,
+**you jsut contact me with wechat: `istarwyh`:-)**
 
-## [0.1.0] - 2021-4-1
+## [0.1.3] - 2021-4-3
+### Fix Bug
+- Some machines are useless
+### Added
+- Support `.md` && `.latex`
+
+### [0.1.0] - 2021-4-1
 ### Added
 - more collocations hint
 - Continous Writing Experience
 - ![rainbowcat](https://gitee.com/istarwyh/images/raw/master/1617025579_20210329214515706_12235.gif)
 
-Welcome to contact me: istarwyh
+
 
 ### Fixed
 - Fix some completions error

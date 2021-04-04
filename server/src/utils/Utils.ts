@@ -1,5 +1,4 @@
-import Node from "../dto/Node";
-import UserSettings from '../UserSettings';
+import { configure, getLogger, Logger } from 'log4js';
 
 export default class Utils {
     static notNull(o: any): any {
@@ -39,5 +38,17 @@ export default class Utils {
 
     static getCurTime(seperator: string) {
         return seperator + Date.now();
+    }
+
+    static createLogger(name:string): Logger {
+        configure({
+            appenders: {
+                writingcat: {
+                    type: "console",
+                },
+            },
+            categories: { default: { appenders: [name], level: "debug" } }
+        });
+        return getLogger(name);
     }
 }

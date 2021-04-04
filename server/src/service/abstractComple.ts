@@ -1,10 +1,11 @@
-import { Server } from 'http';
 import { Position, CompletionItem, MarkupContent, CompletionItemKind, InsertTextFormat, MarkupKind } from "vscode-languageserver";
 // import WritingCatServer from '../server';
 import CollocationDetail from "../entity/CollocationDetail";
 import { Interpretation } from "../entity/Interpretation";
+import WritingCatServer from '../server';
+// import WritingCatServer from '../server';
 import UserSettings from '../UserSettings';
-import { Document } from '../utils/impl/Document';
+import Document from '../utils/impl/Document';
 import Utils from "../utils/Utils";
 import { IComComple } from "./IComComple";
 
@@ -60,9 +61,9 @@ export default abstract class abstractComple implements IComComple {
         if (UserSettings.getNetWorkState()) {
             appendTitle = "![rainbowcat](https://gitee.com/istarwyh/images/raw/master/1617025579_20210329214515706_12235.gif)";
         }
-        //  else {
-        //     setTimeout(() => WritingCatServer.userSeter.refreshNetWorkState(), 5000);
-        // }
+         else {
+            setTimeout(() => WritingCatServer.userSeter.refreshNetWorkState(), 5000);
+        }
         var obj = interpretation; var enInterpretation; var sentence;
         if (obj.hasOwnProperty(Interpretation.EnglishStr())) {
             enInterpretation = obj[Interpretation.EnglishStr()];

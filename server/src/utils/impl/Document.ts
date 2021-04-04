@@ -2,7 +2,7 @@ import { MarkupContent, MarkupKind, TextDocuments } from 'vscode-languageserver'
 import { TextDocument } from 'vscode-languageserver-textdocument';
 import { IDocument } from '../IDocument';
 
-export class Document implements IDocument {
+export default class Document implements IDocument {
 	// Create a simple text document manager.
 	static documents: TextDocuments<TextDocument> = new TextDocuments(TextDocument);
 
@@ -13,6 +13,7 @@ export class Document implements IDocument {
 		}
 		return _result;
 	}
+
 	static getMarkdownContent(title: string, content: string): MarkupContent {
 		let markdown: MarkupContent = {
 			kind: MarkupKind.Markdown,

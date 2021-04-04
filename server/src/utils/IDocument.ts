@@ -1,5 +1,5 @@
 import { TextDocument } from 'vscode-languageserver-textdocument';
-import { MarkupContent } from 'vscode-languageserver/node';
+import { MarkupContent } from 'vscode-languageserver';
 
 
 export interface IDocumentBuilder<T extends IDocument> {

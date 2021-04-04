@@ -1,4 +1,4 @@
-import { CompletionItem } from 'vscode-languageserver/node';
+import { CompletionItem } from 'vscode-languageserver';
 import abstractComple from '../abstractComple';
 
 export default class Blank extends abstractComple{

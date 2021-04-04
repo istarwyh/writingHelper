@@ -1,7 +1,9 @@
-node_modules
-vsc-extension-quickstart.md
 out
+node_modules
+.vscode-test
 *.vsix
+scripts
 src/test
 *.class
 *.zip
+vsc-extension-quickstart.md

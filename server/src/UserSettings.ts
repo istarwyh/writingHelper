@@ -1,5 +1,5 @@
-import { Document } from './utils/impl/Document';
-import https from 'https';
+import Document from './utils/impl/Document';
+import * as https from 'https';
 class UserSettings {
 	static maxNumberOfProblems: number = 10;
 	private static hasNetWork: boolean;

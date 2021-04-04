@@ -12,7 +12,9 @@ Just install me and write in a `.txt` file in English.
 
 for word completion, after we use "tab" key, the result of collocation completion more than what we need.:-(
 Currently, we can use "tab" key and use "Backspace" key and use "tab"/"<-" Key to resolve this problem.
-Welcome to report more problems or give me more issues:-)My contact details(weixin) is on this page!
+Welcome to report more problems or give me more issues :-) 
+
+My contact details(weixin) is on this page~
 
 **Enjoy!**
 
@@ -60,4 +62,8 @@ Welcome to report more problems or give me more issues:-)My contact details(weix
  * Reduce the extension size and improve the startup time by [bundling your extension](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
  * [Publish your extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) on the VSCode extension marketplace.
  * Automate builds by setting up [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
+ 
+----
+ This is a part of my graduation dissertation, so now writingCat/writingHelper is not open. If you have any problems or issues,
+**you jsut contact me with wechat: `istarwyh`:-)**
 

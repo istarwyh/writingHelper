@@ -1,21 +1,21 @@
 import {
-	CompletionItem,
+    CompletionItem,
 	TextDocumentPositionParams,
 	TextEdit,
 	WorkspaceChange,
 	WorkspaceEdit,
-} from 'vscode-languageserver/node';
+} from 'vscode-languageserver';
 import AutoLoader from './AutoLoader';
 import Connection from './Connection';
 import CComple, { provideCompletionItems } from './controller/CComple';
-import { Document } from './utils/impl/Document';
+import Document  from './utils/impl/Document';
 import UserSettings from './UserSettings';
+// const needHover = vscode.workspace.getConfiguration().get('provideHover');
 
-// export default class WritingCatServer {
-// 	static userSeter = UserSettings.iniUserSettings();
-// }
+export default class WritingCatServer {
+	static userSeter = UserSettings.iniUserSettings();
+}
 const connection = Connection.buildConnection();
-UserSettings.iniUserSettings();
 AutoLoader.buildSingleTrie();
 /**
  * 词伙补全响应Completion的请求执行回调函数: the initial list of the completion items handler
@@ -32,6 +32,7 @@ connection.onCompletionResolve(
 		return CComple.modifyCompletionItem(item);
 	}
 );
+
 /**
  * 想要在输入的时候删除此前输入的字符以解决无法用补全的字符覆盖触发字符的缺点
  * 当你知道这个功能肯定能实现,但就是找不到实现方法时,你会怎么办?!!todo
