@@ -2,7 +2,7 @@ import { Position, CompletionItem, MarkupContent, CompletionItemKind, InsertText
 // import WritingCatServer from '../server';
 import CollocationDetail from "../entity/CollocationDetail";
 import { Interpretation } from "../entity/Interpretation";
-import WritingCatServer from '../server';
+import {userSeter} from '../server';
 // import WritingCatServer from '../server';
 import UserSettings from '../UserSettings';
 import Document from '../utils/impl/Document';
@@ -62,7 +62,7 @@ export default abstract class abstractComple implements IComComple {
             appendTitle = "![rainbowcat](https://gitee.com/istarwyh/images/raw/master/1617025579_20210329214515706_12235.gif)";
         }
          else {
-            setTimeout(() => WritingCatServer.userSeter.refreshNetWorkState(), 5000);
+            setTimeout(() => userSeter.refreshNetWorkState(), 5000);
         }
         var obj = interpretation; var enInterpretation; var sentence;
         if (obj.hasOwnProperty(Interpretation.EnglishStr())) {

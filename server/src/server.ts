@@ -10,11 +10,9 @@ import Connection from './Connection';
 import CComple, { provideCompletionItems } from './controller/CComple';
 import Document  from './utils/impl/Document';
 import UserSettings from './UserSettings';
-// const needHover = vscode.workspace.getConfiguration().get('provideHover');
 
-export default class WritingCatServer {
-	static userSeter = UserSettings.iniUserSettings();
-}
+// const needHover = vscode.workspace.getConfiguration().get('provideHover');
+export const userSeter = UserSettings.iniUserSettings();
 const connection = Connection.buildConnection();
 AutoLoader.buildSingleTrie();
 /**
