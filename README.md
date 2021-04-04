@@ -46,6 +46,7 @@ waiting...
 - [ ] count words number
 - [ ] work with time limit
 - [ ] hover
+- [ ] if neccesary, don't launch this programm.(Will the extension be launced when VSC open a file every time?)
 ## 📣note
 >This is a part of my graduation dissertation, so now writingCat/writingHelper is not open. If you have any problems or issues,
 **you jsut contact me with wechat: `istarwyh`** or **email:** `yihui.wang@pku.edu.cn` :-)

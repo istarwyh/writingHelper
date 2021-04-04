@@ -1,7 +1,12 @@
 This is a part of my graduation dissertation, so now writingCat/writingHelper is not open. If you have any problems or issues,
 **you jsut contact me with wechat: `istarwyh`:-)**
+## [0.1.4] - 2021-4-4
+### Removed
+- welcome hint
+### Modified
+- Reademe.md
 
-## [0.1.3] - 2021-4-3
+### [0.1.3] - 2021-4-3
 ### Fix Bug
 - Some machines are useless
 ### Added
