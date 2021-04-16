@@ -32,7 +32,7 @@ connection.onCompletionResolve(
 );
 
 /**
- * 想要在输入的时候删除此前输入的字符以解决无法用补全的字符覆盖触发字符的缺点
+ * 想要在输入的时候删除此前输入的字符以解决无法用补全的字符覆盖触发字符的缺点	
  * 当你知道这个功能肯定能实现,但就是找不到实现方法时,你会怎么办?!!todo
  */
 // connection.workspace.connection.onDidChangeTextDocument((e) => {
