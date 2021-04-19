@@ -26,7 +26,7 @@ public class STransfer<T> {
     /**
      * 关于gson将特殊字符转为utf编码问题: https://my.oschina.net/u/998693/blog/423658
      */
-    private static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
+    public static final Gson GSON = new GsonBuilder().disableHtmlEscaping().create();
 
     /**
      * @param file MultipartFile是Spring提供的一个接口，用来接收multipart／form-data类型 请求方式中即将上传的文件，为处理或保存文件
@@ -62,10 +62,11 @@ public class STransfer<T> {
     /**
      * 在同一个抽象层面上封装API--List && File
      */
-    public String mergeFileAndList(File sourceFile, List<?> list) {
+    public String mergeFileAndList(File jsonFile, List<?> list) {
         try {
-            var jsonStr1 = file2String(sourceFile);
+            var jsonStr1 = file2String(jsonFile);
             var jsonStr2 = GSON.toJson(list).substring(1);
+//            todo:合并后应该进行去重
             return jsonStr1 + jsonStr2;
         } catch (IOException e) {
             e.printStackTrace();
@@ -73,9 +74,9 @@ public class STransfer<T> {
         return "";
     }
 
-    public String file2String(File sourceFile) throws IOException {
+    public String file2String(File jsonFile) throws IOException {
 //            var fr = new FileReader(targetFile);
-        var fileReader = new InputStreamReader(new FileInputStream(sourceFile), StandardCharsets.UTF_8);
+        var fileReader = new InputStreamReader(new FileInputStream(jsonFile), StandardCharsets.UTF_8);
         var sb = new StringBuilder();
         int ch = -1;
         int i = 0;
