@@ -50,22 +50,22 @@ public class HomeController {
         String filePath = "./repository/CollocationJson.json";
         String targetPath = "./repository/CollocationJson.json";
         String json = sTransfer.file2String(new File(filePath));
-        CollocationDetail[] cdArr = STransfer.GSON.fromJson(json,CollocationDetail[].class);
+        CollocationDetail[] cdArr = STransfer.GSON.fromJson(json, CollocationDetail[].class);
         var map = new HashMap<String, HashSet<String>>(124);
-        for( CollocationDetail c : cdArr){
+        for (CollocationDetail c : cdArr) {
             var set = new HashSet<String>(16);
-            for( Interpretation i : c.interpretations){
+            for (Interpretation i : c.interpretations) {
                 set.add(i.Chinese);
             }
-            map.put(c.collocation,set);
+            map.put(c.collocation, set);
         }
         String targetJson0 = sTransfer.mergeFileAndList(new File(filePath), sTransfer.tExcel2tList(file));
-        cdArr = STransfer.GSON.fromJson(targetJson0,CollocationDetail[].class);
-        for( int i=0;i<cdArr.length;i++){
+        cdArr = STransfer.GSON.fromJson(targetJson0, CollocationDetail[].class);
+        for (int i = 0; i < cdArr.length; i++) {
             var cur = cdArr[i];
-            if( map.containsKey(cur.collocation)){
-                for( Interpretation ips : cur.interpretations){
-                    if( map.get(cur.collocation).contains(ips.Chinese)){
+            if (map.containsKey(cur.collocation)) {
+                for (Interpretation ips : cur.interpretations) {
+                    if (map.get(cur.collocation).contains(ips.Chinese)) {
                         cdArr[i] = null;
                     }
                 }

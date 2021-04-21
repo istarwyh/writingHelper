@@ -1,3 +1,4 @@
+import com.lkx.util.ExcelUtil;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import writingCat.entity.excel.CollocationDetailExcel;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -42,24 +44,33 @@ public class Test {
     @org.junit.jupiter.api.Test
     void getCollocationsDetails() throws Exception {
         List<CollocationDetailExcel> allCollocations = new ArrayList<>(1024);
-        //            Document doc = Jsoup.connect(SourceUrl)
+//        Access denied:
+//            Document doc = Jsoup.connect(SourceUrl)
 //                    .userAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
 //                    Chrome/89.0.4389.128 Safari/537.36")
 //                    .cookie("AxWnSXJ8BkdOnTyyBbt2dLk", "0")
 //                    .get();
         WebDriver webDriver = getHomePage(SourceUrl, FinishFlag, false);
         webDriver.findElement(By.className(className1)).click();
-        List<WebElement> list = webDriver.findElements(By.className(className2));
-        var cd = new CollocationDetailExcel();
-        for (WebElement l : list) {
-            System.out.println(list.size());
-            System.out.println(">>>" + l.getText());
+        List<WebElement> webElements = webDriver.findElements(By.className(className1));
+        String[] ss = webElements.get(0).getText().split("\n");
+        for (int i = 0; i < ss.length - 1; i += 2) {
+            var cd = new CollocationDetailExcel();
+            cd.setMajority("0");
+            cd.setCollocation(ss[i]);
+            cd.setChinese(ss[i + 1]);
+            cd.setIssue("undefined");
+            cd.setWordKey(ss[i].split(" ")[0]);
+            allCollocations.add(cd);
         }
         webDriver.close();
+        String targetPath = "./repository/tmp.xlsx";
+        ExcelUtil.exportExcel(targetPath, allCollocations, CollocationDetailExcel.class);
     }
 
     private WebDriver getHomePage(String sourceUrl, String finishFlag, Boolean isDisplay) {
         WebDriver webDriver = getFirefoxWebDriver();
+//        防止因为打开页面过多的域外广告连接而超时
         webDriver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
         webDriver.get(sourceUrl);
         waitPageLoad(webDriver, finishFlag);
@@ -74,7 +85,7 @@ public class Test {
 //        firefoxOptions.addArguments("-headless");
 //            打开火狐浏览器的一些设置
         WebDriver webDriver = new FirefoxDriver(firefoxOptions);
-        webDriver.manage().window().setSize(new Dimension(600, 500));
+        webDriver.manage().window().setSize(new Dimension(1000, 1000));
 //            左上角的位置
         webDriver.manage().window().setPosition(new Point(326, 40));
         return webDriver;

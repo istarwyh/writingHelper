@@ -15,20 +15,20 @@ import lombok.ToString;
 @Setter
 @ToString
 public class CollocationDetailExcel {
-    @Excel( title = "issue")
-    private String issue;
-    @Excel( title = "collocation")
-    private String collocation;
-    @Excel( title = "wordKey")
-    private String wordKey;
-    @Excel(title = "note")
-    private String note;
     @Excel( title = "majority")
     private String majority;
+    @Excel( title = "issue")
+    private String issue;
+    @Excel( title = "wordKey")
+    private String wordKey;
+    @Excel( title = "collocation")
+    private String collocation;
     @Excel(title = "Chinese")
     private String Chinese;
     @Excel(title = "English")
     private String English;
     @Excel(title = "sentence")
     private String sentence;
+    @Excel(title = "note")
+    private String note;
 }
