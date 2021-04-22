@@ -1,4 +1,4 @@
-package writingCat.entity.excel;
+package writingcat.entity.excel;
 
 import com.lkx.util.Excel;
 import lombok.Getter;

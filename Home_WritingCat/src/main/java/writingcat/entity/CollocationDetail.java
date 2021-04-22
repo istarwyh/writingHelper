@@ -1,4 +1,4 @@
-package writingCat.entity;
+package writingcat.entity;
 
 import lombok.Builder;
 

@@ -1,4 +1,4 @@
-package writingCat.Utils;
+package writingcat.Utils;
 
 import org.springframework.util.StopWatch;
 

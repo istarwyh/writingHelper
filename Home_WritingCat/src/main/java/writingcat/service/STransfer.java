@@ -1,18 +1,18 @@
-package writingCat.service;
+package writingcat.service;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.lkx.util.ExcelUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import writingCat.entity.CollocationDetail;
-import writingCat.entity.Interpretation;
-import writingCat.entity.excel.CollocationDetailExcel;
+import writingcat.entity.CollocationDetail;
+import writingcat.entity.Interpretation;
+import writingcat.entity.Phrases;
+import writingcat.entity.excel.CollocationDetailExcel;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -34,8 +34,13 @@ public class STransfer<T> {
      *             todo: 考虑输入格式的各种问题,比如collocation周围空格需要trim
      *             todo: 能不能把参数当类型传进去?像T
      */
-    public List<?> tExcel2tList(MultipartFile file) throws Exception {
-        List<CollocationDetailExcel> excelList = ExcelUtil.readXls(file.getBytes(), CollocationDetailExcel.class);
+    public List<CollocationDetail> tExcel2tList(MultipartFile file) {
+        List<CollocationDetailExcel> excelList = new ArrayList<>();
+        try {
+            excelList = ExcelUtil.readXls(file.getBytes(), CollocationDetailExcel.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         var cd = new ArrayList<CollocationDetail>(128);
         AtomicInteger i = new AtomicInteger();
         excelList.forEach(row -> {
@@ -49,8 +54,7 @@ public class STransfer<T> {
                             .sentence(row.getSentence()).build();
             cd.add(i.getAndIncrement(),
                     CollocationDetail.builder()
-                            .issues(row.getIssue()
-                                    .split(","))
+                            .issues(row.getIssue().split(","))
                             .collocation(row.getCollocation())
                             .wordKeys(row.getWordKey().split(","))
                             .note(row.getNote())
@@ -62,20 +66,60 @@ public class STransfer<T> {
     /**
      * 在同一个抽象层面上封装API--List && File
      */
-    public String mergeFileAndList(File jsonFile, List<?> list) {
+    public Phrases mergeFile(File jsonFile, MultipartFile file) {
         try {
-            var jsonStr1 = file2String(jsonFile);
+            var originSb = jsonFile2StringBuilder(jsonFile);
+            var map = jsonString2Map(originSb.toString());
+            var list = this.tExcel2tList(file);
+            var appendInterpretationMap = new HashMap<String, List<Interpretation>>(16);
+            for (int i = list.size() - 1; i >= 0; i--) {
+                var cur = list.get(i);
+                if (map.containsKey(cur.collocation)) {
+                    boolean flag = true;
+                    var tmpList = new ArrayList<Interpretation>();
+                    for (Interpretation ips : cur.interpretations) {
+                        if (map.get(cur.collocation).contains(ips.Chinese)) {
+                            flag = false;
+                        } else {
+                            tmpList.add(ips);
+                        }
+                        list.remove(i);
+                    }
+                    if (flag) {
+                        appendInterpretationMap.put(cur.collocation, tmpList);
+                    }
+                }
+            }
+            var jsonStr1 = modifyStringBuilder(originSb);
             var jsonStr2 = GSON.toJson(list).substring(1);
-//            todo:合并后应该进行去重
-            return jsonStr1 + jsonStr2;
+            return Phrases.builder().jsonStr(jsonStr1 + jsonStr2).lackedInterpretationMap(appendInterpretationMap).build();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "";
+        return null;
     }
 
-    public String file2String(File jsonFile) throws IOException {
-//            var fr = new FileReader(targetFile);
+    public Map<String, HashSet<String>> jsonString2Map(String jsonStr) {
+        CollocationDetail[] cdArr = STransfer.GSON.fromJson(jsonStr, CollocationDetail[].class);
+        var map = new HashMap<String, HashSet<String>>(124);
+        for (CollocationDetail c : cdArr) {
+            var set = new HashSet<String>(16);
+            for (Interpretation i : c.interpretations) {
+                set.add(i.Chinese);
+            }
+            map.put(c.collocation, set);
+        }
+        return map;
+    }
+
+    public String modifyStringBuilder(StringBuilder sb) throws IOException {
+        sb.deleteCharAt(sb.length() - 1);
+        sb.append(",");
+        return sb.toString();
+    }
+
+    private StringBuilder jsonFile2StringBuilder(File jsonFile) throws IOException {
+        //            var fr = new FileReader(targetFile);
         var fileReader = new InputStreamReader(new FileInputStream(jsonFile), StandardCharsets.UTF_8);
         var sb = new StringBuilder();
         int ch = -1;
@@ -97,11 +141,8 @@ public class STransfer<T> {
                 sb.append(buffer[j]);
             }
         }
-
         fileReader.close();
-        sb.deleteCharAt(sb.length() - 1);
-        sb.append(",");
-        return sb.toString();
+        return sb;
     }
 
     /**

@@ -1,9 +1,8 @@
-package writingCat.Utils;
+package writingcat.Utils;
 
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Objects;
 
 import static org.apache.xmlbeans.impl.common.XBeanDebug.log;
