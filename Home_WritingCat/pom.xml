@@ -60,11 +60,6 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.jsoup</groupId>
-            <artifactId>jsoup</artifactId>
-            <version>1.11.2</version>
-        </dependency>
-        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
@@ -104,7 +99,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>com.github.istarwyh</groupId>
+            <artifactId>Initial</artifactId>
+            <version>0.2.7</version>
+        </dependency>
 
     </dependencies>
 

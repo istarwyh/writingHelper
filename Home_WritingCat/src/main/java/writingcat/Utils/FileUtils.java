@@ -36,7 +36,7 @@ public class FileUtils {
         log(new File(file.toURI()).delete() ? "删除成功" : "删除失败");
     }
 
-    public static String getFileName(String userAgent, String fileName) throws UnsupportedEncodingException {
+    public static String adaptFileName(String userAgent, String fileName) throws UnsupportedEncodingException {
         //IE浏览器
         if (userAgent.contains("MSIE")) {
             fileName = URLEncoder.encode(fileName, StandardCharsets.UTF_8);
