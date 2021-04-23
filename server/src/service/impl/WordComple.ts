@@ -15,7 +15,7 @@ class WordComple extends abstractComple implements IPlusComple {
     modifyCompletionItem(_item: CompletionItem): CompletionItem {
         if(_item.label !== _item.data || _item.label.search(" ")) return _item;
         const collocation: string = Utils.notUndefined(AutoLoader.phraseMap.get(_item.data));
-        return this.getComples4string(collocation);
+        return this.constructComple4string(collocation);
     }
 
 }

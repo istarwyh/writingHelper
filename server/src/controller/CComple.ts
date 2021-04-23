@@ -60,10 +60,15 @@ export function provideCompletionItems(document: TextDocument, position: Positio
 
     // ```mermaid
     // graph LR
-    // id1(lineText)--基础校验-->id2[validText]--业务校验-->id7{是否是issue查找}
-    // id7--是-->id4[issue补全]--补全词伙-->id6[词伙补全]
-    // id7--否-->id3{关键词是否已经补全}--是-->id6
-    // id3--否-->id5[关键词补全]--补全关键词-->id7```
+    // id1(lineText)--基础校验-->id2[validText]--业务校验-->id7{是否是issue查找&&<br>是否位于issue补全范围}
+    // id4--否-->id8[话题Key提示]
+    // id7--是-->id4{话题Key是否<br>已经补全}--是-->id66[领域词伙补全]
+    // id7--否-->id3{词伙Key是否<br>已经补全}--是-->id6[词伙补全]
+    
+    // id3--否-->id9{是否位于<br>词伙补全范围}
+    // id9--否-->id10[返回默认补全]
+    // id9--是-->id5[词伙Key补全]--补全Key后-->id6
+    // ```
     var compleObject: abstractComple =
         (CComple.isIssues(lastWord, issueRegex) && AutoLoader.issueTree.hasPrefix(chKey)) ?
             (AutoLoader.issueTree.has(chKey) ? CComple.issueComple : CComple.issueCue) :

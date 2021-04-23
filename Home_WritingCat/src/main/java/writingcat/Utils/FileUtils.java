@@ -3,6 +3,8 @@ package writingcat.Utils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 import static org.apache.xmlbeans.impl.common.XBeanDebug.log;
@@ -34,4 +36,16 @@ public class FileUtils {
         log(new File(file.toURI()).delete() ? "删除成功" : "删除失败");
     }
 
+    public static String getFileName(String userAgent, String fileName) throws UnsupportedEncodingException {
+        //IE浏览器
+        if (userAgent.contains("MSIE")) {
+            fileName = URLEncoder.encode(fileName, StandardCharsets.UTF_8);
+            //google,火狐浏览器
+        } else if (userAgent.contains("Mozilla")) {
+            fileName = new String(fileName.getBytes(), "ISO8859-1");
+        } else {
+            fileName = URLEncoder.encode(fileName, StandardCharsets.UTF_8);
+        }
+        return fileName;
+    }
 }

@@ -9,12 +9,19 @@ export interface IComComple {
      * @param regExps 
      */
     provideCompletionItems(...regExps: string[]): CompletionItem[];
-    getComples4string(s: string): CompletionItem;
+
+    /**
+     * string construct CompletionItems
+     * @param s 
+     */
+    constructComple4string(s: string): CompletionItem;
+
     /**
      * CollocationDetail[] provide CompletionItems
      * @param matchedphrases 
      */
     getComples4CollocationDetail(matchedphrases: CollocationDetail[]): CompletionItem[];
+
     /**
      * Array<string> provide CompletionItems
      * @param arr 
@@ -23,8 +30,9 @@ export interface IComComple {
 
     /**
      * collocation & interpretation polish CompletionItem
+     * @param wordKey 
      * @param collocation 
      * @param interpretation 
      */
-    getCompletionItem(wordKey: string, collocation: string, interpretation: Interpretation[]): CompletionItem;
+    constrcutCompletionItem(wordKey: string, collocation: string, interpretation: Interpretation[]): CompletionItem;
 }

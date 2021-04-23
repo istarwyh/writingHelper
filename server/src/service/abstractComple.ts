@@ -2,7 +2,7 @@ import { Position, CompletionItem, MarkupContent, CompletionItemKind, InsertText
 // import WritingCatServer from '../server';
 import CollocationDetail from "../entity/CollocationDetail";
 import { Interpretation } from "../entity/Interpretation";
-import {userSeter} from '../server';
+import { userSeter } from '../server';
 // import WritingCatServer from '../server';
 import UserSettings from '../UserSettings';
 import Document from '../utils/impl/Document';
@@ -19,11 +19,11 @@ export default abstract class abstractComple implements IComComple {
             const wordKey = phrase[CollocationDetail.wordKeyStr()][0];
             const interpretations: Interpretation[] = phrase[CollocationDetail.interpretationStr()];
             const collocation: string = phrase[CollocationDetail.collocationStr()];
-            completionItems.push(this.getCompletionItem(wordKey, collocation, Utils.notNull(interpretations)));
+            completionItems.push(this.constrcutCompletionItem(wordKey, collocation, Utils.notNull(interpretations)));
         }
         return completionItems;
     }
-    getComples4string(s: string): CompletionItem {
+    constructComple4string(s: string): CompletionItem {
         const _item = CompletionItem.create(s);
         _item.data = s;
         _item.kind = CompletionItemKind.Method;
@@ -36,13 +36,13 @@ export default abstract class abstractComple implements IComComple {
         var completionItems = new Array<CompletionItem>();
         ss.forEach(
             (s) => {
-                completionItems.push(this.getComples4string(s));
+                completionItems.push(this.constructComple4string(s));
             }
         )
         return completionItems;
     }
 
-    getCompletionItem(wordKey: string, collocation: string, interpretations: Interpretation[]): CompletionItem {
+    constrcutCompletionItem(wordKey: string, collocation: string, interpretations: Interpretation[]): CompletionItem {
         const _item = CompletionItem.create(collocation);
         _item.data = wordKey;
         _item.kind = CompletionItemKind.Function;
@@ -61,7 +61,7 @@ export default abstract class abstractComple implements IComComple {
         if (UserSettings.getNetWorkState()) {
             appendTitle = "![rainbowcat](https://gitee.com/istarwyh/images/raw/master/1617025579_20210329214515706_12235.gif)";
         }
-         else {
+        else {
             setTimeout(() => userSeter.refreshNetWorkState(), 5000);
         }
         var obj = interpretation; var enInterpretation; var sentence;

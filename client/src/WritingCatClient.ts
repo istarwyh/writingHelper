@@ -26,7 +26,7 @@ export default class WritingCatClient {
 	 * @param debuggerPort --inspect=debuggerPort: runs the server in Node's Inspector mode so VS Code can attach to the server for debugging
 	 * @param logPanelName 
 	 */
-	public constructor(context: ExtensionContext, debuggerPort: number, logPanelName: string) {
+	private constructor(context: ExtensionContext, debuggerPort: number, logPanelName: string) {
 		this.serverModule = context.asAbsolutePath(
 			path.join('server', 'out', 'server.js')
 		);
@@ -38,7 +38,6 @@ export default class WritingCatClient {
 				transport: TransportKind.ipc,
 				options: this.debugOptions
 			},
-			
 		};
 		this.clientOptions = {
 			documentSelector: [
@@ -52,7 +51,6 @@ export default class WritingCatClient {
 				/* 为什么这个地方要用tsconfig? */ 
 				fileEvents: vscode.workspace.createFileSystemWatcher('**/tsconfig.json')
 			},
-		
 			revealOutputChannelOn: lsp.RevealOutputChannelOn.Never,
 		};
 		WritingCatClient.client = new lsp.LanguageClient(
@@ -68,4 +66,4 @@ export default class WritingCatClient {
 		}
 		return this.client;
 	}
-}
+}	

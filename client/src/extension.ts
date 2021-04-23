@@ -1,9 +1,8 @@
 import * as vscode from 'vscode';
 import{registerCommands} from './commands';
-
-import {
-	LanguageClient} from 'vscode-languageclient';
+import {LanguageClient} from 'vscode-languageclient';
 import WritingCatClient from './WritingCatClient';
+
 let client: LanguageClient;
 export function activate(context: vscode.ExtensionContext) {
 	client = WritingCatClient.buildWritingCatClient(context, 6009, "writingcat");
