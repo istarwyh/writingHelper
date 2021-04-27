@@ -57,7 +57,6 @@ public class HomeController {
         sTransfer.stringPersistence(STransfer.GSON.toJson(phrases.lackedInterpretationMap), new File("./repository" +
                 "/lackedInterpretations.json"));
         return "<br><h3><font color=\"skyblue\">We will build our collocation repositories.<br>           Write " +
-                "essays" +
-                " increasingly smartly and freely! :-)</font></h3>";
+                "essays increasingly smartly and freely! :-)</font></h3>";
     }
 }

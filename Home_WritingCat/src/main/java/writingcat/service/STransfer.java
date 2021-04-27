@@ -32,7 +32,6 @@ public class STransfer<T> {
      * @param file MultipartFile是Spring提供的一个接口，用来接收multipart／form-data类型 请求方式中即将上传的文件，为处理或保存文件
      *             注意读取时文件表头可能因为隐藏的格式问题读取失败,此时可重写
      *             todo: 考虑输入格式的各种问题,比如collocation周围空格需要trim
-     *             todo: 能不能把参数当类型传进去?像T
      */
     public List<CollocationDetail> tExcel2tList(MultipartFile file) {
         List<CollocationDetailExcel> excelList = new ArrayList<>();
