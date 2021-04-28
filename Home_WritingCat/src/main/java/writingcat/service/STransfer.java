@@ -138,7 +138,7 @@ public class STransfer<T> {
         return sb.toString();
     }
 
-    private StringBuilder jsonFile2StringBuilder(File jsonFile) throws IOException {
+    protected StringBuilder jsonFile2StringBuilder(File jsonFile) throws IOException {
 //        Reader类为包装字节流后的字符流,因为按StandardCharsets.UTF_8格式每次读为字符,所以速度更快
         var fileReader = new InputStreamReader(new FileInputStream(jsonFile), StandardCharsets.UTF_8);
         var sb = new StringBuilder();

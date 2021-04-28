@@ -1,19 +1,20 @@
 package writingcat.service;
 
-import com.google.gson.Gson;
-import com.lkx.util.ExcelUtil;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.model.InsertManyOptions;
+import com.mongodb.client.result.DeleteResult;
 import org.bson.Document;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import writingcat.entity.CollocationDetail;
-import writingcat.entity.Interpretation;
-import writingcat.entity.excel.CollocationDetailExcel;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static com.mongodb.client.model.Filters.gt;
 
 class STransferTest {
     STransfer<Object> sTransfer = new STransfer<>();
@@ -28,19 +29,27 @@ class STransferTest {
     }
 
     @Test
-    void gsonStringArray() {
-        var cd = CollocationDetail.builder()
-                .issues(new String[]{"100", "200", "300"}).build();
-        String gson = new Gson().toJson(cd);
-        System.out.println(gson);
+    void testInsertFile2MongoAndDelete() throws Exception {
+        var jsonFile = new File("./repository/CollocationJson.json");
+        String jsonStr = sTransfer.jsonFile2StringBuilder(jsonFile).toString();
+        List<Document> list = new ArrayList<>(256);
+        int i = 0;
+        for (CollocationDetail c : STransfer.GSON.fromJson(jsonStr, CollocationDetail[].class)) {
+            list.add(Document.parse(c.toJsonStr()).append("id", i++));
+        }
+        var insertManyOptions = new InsertManyOptions().ordered(true);
+        MongoCollection<Document> collection = sTransfer.getClient().getDatabase("writingcat").getCollection(
+                "CollocationsTest");
+        collection.insertMany(list, insertManyOptions);
+        DeleteResult deleteResult = collection.deleteMany(gt("id", 0));
+        Assertions.assertEquals(i - 1, deleteResult.getDeletedCount());
+        collection.drop();
     }
 
     @Test
-    void testInsertFile2Mongo() throws Exception {
-        File file = new File("./repository/CollocationJson.json");
-        var ins = new FileInputStream(file);
-        var list = sTransfer.bytes2List(ins.readAllBytes());
-        Document doc = Document.parse(STransfer.GSON.toJson(list));
-        sTransfer.getClient().getDatabase("writingcat").getCollection("Collocations").insertOne(doc);
+    void seeAllInMongo() {
+        for (Document cur : sTransfer.getClient().getDatabase("writingcat").getCollection("collocations").find()) {
+            System.out.println(cur.toJson());
+        }
     }
 }
