@@ -1,6 +1,7 @@
 package writingcat.entity;
 
 import lombok.Builder;
+import writingcat.service.STransfer;
 
 /**
  * @Description: CollocationDetail
@@ -15,4 +16,8 @@ public class CollocationDetail {
     public String[] wordKeys;
     public String note;
     public Interpretation[] interpretations;
+
+    public String toJsonStr() {
+        return STransfer.GSON.toJson(this, CollocationDetail.class);
+    }
 }
