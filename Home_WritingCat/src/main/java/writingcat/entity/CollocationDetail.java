@@ -1,6 +1,8 @@
 package writingcat.entity;
 
+import com.mongodb.client.MongoCollection;
 import lombok.Builder;
+import org.bson.Document;
 import writingcat.service.STransfer;
 
 /**
@@ -19,5 +21,11 @@ public class CollocationDetail {
 
     public String toJsonStr() {
         return STransfer.GSON.toJson(this, CollocationDetail.class);
+    }
+
+    public void insertInMongo(STransfer<?> sTransfer) {
+        MongoCollection<Document> collection = sTransfer.getClient().getDatabase("writingcat").getCollection(
+                "collocations");
+        collection.insertOne(Document.parse(this.toJsonStr()));
     }
 }

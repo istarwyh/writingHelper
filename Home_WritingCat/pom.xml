@@ -13,7 +13,7 @@
 
     <groupId>org.YiHui</groupId>
     <artifactId>WritingCat</artifactId>
-    <version>0.1</version>
+    <version>0.2.0</version>
     <build>
         <plugins>
             <plugin>

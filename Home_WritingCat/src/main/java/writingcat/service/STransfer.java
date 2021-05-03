@@ -3,14 +3,15 @@ package writingcat.service;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.lkx.util.ExcelUtil;
-import org.bson.Document;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import writingcat.Utils.PropertyUtil;
 import writingcat.entity.CollocationDetail;
 import writingcat.entity.Interpretation;
 import writingcat.entity.Phrases;
 import writingcat.entity.excel.CollocationDetailExcel;
 
+import javax.annotation.Resource;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -43,39 +44,47 @@ public class STransfer<T> {
     /**
      * 在同一个抽象层面上封装API--List && File
      */
-    public Phrases mergeFile(File jsonFile, MultipartFile file) {
+    public Phrases mergeFile(File jsonFile, MultipartFile file, Class<?> classOfT) {
         try {
-            var originSb = jsonFile2StringBuilder(jsonFile);
-            var map = jsonString2Map(originSb.toString());
-            var list = this.bytes2List(file.getBytes());
-            var appendInterpretationMap = new HashMap<String, List<Interpretation>>(16);
-            for (int i = list.size() - 1; i >= 0; i--) {
-                var cur = list.get(i);
-                if (map.containsKey(cur.collocation)) {
-                    boolean flag = true;
-                    var tmpList = new ArrayList<Interpretation>();
-                    for (Interpretation ips : cur.interpretations) {
-                        if (map.get(cur.collocation).contains(ips.Chinese)) {
-                            flag = false;
-                        } else {
-                            tmpList.add(ips);
-                        }
-                        list.remove(i);
-                    }
-                    if (flag) {
-                        appendInterpretationMap.put(cur.collocation, tmpList);
-                    }
-                }
-            }
-            var jsonStr1 = modifyStringBuilder(originSb);
-            Document doc = Document.parse(GSON.toJson(list));
-            client.getDatabase("writingcat").getCollection("Collocations").insertOne(doc);
-            var jsonStr2 = GSON.toJson(list).substring(1);
+            StringBuilder originSb = file2StringBuilder(jsonFile);
+            String originJsonStr = originSb.toString();
+            List<CollocationDetail> list = this.bytes2List(file.getBytes());
+            client.batchInsert(originJsonStr, client.getDatabase(PropertyUtil.getProperty("mongodb.database")).
+                    getCollection(PropertyUtil.getProperty("mongodb.database.collection")), classOfT);
+            String jsonStr1 = modifyStringBuilder(originSb);
+            String jsonStr2 = GSON.toJson(list).substring(1);
+
+            HashMap<String, List<Interpretation>> appendInterpretationMap =
+                    rmDuplicateAndGetExtra(jsonStr2Map(originJsonStr), list);
             return Phrases.builder().jsonStr(jsonStr1 + jsonStr2).lackedInterpretationMap(appendInterpretationMap).build();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return Phrases.builder().build();
+    }
+
+    private HashMap<String, List<Interpretation>> rmDuplicateAndGetExtra(Map<String, HashSet<String>> map,
+                                                                         List<CollocationDetail> list) {
+        var appendInterpretationMap = new HashMap<String, List<Interpretation>>(16);
+        for (int i = list.size() - 1; i >= 0; i--) {
+            var cur = list.get(i);
+            if (map.containsKey(cur.collocation)) {
+                boolean flag = true;
+                var tmpList = new ArrayList<Interpretation>();
+                for (Interpretation ips : cur.interpretations) {
+                    if (map.get(cur.collocation).contains(ips.Chinese)) {
+                        flag = false;
+                    } else {
+                        tmpList.add(ips);
+                    }
+                    list.remove(i);
+                }
+                if (flag) {
+                    appendInterpretationMap.put(cur.collocation, tmpList);
+                }
+            }
+        }
+        return appendInterpretationMap;
     }
 
     /**
@@ -90,7 +99,34 @@ public class STransfer<T> {
     }
 
     public WritingCatClient getClient() {
-        return client;
+        return this.client;
+    }
+
+    public StringBuilder file2StringBuilder(File file) throws IOException {
+//        Reader类为包装字节流后的字符流,因为按StandardCharsets.UTF_8格式每次读为字符,所以速度更快
+        var fileReader = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8);
+        var sb = new StringBuilder();
+        int ch = -1;
+        int i = 0;
+        var buffer = new char[1024];
+        while ((ch = fileReader.read()) != -1) {
+            if (i < 1024) {
+                buffer[i++] = (char) ch;
+            } else {
+                sb.append(buffer).append((char) ch);
+                i = 0;
+//                    new一个和逐个为空,一个消耗内存,一个消耗资源吧
+                buffer = new char[1024];
+            }
+        }
+//                当buffer数组没有满的时候:
+        if (i > 0) {
+            for (int j = 0; j < i; j++) {
+                sb.append(buffer[j]);
+            }
+        }
+        fileReader.close();
+        return sb;
     }
 
     /**
@@ -119,7 +155,7 @@ public class STransfer<T> {
         return cd;
     }
 
-    private Map<String, HashSet<String>> jsonString2Map(String jsonStr) {
+    private Map<String, HashSet<String>> jsonStr2Map(String jsonStr) {
         CollocationDetail[] cdArr = STransfer.GSON.fromJson(jsonStr, CollocationDetail[].class);
         var map = new HashMap<String, HashSet<String>>(124);
         for (CollocationDetail c : cdArr) {
@@ -136,32 +172,5 @@ public class STransfer<T> {
         sb.deleteCharAt(sb.length() - 1);
         sb.append(",");
         return sb.toString();
-    }
-
-    protected StringBuilder jsonFile2StringBuilder(File jsonFile) throws IOException {
-//        Reader类为包装字节流后的字符流,因为按StandardCharsets.UTF_8格式每次读为字符,所以速度更快
-        var fileReader = new InputStreamReader(new FileInputStream(jsonFile), StandardCharsets.UTF_8);
-        var sb = new StringBuilder();
-        int ch = -1;
-        int i = 0;
-        var buffer = new char[1024];
-        while ((ch = fileReader.read()) != -1) {
-            if (i < 1024) {
-                buffer[i++] = (char) ch;
-            } else {
-                sb.append(buffer).append((char) ch);
-                i = 0;
-//                    new一个和逐个为空,一个消耗内存,一个消耗资源吧
-                buffer = new char[1024];
-            }
-        }
-//                当buffer数组没有满的时候:
-        if (i > 0) {
-            for (int j = 0; j < i; j++) {
-                sb.append(buffer[j]);
-            }
-        }
-        fileReader.close();
-        return sb;
     }
 }

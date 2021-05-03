@@ -55,7 +55,7 @@ public class HomeController {
     public String postFile(@RequestParam(value = "file") MultipartFile file) throws Exception {
         String originFilePath = "./repository/CollocationJson.json";
         String targetPath = "./repository/CollocationJson.json";
-        var phrases = sTransfer.mergeFile(new File(originFilePath), file);
+        var phrases = sTransfer.mergeFile(new File(originFilePath), file, CollocationDetail[].class);
         sTransfer.stringPersistence(phrases.jsonStr, new File(targetPath));
 //        todo:应该在lackedInterpretations之后追加新的不一样的Interpretations,后面引入mongodb可以解决连续持久化的问题
         sTransfer.stringPersistence(STransfer.GSON.toJson(phrases.lackedInterpretationMap), new File("./repository" +

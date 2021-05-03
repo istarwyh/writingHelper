@@ -1,17 +1,15 @@
 package writingcat.service;
 
 import com.mongodb.client.MongoCollection;
-import com.mongodb.client.model.InsertManyOptions;
 import com.mongodb.client.result.DeleteResult;
 import org.bson.Document;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import writingcat.Utils.PropertyUtil;
 import writingcat.entity.CollocationDetail;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import static com.mongodb.client.model.Filters.gt;
@@ -21,7 +19,6 @@ class STransferTest {
 
     @Test
     void testGsonSpCharacter() {
-
         Map<String, String> lackedInterpretationMap = new HashMap<>();
         lackedInterpretationMap.put("make sense", "Religion wants make sense of the world.");
         lackedInterpretationMap.put("make sense", "Religion wants make sense of the world.");
@@ -31,18 +28,13 @@ class STransferTest {
     @Test
     void testInsertFile2MongoAndDelete() throws Exception {
         var jsonFile = new File("./repository/CollocationJson.json");
-        String jsonStr = sTransfer.jsonFile2StringBuilder(jsonFile).toString();
-        List<Document> list = new ArrayList<>(256);
-        int i = 0;
-        for (CollocationDetail c : STransfer.GSON.fromJson(jsonStr, CollocationDetail[].class)) {
-            list.add(Document.parse(c.toJsonStr()).append("id", i++));
-        }
-        var insertManyOptions = new InsertManyOptions().ordered(true);
-        MongoCollection<Document> collection = sTransfer.getClient().getDatabase("writingcat").getCollection(
-                "CollocationsTest");
-        collection.insertMany(list, insertManyOptions);
+        String jsonStr = sTransfer.file2StringBuilder(jsonFile).toString();
+        MongoCollection<Document> collection = sTransfer.getClient().getDatabase(PropertyUtil.getProperty("mongodb" +
+                ".database")).getCollection(
+                "collocationsTest");
+        sTransfer.getClient().batchInsert(jsonStr, collection, CollocationDetail[].class);
         DeleteResult deleteResult = collection.deleteMany(gt("id", 0));
-        Assertions.assertEquals(i - 1, deleteResult.getDeletedCount());
+        Assertions.assertNotEquals(0, deleteResult.getDeletedCount());
         collection.drop();
     }
 
@@ -51,5 +43,10 @@ class STransferTest {
         for (Document cur : sTransfer.getClient().getDatabase("writingcat").getCollection("collocations").find()) {
             System.out.println(cur.toJson());
         }
+    }
+
+    @Test
+    void testGetProps() {
+        Assertions.assertEquals("writingcat", PropertyUtil.getProperty("mongodb.database"));
     }
 }
