@@ -5,13 +5,12 @@ import com.google.gson.GsonBuilder;
 import com.lkx.util.ExcelUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import writingcat.Utils.PropertyUtil;
+import writingcat.utils.PropertyUtil;
 import writingcat.entity.CollocationDetail;
 import writingcat.entity.Interpretation;
 import writingcat.entity.Phrases;
 import writingcat.entity.excel.CollocationDetailExcel;
 
-import javax.annotation.Resource;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
@@ -24,7 +23,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @Version: ing
  */
 @Service
-public class STransfer<T> {
+public class STransfer {
     private final WritingCatClient client = new WritingCatClient();
     /**
      * 关于gson将特殊字符转为utf编码问题: https://my.oschina.net/u/998693/blog/423658
@@ -47,16 +46,12 @@ public class STransfer<T> {
     public Phrases mergeFile(File jsonFile, MultipartFile file, Class<?> classOfT) {
         try {
             StringBuilder originSb = file2StringBuilder(jsonFile);
-            String originJsonStr = originSb.toString();
             List<CollocationDetail> list = this.bytes2List(file.getBytes());
-            client.batchInsert(originJsonStr, client.getDatabase(PropertyUtil.getProperty("mongodb.database")).
-                    getCollection(PropertyUtil.getProperty("mongodb.database.collection")), classOfT);
+//          locally rmDup merge extraInfo ?
+//
             String jsonStr1 = modifyStringBuilder(originSb);
             String jsonStr2 = GSON.toJson(list).substring(1);
-
-            HashMap<String, List<Interpretation>> appendInterpretationMap =
-                    rmDuplicateAndGetExtra(jsonStr2Map(originJsonStr), list);
-            return Phrases.builder().jsonStr(jsonStr1 + jsonStr2).lackedInterpretationMap(appendInterpretationMap).build();
+            return Phrases.builder().jsonStr(jsonStr1 + jsonStr2).build();
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -5,17 +5,17 @@ import com.mongodb.client.result.DeleteResult;
 import org.bson.Document;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import writingcat.Utils.PropertyUtil;
+import writingcat.utils.PropertyUtil;
 import writingcat.entity.CollocationDetail;
 
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.mongodb.client.model.Filters.gt;
+import static com.mongodb.client.model.Filters.*;
 
 class STransferTest {
-    STransfer<Object> sTransfer = new STransfer<>();
+    STransfer sTransfer = new STransfer();
 
     @Test
     void testGsonSpCharacter() {
@@ -38,15 +38,4 @@ class STransferTest {
         collection.drop();
     }
 
-    @Test
-    void seeAllInMongo() {
-        for (Document cur : sTransfer.getClient().getDatabase("writingcat").getCollection("collocations").find()) {
-            System.out.println(cur.toJson());
-        }
-    }
-
-    @Test
-    void testGetProps() {
-        Assertions.assertEquals("writingcat", PropertyUtil.getProperty("mongodb.database"));
-    }
 }

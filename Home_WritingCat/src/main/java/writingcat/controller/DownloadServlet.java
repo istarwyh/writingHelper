@@ -3,7 +3,7 @@ package writingcat.controller;
 import com.github.istarwyh.cache.LruCache;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import writingcat.Utils.FileUtils;
+import writingcat.utils.FileUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;

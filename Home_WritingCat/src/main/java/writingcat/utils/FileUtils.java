@@ -1,4 +1,4 @@
-package writingcat.Utils;
+package writingcat.utils;
 
 import org.springframework.web.multipart.MultipartFile;
 

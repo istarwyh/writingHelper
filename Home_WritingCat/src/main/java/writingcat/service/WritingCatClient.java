@@ -2,20 +2,18 @@ package writingcat.service;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.mongodb.client.MongoClient;
-import com.mongodb.client.MongoClients;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.*;
 import com.mongodb.client.model.InsertManyOptions;
 import org.bson.Document;
 import org.springframework.stereotype.Service;
-import writingcat.Utils.PropertyUtil;
 import writingcat.entity.CollocationDetail;
+import writingcat.utils.PropertyUtil;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.exists;
 import static com.mongodb.client.model.Sorts.descending;
 
@@ -59,10 +57,14 @@ public class WritingCatClient {
         return client.getDatabase(databaseName);
     }
 
+    private int maxFieldName(MongoCollection<Document> collection, String fieldName) {
+        Document doc = collection.find(exists(fieldName)).sort(descending(fieldName)).first();
+        return doc == null ? 0 : (int) doc.get(fieldName) + 1;
+    }
+
     public void batchInsert(String jsonStr, MongoCollection<Document> collection, Class<?> classOfT) {
         List<Document> list = new ArrayList<>(256);
-        Document doc = collection.find(exists("id")).sort(descending("id")).first();
-        int i = doc == null ? 0 : (int) doc.get("id") + 1;
+        int i = maxFieldName(collection, "id");
         if (classOfT.getName().startsWith("[L") && classOfT.getSimpleName().startsWith("CollocationDetail")) {
             CollocationDetail[] arr = GSON.fromJson(jsonStr, (Type) classOfT);
             for (CollocationDetail c : arr) {
@@ -72,5 +74,15 @@ public class WritingCatClient {
             throw new UnsupportedOperationException("非CollocationDetail[]暂且不支持插入");
         }
         collection.insertMany(list, new InsertManyOptions().ordered(true));
+    }
+
+    public void rmDuplicateByKey(MongoCollection<Document> collection, String key, String value) {
+        FindIterable<Document> findIterable = collection.find(eq(key, value));
+        Document firstDoc = findIterable.first();
+        for (Document doc : findIterable) {
+            if (CollocationDetail.equals(firstDoc, doc)) {
+                collection.deleteOne(doc);
+            }
+        }
     }
 }
