@@ -9,6 +9,7 @@ import writingcat.entity.CollocationDetail;
 import writingcat.entity.Interpretation;
 import writingcat.entity.Phrases;
 import writingcat.entity.excel.CollocationDetailExcel;
+import writingcat.utils.SetUtil;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -63,10 +64,9 @@ public class STransfer {
             CollocationDetail cur = list.get(i);
             if (map.containsKey(cur.getCollocation())) {
                 CollocationDetail cd = map.get(cur.getCollocation());
-                var tmpSet = new HashSet<Interpretation>(16);
-                tmpSet.addAll(Arrays.asList(cur.getInterpretations()));
-                tmpSet.addAll(Arrays.asList(cd.getInterpretations()));
-                cd.setInterpretationsBySet(tmpSet);
+                cd.setIssuesBySet(SetUtil.getUniqUnion(cur.getIssues(), cd.getIssues()));
+                cd.setWordKeysBySet(SetUtil.getUniqUnion(cur.getWordKeys(), cd.getWordKeys()));
+                cd.setInterpretationsBySet(SetUtil.getUniqUnion(cur.getInterpretations(), cd.getInterpretations()));
                 list.remove(i);
             }
         }

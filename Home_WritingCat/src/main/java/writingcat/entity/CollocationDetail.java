@@ -20,9 +20,9 @@ import java.util.Set;
 @Getter
 @Setter
 public class CollocationDetail {
-    private final String[] issues;
+    private String[] issues;
     private final String collocation;
-    private final String[] wordKeys;
+    private String[] wordKeys;
     private final String note;
     private Interpretation[] interpretations;
 
@@ -53,6 +53,22 @@ public class CollocationDetail {
 
     private static boolean filedEqual(Document a, Document b, String fieldName) {
         return Arrays.equals((String[]) a.get(fieldName), (String[]) b.get(fieldName));
+    }
+
+    public void setWordKeysBySet(Set<String> set) {
+        this.setWordKeys(new String[set.size()]);
+        int index = 0;
+        for (String ip : set) {
+            this.getWordKeys()[index++] = ip;
+        }
+    }
+
+    public void setIssuesBySet(Set<String> set) {
+        this.setIssues(new String[set.size()]);
+        int index = 0;
+        for (String ip : set) {
+            this.getIssues()[index++] = ip;
+        }
     }
 
     public void setInterpretationsBySet(Set<Interpretation> set) {
