@@ -30,7 +30,22 @@ public class Interpretation {
             return false;
         }
         Interpretation that = (Interpretation) o;
-        return getChinese().equals(that.getChinese());
+        return equals(getChinese(), that.getChinese()) &&
+                equals(getEnglish(), that.getEnglish()) &&
+                equals(getSentence(), that.getSentence());
+    }
+
+    /**
+     * @return s1/s2都为空;s1/s2都为Blank(但是注意null不能调用isBlank());s1与s2内容相等
+     */
+    private boolean equals(String s1, String s2) {
+        if (s1 == null && s2 == null) {
+            return true;
+        } else if (s1 != null && s1.isBlank()) {
+            return s2 == null || s2.isBlank();
+        } else {
+            return s1 != null && s1.equals(s2);
+        }
     }
 
     @Override

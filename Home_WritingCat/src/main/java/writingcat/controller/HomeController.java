@@ -49,9 +49,14 @@ public class HomeController {
     public String postFile(@RequestParam(value = "file") MultipartFile file) throws Exception {
         String originFilePath = PropertyUtil.getProperty("originFilePath");
         String targetPath = PropertyUtil.getProperty("targetPath");
-        Phrases phrases = sTransfer.mergeFile(new File(originFilePath), file, CollocationDetail[].class);
-        sTransfer.stringPersistence(phrases.jsonStr, new File(targetPath));
-        return "<br><h3><font color=\"skyblue\">We will build our collocation repositories.<br>           Write " +
-                "essays increasingly smartly and freely! :-)</font></h3>";
+        Phrases phrases = sTransfer.mergeFile(new File(originFilePath), file);
+        if (phrases.getModified()) {
+            sTransfer.stringPersistence(phrases.getJsonStr(), new File(targetPath));
+            return "<br><h3><font color=\"skyblue\">" +
+                    "We will build our collocation repositories.<br>          " +
+                    "Write essays increasingly smartly and freely! :-)</font></h3>";
+        } else {
+            return "<br><h3><font color=\"skyblue\">Thank you for your material! :-)</font></h3>";
+        }
     }
 }

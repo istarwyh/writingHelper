@@ -1,6 +1,8 @@
 package writingcat.entity;
 
 import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 import java.util.Map;
@@ -12,7 +14,31 @@ import java.util.Map;
  * @Version: ing
  */
 @Builder
+@Getter
 public class Phrases {
-    public String jsonStr;
-    public Map<String, List<Interpretation>> lackedInterpretationMap;
+    private boolean modified;
+    private boolean waitModified;
+    private String jsonStr;
+
+    public Phrases setJsonStr(String jsonStr) {
+        this.jsonStr = jsonStr;
+        return this;
+    }
+
+    public boolean getModified() {
+        return this.modified;
+    }
+
+    public void setModified(boolean modified) {
+        this.modified = modified;
+    }
+
+    public boolean getWaitModified() {
+        return this.waitModified;
+    }
+
+    public Phrases setWaitModified(boolean waitModified) {
+        this.waitModified = waitModified;
+        return this;
+    }
 }

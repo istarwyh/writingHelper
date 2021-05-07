@@ -41,34 +41,67 @@ public class STransfer {
     }
 
     /**
-     * 在同一个抽象层面上封装API--List && File
+     * 在同一个抽象层面上封装API
      */
-    public Phrases mergeFile(File jsonFile, MultipartFile file, Class<?> classOfT) {
+    public Phrases mergeFile(File jsonFile, MultipartFile file) {
+        var phrases = Phrases.builder().waitModified(false).modified(false).build();
         try {
             StringBuilder originSb = file2StringBuilder(jsonFile);
             CollocationDetail[] originCdArr = GSON.fromJson(originSb.toString(), CollocationDetail[].class);
             List<CollocationDetail> list = this.bytes2List(file.getBytes());
-//          locally rmDup merge extraInfo ?
-            rmDuplicateAndUpdate(cdArr2Map(originCdArr), list);
-            String jsonStr1 = modifyStringBuilder(originSb);
-            String jsonStr2 = GSON.toJson(list).substring(1);
-            return Phrases.builder().jsonStr(jsonStr1 + jsonStr2).build();
+            rmDuplicateAndUpdate(phrases, cdArr2Map(originCdArr), list);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return Phrases.builder().build();
+        return phrases;
     }
 
-    private void rmDuplicateAndUpdate(Map<String, CollocationDetail> map, List<CollocationDetail> list) {
+    /**
+     * @param map  对map进行更新操作,最后将map再转回为CollocationDetail[]
+     * @param list 如果list中有与map中重复的元素,则删除list中的元素
+     */
+    private void rmDuplicateAndUpdate(Phrases phrases, Map<String, CollocationDetail> map,
+                                      List<CollocationDetail> list) {
         for (int i = list.size() - 1; i >= 0; i--) {
             CollocationDetail cur = list.get(i);
             if (map.containsKey(cur.getCollocation())) {
                 CollocationDetail cd = map.get(cur.getCollocation());
+                cd.setModified(false);
                 cd.setIssuesBySet(SetUtil.getUniqUnion(cur.getIssues(), cd.getIssues()));
                 cd.setWordKeysBySet(SetUtil.getUniqUnion(cur.getWordKeys(), cd.getWordKeys()));
                 cd.setInterpretationsBySet(SetUtil.getUniqUnion(cur.getInterpretations(), cd.getInterpretations()));
+                if (cd.getModified()) {
+                    phrases.setWaitModified(cd.getModified());
+                }
                 list.remove(i);
             }
+        }
+        if (phrases.getWaitModified()) {
+            CollocationDetail[] cdArr;
+            if (list.size() == 0) {
+                cdArr = new CollocationDetail[map.size()];
+            } else {
+                cdArr = new CollocationDetail[map.size() + list.size()];
+            }
+            map2cdArr(cdArr, map);
+            phrases.setJsonStr(GSON.toJson(cdArr)).setWaitModified(false).setModified(true);
+        } else {
+            phrases.setModified(false);
+        }
+    }
+
+    private Map<String, CollocationDetail> cdArr2Map(CollocationDetail[] cdArr) {
+        var map = new HashMap<String, CollocationDetail>(124);
+        for (CollocationDetail c : cdArr) {
+            map.put(c.getCollocation(), c);
+        }
+        return map;
+    }
+
+    private void map2cdArr(CollocationDetail[] cdArr, Map<String, CollocationDetail> map) {
+        int index = 0;
+        for (CollocationDetail cd : map.values()) {
+            cdArr[index++] = cd;
         }
     }
 
@@ -138,14 +171,6 @@ public class STransfer {
                             .interpretations(tmpArray).build());
         });
         return cd;
-    }
-
-    private Map<String, CollocationDetail> cdArr2Map(CollocationDetail[] cdArr) {
-        var map = new HashMap<String, CollocationDetail>(124);
-        for (CollocationDetail c : cdArr) {
-            map.put(c.getCollocation(), c);
-        }
-        return map;
     }
 
     private String modifyStringBuilder(StringBuilder sb) throws IOException {

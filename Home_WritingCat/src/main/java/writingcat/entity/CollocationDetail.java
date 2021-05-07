@@ -25,6 +25,7 @@ public class CollocationDetail {
     private String[] wordKeys;
     private final String note;
     private Interpretation[] interpretations;
+    private boolean modified;
 
     public String toJsonStr() {
         return STransfer.GSON.toJson(this, CollocationDetail.class);
@@ -56,30 +57,46 @@ public class CollocationDetail {
     }
 
     public void setWordKeysBySet(Set<String> set) {
+        if (set.size() == this.getWordKeys().length) {
+            return;
+        }
         this.setWordKeys(new String[set.size()]);
         int index = 0;
         for (String ip : set) {
             this.getWordKeys()[index++] = ip;
         }
+        modified = true;
     }
 
     public void setIssuesBySet(Set<String> set) {
+        if (set.size() == this.getIssues().length) {
+            return;
+        }
         this.setIssues(new String[set.size()]);
         int index = 0;
         for (String ip : set) {
             this.getIssues()[index++] = ip;
         }
+        modified = true;
     }
 
     public void setInterpretationsBySet(Set<Interpretation> set) {
+        if (set.size() == this.getInterpretations().length) {
+            return;
+        }
         this.setInterpretations(new Interpretation[set.size()]);
         int index = 0;
         for (Interpretation ip : set) {
             this.getInterpretations()[index++] = ip;
         }
+        modified = true;
     }
 
     public void insertInMongo(MongoCollection<Document> collection) {
         collection.insertOne(Document.parse(this.toJsonStr()));
+    }
+
+    public boolean getModified() {
+        return this.modified;
     }
 }

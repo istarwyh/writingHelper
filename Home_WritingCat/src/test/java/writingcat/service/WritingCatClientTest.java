@@ -19,16 +19,12 @@ class WritingCatClientTest {
             .getCollection(PropertyUtil.getProperty("mongodb.database.collection"));
     private final STransfer sTransfer = new STransfer();
 
-    @Test
-    void Initial() throws Exception {
-        String originFilePath = PropertyUtil.getProperty("originFilePath");
-        String originJsonStr = sTransfer.file2StringBuilder(new File(originFilePath)).toString();
-        client.batchInsert(originJsonStr, connection, CollocationDetail[].class);
-    }
-
-    @Test
-    void rmDuplicateByKey() {
-    }
+//    @Test
+//    void Initial() throws Exception {
+//        String originFilePath = PropertyUtil.getProperty("originFilePath");
+//        String originJsonStr = sTransfer.file2StringBuilder(new File(originFilePath)).toString();
+//        client.batchInsert(originJsonStr, connection, CollocationDetail[].class);
+//    }
 
     @Test
     void seeAllInMongo() {
@@ -45,10 +41,7 @@ class WritingCatClientTest {
 
     @Test
     void RetrieveInMongo() {
-//         for ( Document doc : connection.find(eq("collocation","give them more freedom"))){
-//             System.out.println(doc.toJson());
-//         }
-        for (Document doc : connection.find(eq("id", 98))) {
+        for (Document doc : connection.find(eq("collocation", "give them more freedom"))) {
             System.out.println(doc.toJson());
         }
     }
