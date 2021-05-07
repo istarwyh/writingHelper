@@ -5,11 +5,10 @@ import com.google.gson.GsonBuilder;
 import com.lkx.util.ExcelUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import writingcat.utils.PropertyUtil;
-import writingcat.entity.CollocationDetail;
 import writingcat.entity.Interpretation;
 import writingcat.entity.Phrases;
 import writingcat.entity.excel.CollocationDetailExcel;
+import writingcat.entity.CollocationDetail;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -46,9 +45,10 @@ public class STransfer {
     public Phrases mergeFile(File jsonFile, MultipartFile file, Class<?> classOfT) {
         try {
             StringBuilder originSb = file2StringBuilder(jsonFile);
+            CollocationDetail[] originCdArr = GSON.fromJson(originSb.toString(), CollocationDetail[].class);
             List<CollocationDetail> list = this.bytes2List(file.getBytes());
 //          locally rmDup merge extraInfo ?
-//
+            rmDuplicateAndUpdate(cdArr2Map(originCdArr), list);
             String jsonStr1 = modifyStringBuilder(originSb);
             String jsonStr2 = GSON.toJson(list).substring(1);
             return Phrases.builder().jsonStr(jsonStr1 + jsonStr2).build();
@@ -58,28 +58,18 @@ public class STransfer {
         return Phrases.builder().build();
     }
 
-    private HashMap<String, List<Interpretation>> rmDuplicateAndGetExtra(Map<String, HashSet<String>> map,
-                                                                         List<CollocationDetail> list) {
-        var appendInterpretationMap = new HashMap<String, List<Interpretation>>(16);
+    private void rmDuplicateAndUpdate(Map<String, CollocationDetail> map, List<CollocationDetail> list) {
         for (int i = list.size() - 1; i >= 0; i--) {
-            var cur = list.get(i);
-            if (map.containsKey(cur.collocation)) {
-                boolean flag = true;
-                var tmpList = new ArrayList<Interpretation>();
-                for (Interpretation ips : cur.interpretations) {
-                    if (map.get(cur.collocation).contains(ips.Chinese)) {
-                        flag = false;
-                    } else {
-                        tmpList.add(ips);
-                    }
-                    list.remove(i);
-                }
-                if (flag) {
-                    appendInterpretationMap.put(cur.collocation, tmpList);
-                }
+            CollocationDetail cur = list.get(i);
+            if (map.containsKey(cur.getCollocation())) {
+                CollocationDetail cd = map.get(cur.getCollocation());
+                var tmpSet = new HashSet<Interpretation>(16);
+                tmpSet.addAll(Arrays.asList(cur.getInterpretations()));
+                tmpSet.addAll(Arrays.asList(cd.getInterpretations()));
+                cd.setInterpretationsBySet(tmpSet);
+                list.remove(i);
             }
         }
-        return appendInterpretationMap;
     }
 
     /**
@@ -150,15 +140,10 @@ public class STransfer {
         return cd;
     }
 
-    private Map<String, HashSet<String>> jsonStr2Map(String jsonStr) {
-        CollocationDetail[] cdArr = STransfer.GSON.fromJson(jsonStr, CollocationDetail[].class);
-        var map = new HashMap<String, HashSet<String>>(124);
+    private Map<String, CollocationDetail> cdArr2Map(CollocationDetail[] cdArr) {
+        var map = new HashMap<String, CollocationDetail>(124);
         for (CollocationDetail c : cdArr) {
-            var set = new HashSet<String>(16);
-            for (Interpretation i : c.interpretations) {
-                set.add(i.Chinese);
-            }
-            map.put(c.collocation, set);
+            map.put(c.getCollocation(), c);
         }
         return map;
     }

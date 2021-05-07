@@ -51,9 +51,6 @@ public class HomeController {
         String targetPath = PropertyUtil.getProperty("targetPath");
         Phrases phrases = sTransfer.mergeFile(new File(originFilePath), file, CollocationDetail[].class);
         sTransfer.stringPersistence(phrases.jsonStr, new File(targetPath));
-//        todo:应该在lackedInterpretations之后追加新的不一样的Interpretations,后面引入mongodb可以解决连续持久化的问题
-        sTransfer.stringPersistence(STransfer.GSON.toJson(phrases.lackedInterpretationMap), new File("./repository" +
-                "/lackedInterpretations.json"));
         return "<br><h3><font color=\"skyblue\">We will build our collocation repositories.<br>           Write " +
                 "essays increasingly smartly and freely! :-)</font></h3>";
     }
