@@ -1,0 +1,8 @@
+mongodb.url:cluster0.jb8de.mongodb.net
+mongodb.username:Yihui
+mongodb.password:2w5t8i0p
+mongodb.defaultCluster:Cluster0
+mongodb.database:writingcat
+mongodb.database.collection:collocations
+originFilePath:./repository/CollocationJson.json
+targetPath:./repository/CollocationJson.json

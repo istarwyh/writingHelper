@@ -5,10 +5,10 @@ import com.google.gson.GsonBuilder;
 import com.lkx.util.ExcelUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import writingcat.entity.CollocationDetail;
 import writingcat.entity.Interpretation;
 import writingcat.entity.Phrases;
 import writingcat.entity.excel.CollocationDetailExcel;
-import writingcat.entity.CollocationDetail;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
