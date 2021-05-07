@@ -1,23 +1,755 @@
 [
 	{
 	  "issues": [
-		"compete",
-		"work",
-		"竞争"
+		"culture"
 	  ],
-	  "collocation": "zero-sum game",
+	  "collocation": "adapt old buildings to meet modern needs",
 	  "wordKeys": [
-		"zero"
+		"adapt"
 	  ],
 	  "note": "",
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "零和博弈",
-		  "English": "Zero-sum is a situation in game theory in which one person’s gain is equivalent to another’s loss.",
+		  "Chinese": "让老房子适应现代生活的需要",
+		  "English": "",
 		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"safety"
+	  ],
+	  "collocation": "protect national security",
+	  "wordKeys": [
+		"protect"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "保卫国家的安全",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"culture"
+	  ],
+	  "collocation": "are fun and enjoyable",
+	  "wordKeys": [
+		"are"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "是有趣而且令人愉快的",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "influence people's opinions",
+	  "wordKeys": [
+		"influence"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "影响人们的看法",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"healthy"
+	  ],
+	  "collocation": "promote healthy lifestyles",
+	  "wordKeys": [
+		"promote"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "(政府、媒体等)推广健康的生过方式",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"fun"
+	  ],
+	  "collocation": "do the shopping",
+	  "wordKeys": [
+		"do"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "买买买"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"skill"
+	  ],
+	  "collocation": "prepare for employment",
+	  "wordKeys": [
+		"prepare"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "为就业做好准备"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "reduce distractions",
+	  "wordKeys": [
+		"reduce"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "减少干扰",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"link"
+	  ],
+	  "collocation": "it is no surprise that",
+	  "wordKeys": [
+		"it"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "毫无疑问的是…"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"work"
+	  ],
+	  "collocation": "achieve good grades",
+	  "wordKeys": [
+		"achieve"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "取得好成绩",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"culture"
+	  ],
+	  "collocation": "protect their heritage",
+	  "wordKeys": [
+		"protect"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "保护他们的文化传承(主意：heritage不能用复数)",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"safety"
+	  ],
+	  "collocation": "threaten people's safety",
+	  "wordKeys": [
+		"threaten"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "威胁人们的安全",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "keep them motivated",
+	  "wordKeys": [
+		"keep"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "保持他们的动力",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"culture"
+	  ],
+	  "collocation": "work of art",
+	  "wordKeys": [
+		"work"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "艺术品，尤其常指绘画、雕塑等视觉艺术品",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"duty"
+	  ],
+	  "collocation": "have busy careers",
+	  "wordKeys": [
+		"have",
+		"careers"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "有忙碌的事业"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"link"
+	  ],
+	  "collocation": "it was too late to",
+	  "wordKeys": [
+		"late"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "太迟了再做sth.",
+		  "sentence": "It was too late to be sure whether he even knew she was there."
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"culture"
+	  ],
+	  "collocation": "is a good leisure activity",
+	  "wordKeys": [
+		"is"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "是一种很好的休闲活动",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"life",
+		"culture"
+	  ],
+	  "collocation": "give them more freedom",
+	  "wordKeys": [
+		"give"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "给他们更多的自由",
+		  "English": "",
+		  "sentence": "Should children be given more freedom?"
+		},
+		{
+		  "majority": "0",
+		  "Chinese": "给他们更多的自由",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"skill"
+	  ],
+	  "collocation": "work closely with",
+	  "wordKeys": [
+		"work",
+		"closely"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "与同学（或者同事、队友）紧密地合作"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"healthy"
+	  ],
+	  "collocation": "improve healthcare services",
+	  "wordKeys": [
+		"improve"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "改善医疗服务",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"culture"
+	  ],
+	  "collocation": "the expansion of English",
+	  "wordKeys": [
+		"the"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "英语的扩张",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"duty"
+	  ],
+	  "collocation": "do voluntary work",
+	  "wordKeys": [
+		"do"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "做义工",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"duty"
+	  ],
+	  "collocation": "run campaigns to encourage people to",
+	  "wordKeys": [
+		"run",
+		"campaigns"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "（政府）举办大型的系列宣传活动以鼓励人们去……"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"finance"
+	  ],
+	  "collocation": "consumer society",
+	  "wordKeys": [
+		"consumer"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "崇尚消费的社会",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"finance"
+	  ],
+	  "collocation": "the gap between rich and poor",
+	  "wordKeys": [
+		"the"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "贫富差距",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"skill"
+	  ],
+	  "collocation": "life skills",
+	  "wordKeys": [
+		"life"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "生活技能"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "make our lives more convenient and comfortable",
+	  "wordKeys": [
+		"make"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "让我们的生活变得更方便、更舒适",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"healthy"
+	  ],
+	  "collocation": "cause health problems",
+	  "wordKeys": [
+		"cause"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "导致健康问题"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"healthy"
+	  ],
+	  "collocation": "outdoor sports",
+	  "wordKeys": [
+		"outdoor"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "户外运动",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "animal experiment",
+	  "wordKeys": [
+		"experiment"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "动物实验（名词短语，“从事”动物实验动词搭配do,perform或者conduct都地道）"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"life"
+	  ],
+	  "collocation": "make a cup of coffee",
+	  "wordKeys": [
+		"make"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "制作一杯咖啡"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"finance"
+	  ],
+	  "collocation": "long-distance food",
+	  "wordKeys": [
+		"long-distance"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "被长距离运输的食品",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"safety"
+	  ],
+	  "collocation": "give them harsh punishments",
+	  "wordKeys": [
+		"give"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "给他们严厉的惩罚",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"safety"
+	  ],
+	  "collocation": "media violence",
+	  "wordKeys": [
+		"media"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "媒体里的暴力内容",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"skill"
+	  ],
+	  "collocation": "develop their skills",
+	  "wordKeys": [
+		"develop"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "发展他们的技能",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"fun"
+	  ],
+	  "collocation": "is an enjoyable and memorable experience",
+	  "wordKeys": [
+		"is"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "(旅行、参观博物馆等)是令人愉快而且值得回忆的经历",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "rely too much on",
+	  "wordKeys": [
+		"rely"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "过度地依赖于……"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "meet/fulfill their environmental responsibilities",
+	  "wordKeys": [
+		"meet",
+		"responsibilities"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "（个人、公司、政府）履行对于环境的义务"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "become overcrowded",
+	  "wordKeys": [
+		"become"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "(城市)变得过于拥挤",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "make the best use of their time",
+	  "wordKeys": [
+		"make"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "更充分地利用他们的时间",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"right"
+	  ],
+	  "collocation": "violate their privacy",
+	  "wordKeys": [
+		"violate"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "侵犯他们的隐私",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
@@ -37,14 +769,385 @@
 		  "English": "Language is learned primarily through communication with other people.",
 		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": false
 	},
 	{
 	  "issues": [
-		"life",
-		"生活"
+		"environment"
 	  ],
-	  "collocation": "do the laundry",
+	  "collocation": "lead a healthy lifestyle",
+	  "wordKeys": [
+		"lead"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "保持健康的生活方式",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"life"
+	  ],
+	  "collocation": "home-cooked food",
+	  "wordKeys": [
+		"home-cooked"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "家里做的饭菜",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "develop good learning habits",
+	  "wordKeys": [
+		"develop"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "形成良好的学习习惯",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"safety"
+	  ],
+	  "collocation": "involve high risks",
+	  "wordKeys": [
+		"involve"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "涉及很高的风险",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"skill"
+	  ],
+	  "collocation": "work closely with their classmates",
+	  "wordKeys": [
+		"work"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "与同学密切地合作",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "make our lives more convenient",
+	  "wordKeys": [
+		"make",
+		"convenient"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "让我们的生活变得更方便"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"culture"
+	  ],
+	  "collocation": "customs and traditions",
+	  "wordKeys": [
+		"customs"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "风俗和传统",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"skill"
+	  ],
+	  "collocation": "broaden their knowledge about",
+	  "wordKeys": [
+		"broaden"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "扩展他们关于……的知识"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"skill"
+	  ],
+	  "collocation": "improve their life skills",
+	  "wordKeys": [
+		"improve"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "提高他们的生活技能",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"fun",
+		"life"
+	  ],
+	  "collocation": "online shopping",
+	  "wordKeys": [
+		"online"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "网络购物",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"finance"
+	  ],
+	  "collocation": "has more important concerns",
+	  "wordKeys": [
+		"has"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "(政府)还有其他更需要关注的问题",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"healthy"
+	  ],
+	  "collocation": "fast food",
+	  "wordKeys": [
+		"fast"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "快餐",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"skill"
+	  ],
+	  "collocation": "manage their time",
+	  "wordKeys": [
+		"manage"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "管理他们的时间"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"duty"
+	  ],
+	  "collocation": "become useful members of society",
+	  "wordKeys": [
+		"become",
+		"useful"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "(学生）成为能够创造有用社会价值的社会成员"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"right"
+	  ],
+	  "collocation": "promote gender equality",
+	  "wordKeys": [
+		"promote"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "促进性别平等，促进男女平等",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"finance"
+	  ],
+	  "collocation": "the tourism industry",
+	  "wordKeys": [
+		"the"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "旅游产业",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"duty"
+	  ],
+	  "collocation": "run campaigns to encourage people to ......",
+	  "wordKeys": [
+		"run"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "举办大型的系列宣传活动以鼓励人们去......",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"skill"
+	  ],
+	  "collocation": "improve their brain development",
+	  "wordKeys": [
+		"improve"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "促进智力发展",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"finance"
+	  ],
+	  "collocation": "give financial support to ......",
+	  "wordKeys": [
+		"give"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "(政府、大学、慈善组织、发达国家等)为......提供资助",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "achieve their potential",
+	  "wordKeys": [
+		"achieve"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "发挥他们的潜能",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"duty"
+	  ],
+	  "collocation": "do volunteer work",
 	  "wordKeys": [
 		"do"
 	  ],
@@ -52,11 +1155,637 @@
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "洗衣服/做浣洗",
+		  "Chinese": "做义工",
 		  "English": "",
 		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"finance"
+	  ],
+	  "collocation": "government tax revenue",
+	  "wordKeys": [
+		"government"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "政府的税收",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "rapid population growth",
+	  "wordKeys": [
+		"rapid"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "人口的快速增长",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"skill"
+	  ],
+	  "collocation": "prepare them for employment",
+	  "wordKeys": [
+		"prepare"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "帮助他们为就业做好准备",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"finance"
+	  ],
+	  "collocation": "multinational corporations",
+	  "wordKeys": [
+		"multinational"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "跨国公司",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"work"
+	  ],
+	  "collocation": "employee benefits",
+	  "wordKeys": [
+		"employee"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "员工福利",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "endangerd animals",
+	  "wordKeys": [
+		"endangerd"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "濒危动物",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"finance"
+	  ],
+	  "collocation": "provide financial help to ......",
+	  "wordKeys": [
+		"provide"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "(政府、大学、慈善组织、发达国家等)为......提供资助",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"life"
+	  ],
+	  "collocation": "make a cup of tea",
+	  "wordKeys": [
+		"make"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "泡一杯茶"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"culture"
+	  ],
+	  "collocation": "build a positive corporate culture",
+	  "wordKeys": [
+		"build"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "建设积极的企业文化",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"right"
+	  ],
+	  "collocation": "can have more flexible schedules",
+	  "wordKeys": [
+		"can"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "可以有更加灵活的时间安排",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "feel bored and unmotivated",
+	  "wordKeys": [
+		"feel"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "(学生、员工等)感到无聊而且缺乏动力",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "put pressure on",
+	  "wordKeys": [
+		"put",
+		"perssure"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "对……（自然资源、医疗体系等）构成压力"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"skill"
+	  ],
+	  "collocation": "have more creative ideas",
+	  "wordKeys": [
+		"have"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "更有创意",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"life"
+	  ],
+	  "collocation": "make noise",
+	  "wordKeys": [
+		"make"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "制造噪音"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"healthy"
+	  ],
+	  "collocation": "population ageing",
+	  "wordKeys": [
+		"population"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "人口的老龄化",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"culture"
+	  ],
+	  "collocation": "promote pease and understanding",
+	  "wordKeys": [
+		"promote"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "(国际交流、奥运会等)促进和平与理解",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "wildlife habitats",
+	  "wordKeys": [
+		"wildlife"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "野生动植物的栖息地（名词短语）"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"finance"
+	  ],
+	  "collocation": "make large profits",
+	  "wordKeys": [
+		"make"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "(公司、企业)获得很高的利润",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"link"
+	  ],
+	  "collocation": "by the time",
+	  "wordKeys": [
+		"by"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "到..之前",
+		  "sentence": "It was dark by the time I arrived."
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"finance"
+	  ],
+	  "collocation": "low-cost airline",
+	  "wordKeys": [
+		"low-cost"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "提供低价航线的航空公司",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "make traffic more efficient",
+	  "wordKeys": [
+		"make"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "让交通变得更高效",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"culture"
+	  ],
+	  "collocation": "a multicultural society",
+	  "wordKeys": [
+		"a"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "一个多元文化的社会",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"culture"
+	  ],
+	  "collocation": "an endangered language",
+	  "wordKeys": [
+		"an"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "一种濒危的语言",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "provide a friendly learning environment",
+	  "wordKeys": [
+		"provide"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "提供一个友好的学习环境",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"culture"
+	  ],
+	  "collocation": "cultural globalisation",
+	  "wordKeys": [
+		"cultural"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "文化的全球化",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"duty"
+	  ],
+	  "collocation": "create jobs/create employment opportunities",
+	  "wordKeys": [
+		"create"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "创造就业"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "industrial production",
+	  "wordKeys": [
+		"industrial"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "工业生产",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"healthy"
+	  ],
+	  "collocation": "have fast-paced lifestyle",
+	  "wordKeys": [
+		"have",
+		"fast-paced"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "（城市里的人们）过着快节奏的生活"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "traffic pollution",
+	  "wordKeys": [
+		"traffic"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "交通污染",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"healthy"
+	  ],
+	  "collocation": "have a strong sense of belonging",
+	  "wordKeys": [
+		"have"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "有一种很强的归属感",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"healthy"
+	  ],
+	  "collocation": "cause stress and anxiety",
+	  "wordKeys": [
+		"cause"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "导致压力和焦虑",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"safety"
+	  ],
+	  "collocation": "reform criminals",
+	  "wordKeys": [
+		"reform"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "改造罪犯",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"work"
+	  ],
+	  "collocation": "make a business deal",
+	  "wordKeys": [
+		"make"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "做生意"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "log forests",
+	  "wordKeys": [
+		"log"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "砍伐森林",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
@@ -75,562 +1804,78 @@
 		  "English": "",
 		  "sentence": ""
 		}
-	  ]
-	},
-	{
-	  "issues": [
-		"link"
 	  ],
-	  "collocation": "by the time",
-	  "wordKeys": [
-		"by"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "到..之前",
-		  "sentence": "It was dark by the time I arrived."
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"link"
-	  ],
-	  "collocation": "it was too late to",
-	  "wordKeys": [
-		"late"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "太迟了再做sth.",
-		  "sentence": "It was too late to be sure whether he even knew she was there."
-		}
-	  ]
+	  "modified": false
 	},
 	{
 	  "issues": [
 		"skill"
 	  ],
-	  "collocation": "develop their skills",
-	  "wordKeys": [
-		"develop"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "提升他们的技能"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"skill"
-	  ],
-	  "collocation": "develop good learning habits",
-	  "wordKeys": [
-		"develop"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "形成良好的学习习惯"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"skill"
-	  ],
-	  "collocation": "broaden their knowledge about",
-	  "wordKeys": [
-		"broaden"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "扩展他们关于……的知识"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"skill"
-	  ],
-	  "collocation": "boost their brain development",
-	  "wordKeys": [
-		"boost"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "促进（儿童的）大脑发育，例如：阅读，玩益智游戏等"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"skill"
-	  ],
-	  "collocation": "become more creative",
-	  "wordKeys": [
-		"become"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "变得更有创造力"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"skill"
-	  ],
-	  "collocation": "expand their horizons",
-	  "wordKeys": [
-		"expand"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "开阔他们的视野、开阔他们的眼界"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"skill"
-	  ],
-	  "collocation": "improve their social skills",
+	  "collocation": "improve their organization skills",
 	  "wordKeys": [
 		"improve"
 	  ],
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "提高他们的社会交往能力"
+		  "Chinese": "提高他们的组织能力"
 		}
-	  ]
+	  ],
+	  "modified": false
 	},
 	{
 	  "issues": [
-		"skill"
+		"healthy"
 	  ],
-	  "collocation": "work closely with",
+	  "collocation": "have a balanced diet",
 	  "wordKeys": [
-		"work",
-		"closely"
+		"diet"
 	  ],
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "与同学（或者同事、队友）紧密地合作"
+		  "Chinese": "保持均衡的饮食结构"
 		}
-	  ]
+	  ],
+	  "modified": false
 	},
 	{
 	  "issues": [
-		"skill"
+		"finance"
 	  ],
-	  "collocation": "increase their independence",
+	  "collocation": "develop good spending habits",
 	  "wordKeys": [
-		"increase"
+		"develop"
 	  ],
+	  "note": "",
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "（活动、经历等）增强他们的独立性"
+		  "Chinese": "形成良好的消费习惯",
+		  "English": "",
+		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
-		"skill"
+		"culture"
 	  ],
-	  "collocation": "gain practical experience",
+	  "collocation": "explore the local culture",
 	  "wordKeys": [
-		"gain"
+		"explore"
 	  ],
+	  "note": "",
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "获得实践经验"
+		  "Chinese": "探索当地的文化",
+		  "English": "",
+		  "sentence": ""
 		}
-	  ]
-	},
-	{
-	  "issues": [
-		"skill"
 	  ],
-	  "collocation": "prepare for employment",
-	  "wordKeys": [
-		"prepare"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "为就业做好准备"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"skill"
-	  ],
-	  "collocation": "achieve their potential",
-	  "wordKeys": [
-		"achieve"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "充分发挥出他们的潜力"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"efficient"
-	  ],
-	  "collocation": "save time and energy",
-	  "wordKeys": [
-		"save"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "节省时间和精力"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"efficient"
-	  ],
-	  "collocation": "increase their efficiency",
-	  "wordKeys": [
-		"increase"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "提高他们的效率"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"efficient"
-	  ],
-	  "collocation": "reduce distractions",
-	  "wordKeys": [
-		"reduce"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "减少干扰"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"efficient"
-	  ],
-	  "collocation": "make the best use of their time",
-	  "wordKeys": [
-		"make",
-		"use"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "更充分地利用他们的时间"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"efficient"
-	  ],
-	  "collocation": "boost their performance",
-	  "wordKeys": [
-		"boost",
-		"performance"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "提高它们的表现"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"efficient"
-	  ],
-	  "collocation": "make our lives more convenient",
-	  "wordKeys": [
-		"make",
-		"convenient"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "让我们的生活变得更方便"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"efficient"
-	  ],
-	  "collocation": "find information quickly and easily",
-	  "wordKeys": [
-		"find"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "快速、轻松地找到信息"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"efficient"
-	  ],
-	  "collocation": "influence people's opinions",
-	  "wordKeys": [
-		"influence"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "（广告、新闻节目、报纸等）影响人们的看法"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"efficient"
-	  ],
-	  "collocation": "make the country more competitive",
-	  "wordKeys": [
-		"make",
-		"competitive"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "让国家变得更具有竞争力"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"right"
-	  ],
-	  "collocation": "have more freedom",
-	  "wordKeys": [
-		"have",
-		"freedom"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "（在家远程上班的员工、独居的人）有更多的自由"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"right"
-	  ],
-	  "collocation": "should be a personal choice",
-	  "wordKeys": [
-		"should",
-		"choice"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "应该纯属个人的选择"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"right"
-	  ],
-	  "collocation": "people with more choices",
-	  "wordKeys": [
-		"provide"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "（科技、网络购物等）为人们提供了更多的选择"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"right"
-	  ],
-	  "collocation": "can have more flexible schedules",
-	  "wordKeys": [
-		"can",
-		"schedules"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "（学生或者员工）可以有更灵活的时间安排"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"right"
-	  ],
-	  "collocation": "have job security",
-	  "wordKeys": [
-		"have",
-		"security"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "（员工）拥有工作的稳定性"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"right"
-	  ],
-	  "collocation": "are treated fairly",
-	  "wordKeys": [
-		"are",
-		"fairly"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "（学生们或者员工们）受到平等的对待"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"right"
-	  ],
-	  "collocation": "promote gender equality",
-	  "wordKeys": [
-		"promote"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "促进性别平等，促进男女平等"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"right"
-	  ],
-	  "collocation": "violate their privacy",
-	  "wordKeys": [
-		"violate"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "侵犯他们的隐私"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"duty"
-	  ],
-	  "collocation": "teach their children good behaviour",
-	  "wordKeys": [
-		"teach"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "交给孩子良好的行为举止"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"duty"
-	  ],
-	  "collocation": "give them advice and support",
-	  "wordKeys": [
-		"give",
-		"advice"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "给他们建议和支持"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"duty"
-	  ],
-	  "collocation": "have busy careers",
-	  "wordKeys": [
-		"have",
-		"careers"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "有忙碌的事业"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"duty"
-	  ],
-	  "collocation": "achieve good grades/get good grades",
-	  "wordKeys": [
-		"achieve",
-		"grades"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "（学生）取得好成绩"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"duty"
-	  ],
-	  "collocation": "elderly people",
-	  "wordKeys": [
-		"elderly"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "老年人（名词短语）"
-		}
-	  ]
+	  "modified": true
 	},
 	{
 	  "issues": [
@@ -646,7 +1891,212 @@
 		  "majority": "0",
 		  "Chinese": "（学校）满足学生们的需求"
 		}
-	  ]
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "are portable and easy to use",
+	  "wordKeys": [
+		"are"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "(手机等)便于携带且便于使用的",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "make learning more efficient",
+	  "wordKeys": [
+		"make"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "让学习变得更高效",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"healthy"
+	  ],
+	  "collocation": "lead a stressful lifestyle",
+	  "wordKeys": [
+		"lead"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "在生活中承受很大的压力",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"duty"
+	  ],
+	  "collocation": "achieve good grades/get good grades",
+	  "wordKeys": [
+		"achieve",
+		"grades"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "（学生）取得好成绩"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"duty"
+	  ],
+	  "collocation": "working parents",
+	  "wordKeys": [
+		"working"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "工作的家长们",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"duty"
+	  ],
+	  "collocation": "improve public services",
+	  "wordKeys": [
+		"improve"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "改进公共服务",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"finance"
+	  ],
+	  "collocation": "should increase spending on ......",
+	  "wordKeys": [
+		"should"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "(政府)应该加大对......的资金投入",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"healthy"
+	  ],
+	  "collocation": "have a stressful lifestyle",
+	  "wordKeys": [
+		"stressful"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "在生活中承受着很大的压力，“亚历山大”"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "increase their efficiency",
+	  "wordKeys": [
+		"increase"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "提高他们的效率",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "make the country more competitive",
+	  "wordKeys": [
+		"make"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "让国家变得更具有竞争力",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"life"
+	  ],
+	  "collocation": "in a virtual world",
+	  "wordKeys": [
+		"in"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "在一个虚拟的世界里",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
@@ -662,438 +2112,275 @@
 		  "majority": "0",
 		  "Chinese": "提供科目广泛、不偏科的课程安排"
 		}
-	  ]
+	  ],
+	  "modified": false
 	},
 	{
 	  "issues": [
-		"duty"
+		"finance"
 	  ],
-	  "collocation": "become useful members of society",
-	  "wordKeys": [
-		"become",
-		"useful"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "(学生）成为能够创造有用社会价值的社会成员"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"duty"
-	  ],
-	  "collocation": "do voluntary work",
-	  "wordKeys": [
-		"do",
-		"volunteer"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "做义工"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"duty"
-	  ],
-	  "collocation": "improve public services",
-	  "wordKeys": [
-		"improve",
-		"services"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "（政府）改进公共服务"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"duty"
-	  ],
-	  "collocation": "create jobs/create employment opportunities",
-	  "wordKeys": [
-		"create"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "创造就业"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"duty"
-	  ],
-	  "collocation": "reduce poverty",
-	  "wordKeys": [
-		"reduce"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "减少困难现象"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"duty"
-	  ],
-	  "collocation": "introduce laws to",
-	  "wordKeys": [
-		"introduce",
-		"law"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "通过立法来……"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"duty"
-	  ],
-	  "collocation": "run campaigns to encourage people to",
-	  "wordKeys": [
-		"run",
-		"campaigns"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "（政府）举办大型的系列宣传活动以鼓励人们去……"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"duty"
-	  ],
-	  "collocation": "compete fairly",
-	  "wordKeys": [
-		"compete"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "（学生、运动员、求职者、企业）公平地竞争"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"duty"
-	  ],
-	  "collocation": "provide reliable information",
-	  "wordKeys": [
-		"provide"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "（广告、报纸等）提供可靠的信息"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"environment"
-	  ],
-	  "collocation": "damage the environment",
-	  "wordKeys": [
-		"damage"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "破坏环境"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"environment"
-	  ],
-	  "collocation": "create waste and pollution ",
-	  "wordKeys": [
-		"waste",
-		"pollution"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "产生垃圾废料和污染"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"environment"
-	  ],
-	  "collocation": "car fumes",
-	  "wordKeys": [
-		"car",
-		"fumes"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "汽车尾气（名词短语）"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"environment"
-	  ],
-	  "collocation": "rely too much on",
-	  "wordKeys": [
-		"rely"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "过度地依赖于……"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"environment"
-	  ],
-	  "collocation": "contribute to global warming",
-	  "wordKeys": [
-		"contribute"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "（汽车、飞机等）加剧全球变暖"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"environment"
-	  ],
-	  "collocation": "put pressure on",
-	  "wordKeys": [
-		"put",
-		"perssure"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "对……（自然资源、医疗体系等）构成压力"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"environment"
-	  ],
-	  "collocation": "meet/fulfill their environmental responsibilities",
-	  "wordKeys": [
-		"meet",
-		"responsibilities"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "（个人、公司、政府）履行对于环境的义务"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"environment"
-	  ],
-	  "collocation": "become overcrowded",
-	  "wordKeys": [
-		"overcrowded"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "（城市）变得过于拥挤"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"environment"
-	  ],
-	  "collocation": "make…more attractive",
-	  "wordKeys": [
-		"attractive"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "让……（食品、城市、旅游景点等）更吸引人"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"environment"
-	  ],
-	  "collocation": "wildlife habitats",
-	  "wordKeys": [
-		"wildlife"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "野生动植物的栖息地（名词短语）"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"environment"
-	  ],
-	  "collocation": "endangered animals",
-	  "wordKeys": [
-		"endangered"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "濒危动物（名词短语）"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"environment"
-	  ],
-	  "collocation": "animal experiment",
-	  "wordKeys": [
-		"experiment"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "动物实验（名词短语，“从事”动物实验动词搭配do,perform或者conduct都地道）"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"healthy"
-	  ],
-	  "collocation": "have a healthy lifestyle",
-	  "wordKeys": [
-		"lifestyle"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "保持健康的生活方式"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"healthy"
-	  ],
-	  "collocation": "cause health problems",
-	  "wordKeys": [
-		"cause"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "导致健康问题"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"healthy"
-	  ],
-	  "collocation": "have a balanced diet",
-	  "wordKeys": [
-		"diet"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "保持均衡的饮食结构"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"healthy"
-	  ],
-	  "collocation": "have fast-paced lifestyle",
-	  "wordKeys": [
-		"have",
-		"fast-paced"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "（城市里的人们）过着快节奏的生活"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"healthy"
-	  ],
-	  "collocation": "outdoor sports",
-	  "wordKeys": [
-		"outdoor"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "户外运动（名词短语）"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"healthy"
-	  ],
-	  "collocation": "promote healthy lifestyles",
+	  "collocation": "promote fair competition",
 	  "wordKeys": [
 		"promote"
 	  ],
+	  "note": "",
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "（政府、媒体、学校）推广健康的生活方式"
+		  "Chinese": "（政府）促进公平的竞争",
+		  "English": "",
+		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
-		"healthy"
+		"life"
 	  ],
-	  "collocation": "improve healthcare services",
+	  "collocation": "make a fuss",
 	  "wordKeys": [
-		"improve",
-		"healthcare"
+		"make"
 	  ],
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "改善医疗服务"
+		  "Chinese": "大惊小怪"
 		}
-	  ]
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"work"
+	  ],
+	  "collocation": "make time for",
+	  "wordKeys": [
+		"make"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "为...安排/腾出时间"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"finance"
+	  ],
+	  "collocation": "international aid",
+	  "wordKeys": [
+		"international"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "国际援助",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"skill"
+	  ],
+	  "collocation": "expand their horizons",
+	  "wordKeys": [
+		"expand"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "开阔他们的视野、开阔他们的眼界"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "animal experiments",
+	  "wordKeys": [
+		"animal"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "动物实验",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"skill"
+	  ],
+	  "collocation": "boost their brain development",
+	  "wordKeys": [
+		"boost"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "促进（儿童的）大脑发育，例如：阅读，玩益智游戏等"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"life"
+	  ],
+	  "collocation": "elderly people",
+	  "wordKeys": [
+		"elderly"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "老年人",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "improve their academic skills",
+	  "wordKeys": [
+		"improve"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "提高他们的学术技能",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "save time and energy",
+	  "wordKeys": [
+		"save"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "节省时间和精力"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "genetically modified food",
+	  "wordKeys": [
+		"genetically"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "转基因食品，GM food",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"finance"
+	  ],
+	  "collocation": "involve high costs",
+	  "wordKeys": [
+		"involve"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "涉及到高昂的费用",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"life"
+	  ],
+	  "collocation": "make the bed",
+	  "wordKeys": [
+		"make"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "整理睡觉的床"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"work"
+	  ],
+	  "collocation": "get good grades",
+	  "wordKeys": [
+		"get"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "取得好成绩",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "boost their performance",
+	  "wordKeys": [
+		"boost"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "提升他们的表现",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
@@ -1109,128 +2396,103 @@
 		  "majority": "0",
 		  "Chinese": "人口老龄化"
 		}
-	  ]
-	},
-	{
-	  "issues": [
-		"healthy"
 	  ],
-	  "collocation": "cause stress and anxiety",
-	  "wordKeys": [
-		"syress",
-		"anxiety"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "导致压力和焦虑"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"healthy"
-	  ],
-	  "collocation": "have a stressful lifestyle",
-	  "wordKeys": [
-		"stressful"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "在生活中承受着很大的压力，“亚历山大”"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"healthy"
-	  ],
-	  "collocation": "have a strong sense of belonging",
-	  "wordKeys": [
-		"belonging"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "（员工、居民）有很强的归属感"
-		}
-	  ]
+	  "modified": false
 	},
 	{
 	  "issues": [
 		"finance"
 	  ],
-	  "collocation": "develop good spending habits",
+	  "collocation": "advertising campaign",
 	  "wordKeys": [
-		"spending"
+		"advertising"
 	  ],
+	  "note": "",
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "形成良好的消费习惯"
+		  "Chinese": "大规模的广告宣传活动",
+		  "English": "",
+		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
-		"safety"
+		"duty"
 	  ],
-	  "collocation": "reduce crime rates",
+	  "collocation": "reduce poverty",
 	  "wordKeys": [
 		"reduce"
 	  ],
+	  "note": "",
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "降低犯罪率"
+		  "Chinese": "减少贫困现象",
+		  "English": "",
+		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
-		"culture"
+		"environment"
 	  ],
-	  "collocation": "protect their heritage",
+	  "collocation": "fossil fuels",
 	  "wordKeys": [
-		"protece"
+		"fossil"
 	  ],
+	  "note": "",
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "保护他们的文化传承"
+		  "Chinese": "化石燃料",
+		  "English": "",
+		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
-		"fun"
+		"life"
 	  ],
-	  "collocation": "in a virtual world",
+	  "collocation": "keep in touch with family and friends",
 	  "wordKeys": [
-		"virtual"
+		"keep"
 	  ],
+	  "note": "",
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "在一个虚拟的世界里"
+		  "Chinese": "与亲友们保持联系",
+		  "English": "",
+		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
-		"work"
+		"finance"
 	  ],
-	  "collocation": "do businness with",
+	  "collocation": "contribute to the economy",
 	  "wordKeys": [
-		"do"
+		"contribute"
 	  ],
+	  "note": "",
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "与…谈生意"
+		  "Chinese": "为经济做贡献",
+		  "English": "",
+		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
@@ -1245,220 +2507,44 @@
 		  "majority": "0",
 		  "Chinese": "做家务"
 		}
-	  ]
+	  ],
+	  "modified": false
 	},
 	{
 	  "issues": [
-		"fun"
+		"right"
 	  ],
-	  "collocation": "do the shopping",
+	  "collocation": "have more freedom",
 	  "wordKeys": [
-		"do"
+		"have",
+		"freedom"
 	  ],
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "买买买"
+		  "Chinese": "（在家远程上班的员工、独居的人）有更多的自由"
 		}
-	  ]
+	  ],
+	  "modified": false
 	},
 	{
 	  "issues": [
-		"duty"
+		"culture"
 	  ],
-	  "collocation": "do voluntary work",
+	  "collocation": "increase their independence",
 	  "wordKeys": [
-		"do"
+		"increase"
 	  ],
+	  "note": "",
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "做志愿工作"
+		  "Chinese": "(活动、经历等)增强他们的独立性",
+		  "English": "",
+		  "sentence": ""
 		}
-	  ]
-	},
-	{
-	  "issues": [
-		"link"
 	  ],
-	  "collocation": "it is no surprise that",
-	  "wordKeys": [
-		"it"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "毫无疑问的是…"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"link"
-	  ],
-	  "collocation": "it is believed that",
-	  "wordKeys": [
-		"it"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "可以被相信的是…"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"skill"
-	  ],
-	  "collocation": "life skills",
-	  "wordKeys": [
-		"life"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "生活技能"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"life"
-	  ],
-	  "collocation": "make a cup of coffee",
-	  "wordKeys": [
-		"make"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "制作一杯咖啡"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"life"
-	  ],
-	  "collocation": "make a cup of tea",
-	  "wordKeys": [
-		"make"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "泡一杯茶"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"life"
-	  ],
-	  "collocation": "make noise",
-	  "wordKeys": [
-		"make"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "制造噪音"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"life"
-	  ],
-	  "collocation": "make the bed",
-	  "wordKeys": [
-		"make"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "整理睡觉的床"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"work"
-	  ],
-	  "collocation": "make a business deal",
-	  "wordKeys": [
-		"make"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "做生意"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"life"
-	  ],
-	  "collocation": "make a fuss",
-	  "wordKeys": [
-		"make"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "大惊小怪"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"life"
-	  ],
-	  "collocation": "make sense",
-	  "wordKeys": [
-		"make"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "使…有意义",
-		  "sentence": "Religion wants make sense of the world."
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"life"
-	  ],
-	  "collocation": "make sense",
-	  "wordKeys": [
-		"make"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "好理解的",
-		  "sentence": "I feel like a lot of how you structure things make sense to me."
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"life"
-	  ],
-	  "collocation": "make sense",
-	  "wordKeys": [
-		"make"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "合情合理的",
-		  "sentence": "It seemed to make sense."
-		}
-	  ]
+	  "modified": true
 	},
 	{
 	  "issues": [
@@ -1474,130 +2560,14 @@
 		  "Chinese": "意味着",
 		  "sentence": "it make sense that we are special!"
 		}
-	  ]
+	  ],
+	  "modified": false
 	},
 	{
 	  "issues": [
 		"work"
 	  ],
-	  "collocation": "make time for",
-	  "wordKeys": [
-		"make"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "为...安排/腾出时间"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"skill"
-	  ],
-	  "collocation": "manage their time",
-	  "wordKeys": [
-		"manage"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "管理他们的时间"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"skill"
-	  ],
-	  "collocation": "improve their organization skills",
-	  "wordKeys": [
-		"improve"
-	  ],
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "提高他们的组织能力"
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "give them more freedom",
-	  "wordKeys": [
-		"give"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "给他们更多的自由",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "increase their choices",
-	  "wordKeys": [
-		"increase"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "丰富他们的选择",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "improve their academic skills",
-	  "wordKeys": [
-		"improve"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "提高他们的学术技能",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "improve their brain development",
-	  "wordKeys": [
-		"improve"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "促进智力发展",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "have more creative ideas",
+	  "collocation": "have job security",
 	  "wordKeys": [
 		"have"
 	  ],
@@ -1605,1023 +2575,16 @@
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "更有创意",
+		  "Chinese": "拥有工作的稳定性",
 		  "English": "",
 		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "work closely with their classmates",
-	  "wordKeys": [
-		"work"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "与同学密切地合作",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "work closely with their colleagues",
-	  "wordKeys": [
-		"work"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "与同事密切地合作",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "improve their life skills",
-	  "wordKeys": [
-		"improve"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "提高他们的生活技能",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "broaden their minds",
-	  "wordKeys": [
-		"broaden"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "开阔他们的思维",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "prepare them for employment",
-	  "wordKeys": [
-		"prepare"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "帮助他们为就业做好准备",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "reach their potential",
-	  "wordKeys": [
-		"reach"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "充分发挥出他们的潜力",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "make learning more efficient",
-	  "wordKeys": [
-		"make"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "让学习变得更高效",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "make our lives more convenient and comfortable",
-	  "wordKeys": [
-		"make"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "让我们的生活变得更方便、更舒适",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "make traffic more efficient",
-	  "wordKeys": [
-		"make"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "让交通变得更高效",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "employee benefits",
-	  "wordKeys": [
-		"employee"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "员工福利",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "working parents",
-	  "wordKeys": [
-		"working"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "工作的家长们",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "achieve good grades",
-	  "wordKeys": [
-		"achieve"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "取得好成绩",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "get good grades",
-	  "wordKeys": [
-		"get"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "取得好成绩",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "meet students' needs",
-	  "wordKeys": [
-		"meet"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "满足学生们的需求",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "provide a friendly learning environment",
-	  "wordKeys": [
-		"provide"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "提供一个友好的学习环境",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "do volunteer work",
-	  "wordKeys": [
-		"do"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "做义工",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "create jobs",
-	  "wordKeys": [
-		"create"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "创造就业",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "run campaigns to encourage people to ......",
-	  "wordKeys": [
-		"run"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "举办大型的系列宣传活动以鼓励人们去......",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "promote fair competition",
-	  "wordKeys": [
-		"promote"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "（政府）促进公平的竞争",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "industrial production",
-	  "wordKeys": [
-		"industrial"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "工业生产",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "traffic pollution",
-	  "wordKeys": [
-		"traffic"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "交通污染",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "fossil fuels",
-	  "wordKeys": [
-		"fossil"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "化石燃料",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "increase greenhouse gas emissions",
-	  "wordKeys": [
-		"increase"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "(工业生产、长途飞行等)导致温室效应气体的排放量增加",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "rapid population growth",
-	  "wordKeys": [
-		"rapid"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "人口的快速增长",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "meet their environment responsiblilities",
-	  "wordKeys": [
-		"meet"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "(个人、公司、政府)履行他们/它们对于环境的义务",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "fulfil their environmental responsiblility",
-	  "wordKeys": [
-		"fulfil"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "(个人、公司、政府)履行他们/它们对于环境的义务",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "genetically modified food",
-	  "wordKeys": [
-		"genetically"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "转基因食品，GM food",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "cut down forests",
-	  "wordKeys": [
-		"cut"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "砍伐森林",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "log forests",
-	  "wordKeys": [
-		"log"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "砍伐森林",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "endangerd animals",
-	  "wordKeys": [
-		"endangerd"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "濒危动物",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "animal experiments",
-	  "wordKeys": [
-		"animal"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "动物实验",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "lead a healthy lifestyle",
-	  "wordKeys": [
-		"lead"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "保持健康的生活方式",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "lead an unhealthy lifestyle",
-	  "wordKeys": [
-		"lead"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "过着不健康的生活",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "home-cooked food",
-	  "wordKeys": [
-		"home-cooked"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "家里做的饭菜",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "fast food",
-	  "wordKeys": [
-		"fast"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "快餐",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "population ageing",
-	  "wordKeys": [
-		"population"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "人口的老龄化",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "lead a stressful lifestyle",
-	  "wordKeys": [
-		"lead"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "在生活中承受很大的压力",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "spend too much time online",
-	  "wordKeys": [
-		"spend"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "花过多的时间上网",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "consumer society",
-	  "wordKeys": [
-		"consumer"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "崇尚消费的社会",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "involve high costs",
-	  "wordKeys": [
-		"involve"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "涉及到高昂的费用",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "low-cost airline",
-	  "wordKeys": [
-		"low-cost"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "提供低价航线的航空公司",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "the gap between rich and poor",
-	  "wordKeys": [
-		"the"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "贫富差距",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "make large profits",
-	  "wordKeys": [
-		"make"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "(公司、企业)获得很高的利润",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "give financial support to ......",
-	  "wordKeys": [
-		"give"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "(政府、大学、慈善组织、发达国家等)为......提供资助",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "provide financial help to ......",
-	  "wordKeys": [
-		"provide"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "(政府、大学、慈善组织、发达国家等)为......提供资助",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "has more important concerns",
-	  "wordKeys": [
-		"has"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "(政府)还有其他更需要关注的问题",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "should increase spending on ......",
-	  "wordKeys": [
-		"should"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "(政府)应该加大对......的资金投入",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "government tax revenue",
-	  "wordKeys": [
-		"government"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "政府的税收",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "contribute to the economy",
-	  "wordKeys": [
-		"contribute"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "为经济做贡献",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "the tourism industry",
-	  "wordKeys": [
-		"the"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "旅游产业",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "long-distance food",
-	  "wordKeys": [
-		"long-distance"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "被长距离运输的食品",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "multinational companies",
-	  "wordKeys": [
-		"multinational"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "跨国公司",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "multinational corporations",
-	  "wordKeys": [
-		"multinational"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "跨国公司",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "international aid",
-	  "wordKeys": [
-		"international"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "国际援助",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "reform criminals",
-	  "wordKeys": [
-		"reform"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "改造罪犯",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "give them harsh punishments",
-	  "wordKeys": [
-		"give"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "给他们严厉的惩罚",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
+		"safety"
 	  ],
 	  "collocation": "address the root causes of crime",
 	  "wordKeys": [
@@ -2635,353 +2598,12 @@
 		  "English": "",
 		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "threaten people's safety",
-	  "wordKeys": [
-		"threaten"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "威胁人们的安全",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "media violence",
-	  "wordKeys": [
-		"media"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "媒体里的暴力内容",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "internet crime",
-	  "wordKeys": [
-		"internet"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "网络犯罪",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "break traffic rules",
-	  "wordKeys": [
-		"break"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "违反交通规则",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "involve high risks",
-	  "wordKeys": [
-		"involve"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "涉及很高的风险",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "protect national security",
-	  "wordKeys": [
-		"protect"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "保卫国家的安全",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "customs and traditions",
-	  "wordKeys": [
-		"customs"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "风俗和传统",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "a multicultural society",
-	  "wordKeys": [
-		"a"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "一个多元文化的社会",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "promote pease and understanding",
-	  "wordKeys": [
-		"promote"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "(国际交流、奥运会等)促进和平与理解",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "cultural globalisation",
-	  "wordKeys": [
-		"cultural"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "文化的全球化",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "the expansion of English",
-	  "wordKeys": [
-		"the"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "英语的扩张",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "an endangered language",
-	  "wordKeys": [
-		"an"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "一种濒危的语言",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "introduce laws to protect historic buildings",
-	  "wordKeys": [
-		"introduce"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "通过立法来保护具有历史意义的建筑",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "adapt old buildings to meet modern needs",
-	  "wordKeys": [
-		"adapt"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "让老房子适应现代生活的需要",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "work of art",
-	  "wordKeys": [
 		"work"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "艺术品，尤其常指绘画、雕塑等视觉艺术品",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "build a positive company culture",
-	  "wordKeys": [
-		"build"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "建设积极的企业文化",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "build a positive corporate culture",
-	  "wordKeys": [
-		"build"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "建设积极的企业文化",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "is a good leisure activity",
-	  "wordKeys": [
-		"is"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "是一种很好的休闲活动",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
-	  ],
-	  "collocation": "are fun and enjoyable",
-	  "wordKeys": [
-		"are"
-	  ],
-	  "note": "",
-	  "interpretations": [
-		{
-		  "majority": "0",
-		  "Chinese": "是有趣而且令人愉快的",
-		  "English": "",
-		  "sentence": ""
-		}
-	  ]
-	},
-	{
-	  "issues": [
-		"undefined"
 	  ],
 	  "collocation": "use online resources",
 	  "wordKeys": [
@@ -2995,31 +2617,219 @@
 		  "English": "",
 		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
-		"undefined"
+		"duty"
 	  ],
-	  "collocation": "online shopping",
+	  "collocation": "compete fairly",
 	  "wordKeys": [
-		"online"
+		"compete"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "（学生、运动员、求职者、企业）公平地竞争"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"safety"
+	  ],
+	  "collocation": "break traffic rules",
+	  "wordKeys": [
+		"break"
 	  ],
 	  "note": "",
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "网络购物",
+		  "Chinese": "违反交通规则",
 		  "English": "",
 		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
-		"undefined"
+		"compete",
+		"work",
+		"竞争"
 	  ],
-	  "collocation": "are portable and easy to use",
+	  "collocation": "zero-sum game",
+	  "wordKeys": [
+		"zero"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "零和博弈",
+		  "English": "Zero-sum is a situation in game theory in which one person’s gain is equivalent to another’s loss.",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"finance"
+	  ],
+	  "collocation": "multinational companies",
+	  "wordKeys": [
+		"multinational"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "跨国公司",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"finance"
+	  ],
+	  "collocation": "spend too much time online",
+	  "wordKeys": [
+		"spend"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "花过多的时间上网",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"work"
+	  ],
+	  "collocation": "do businness with",
+	  "wordKeys": [
+		"do"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "与…谈生意"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"safety"
+	  ],
+	  "collocation": "reduce crime rates",
+	  "wordKeys": [
+		"reduce"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "降低犯罪率",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"skill"
+	  ],
+	  "collocation": "work closely with their colleagues",
+	  "wordKeys": [
+		"work"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "与同事密切地合作",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "meet their environment responsiblilities",
+	  "wordKeys": [
+		"meet"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "(个人、公司、政府)履行他们/它们对于环境的义务",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "gain practical experience",
+	  "wordKeys": [
+		"gain"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "获得实践经验",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"duty"
+	  ],
+	  "collocation": "introduce laws to",
+	  "wordKeys": [
+		"introduce"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "通过立法来......",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"right"
+	  ],
+	  "collocation": "are treated fairly",
 	  "wordKeys": [
 		"are"
 	  ],
@@ -3027,118 +2837,532 @@
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "(手机等)便于携带且便于使用的",
+		  "Chinese": "受到平等的对待",
 		  "English": "",
 		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
-		"undefined"
+		"environment"
 	  ],
-	  "collocation": "keep in touch with family and freinds",
+	  "collocation": "fulfil their environmental responsiblility",
 	  "wordKeys": [
-		"keep"
+		"fulfil"
 	  ],
 	  "note": "",
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "与亲友们保持联系",
+		  "Chinese": "(个人、公司、政府)履行他们/它们对于环境的义务",
 		  "English": "",
 		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
-		"undefined"
+		"environment"
 	  ],
-	  "collocation": "advertising campaign",
+	  "collocation": "contribute to global warming",
 	  "wordKeys": [
-		"advertising"
+		"contribute"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "（汽车、飞机等）加剧全球变暖"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"safety"
+	  ],
+	  "collocation": "internet crime",
+	  "wordKeys": [
+		"internet"
 	  ],
 	  "note": "",
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "大规模的广告宣传活动",
+		  "Chinese": "网络犯罪",
 		  "English": "",
 		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
-		"undefined"
+		"skill"
 	  ],
-	  "collocation": "keep them motivated",
+	  "collocation": "become more creative",
 	  "wordKeys": [
-		"keep"
+		"become"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "变得更有创造力"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "create waste and pollution ",
+	  "wordKeys": [
+		"waste",
+		"pollution"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "产生垃圾废料和污染"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"life",
+		"生活"
+	  ],
+	  "collocation": "do the laundry",
+	  "wordKeys": [
+		"do"
 	  ],
 	  "note": "",
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "保持他们的动力",
+		  "Chinese": "洗衣服/做浣洗",
 		  "English": "",
 		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": false
 	},
 	{
 	  "issues": [
-		"undefined"
+		"environment"
 	  ],
-	  "collocation": "feel bored and unmotivated",
+	  "collocation": "increase greenhouse gas emissions",
 	  "wordKeys": [
-		"feel"
+		"increase"
 	  ],
 	  "note": "",
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "(学生、员工等)感到无聊而且缺乏动力",
+		  "Chinese": "(工业生产、长途飞行等)导致温室效应气体的排放量增加",
 		  "English": "",
 		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
-		"undefined"
+		"right"
 	  ],
-	  "collocation": "is an enjoyable and memorable experience",
+	  "collocation": "increase their choices",
 	  "wordKeys": [
-		"is"
+		"increase"
 	  ],
 	  "note": "",
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "(旅行、参观博物馆等)是令人愉快而且值得回忆的经历",
+		  "Chinese": "丰富他们的选择",
 		  "English": "",
 		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
 	},
 	{
 	  "issues": [
-		"undefined"
+		"environment"
 	  ],
-	  "collocation": "explore the local culture",
+	  "collocation": "damage the environment",
 	  "wordKeys": [
-		"explore"
+		"damage"
 	  ],
 	  "note": "",
 	  "interpretations": [
 		{
 		  "majority": "0",
-		  "Chinese": "探索当地的文化",
+		  "Chinese": "破坏环境",
 		  "English": "",
 		  "sentence": ""
 		}
-	  ]
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "car fumes",
+	  "wordKeys": [
+		"car",
+		"fumes"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "汽车尾气（名词短语）"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"skill"
+	  ],
+	  "collocation": "broaden their minds",
+	  "wordKeys": [
+		"broaden"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "开阔他们的思维",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "endangered animals",
+	  "wordKeys": [
+		"endangered"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "濒危动物（名词短语）"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"duty"
+	  ],
+	  "collocation": "give them advice and support",
+	  "wordKeys": [
+		"give"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "给他们建议和支持",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "make…more attractive",
+	  "wordKeys": [
+		"attractive"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "让……（食品、城市、旅游景点等）更吸引人"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"duty"
+	  ],
+	  "collocation": "create jobs",
+	  "wordKeys": [
+		"create"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "创造就业",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "lead an unhealthy lifestyle",
+	  "wordKeys": [
+		"lead"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "过着不健康的生活",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"culture"
+	  ],
+	  "collocation": "build a positive company culture",
+	  "wordKeys": [
+		"build"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "建设积极的企业文化",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"healthy"
+	  ],
+	  "collocation": "have a healthy lifestyle",
+	  "wordKeys": [
+		"lifestyle"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "保持健康的生活方式"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "should be a personal choice",
+	  "wordKeys": [
+		"should"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "应当纯属个人的选择",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"skill"
+	  ],
+	  "collocation": "reach their potential",
+	  "wordKeys": [
+		"reach"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "充分发挥出他们的潜力",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"skill"
+	  ],
+	  "collocation": "improve their social skills",
+	  "wordKeys": [
+		"improve"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "提高他们的社会交往能力"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"duty"
+	  ],
+	  "collocation": "meet students' needs",
+	  "wordKeys": [
+		"meet"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "满足学生们的需求",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"efficient"
+	  ],
+	  "collocation": "find information quickly and easily",
+	  "wordKeys": [
+		"find"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "快速、轻松地找到信息"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"healthy"
+	  ],
+	  "collocation": "teach their children good behaviour",
+	  "wordKeys": [
+		"teach"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "交给孩子良好的行为举止",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"culture"
+	  ],
+	  "collocation": "introduce laws to protect historic buildings",
+	  "wordKeys": [
+		"introduce"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "通过立法来保护具有历史意义的建筑",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"finance"
+	  ],
+	  "collocation": "provide reliable information",
+	  "wordKeys": [
+		"provide"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "(广告、报纸等)提供可靠的信息",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
+	},
+	{
+	  "issues": [
+		"right"
+	  ],
+	  "collocation": "people with more choices",
+	  "wordKeys": [
+		"provide"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "（科技、网络购物等）为人们提供了更多的选择"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"link"
+	  ],
+	  "collocation": "it is believed that",
+	  "wordKeys": [
+		"it"
+	  ],
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "可以被相信的是…"
+		}
+	  ],
+	  "modified": false
+	},
+	{
+	  "issues": [
+		"environment"
+	  ],
+	  "collocation": "cut down forests",
+	  "wordKeys": [
+		"cut"
+	  ],
+	  "note": "",
+	  "interpretations": [
+		{
+		  "majority": "0",
+		  "Chinese": "砍伐森林",
+		  "English": "",
+		  "sentence": ""
+		}
+	  ],
+	  "modified": true
 	}
-]
+  ]
