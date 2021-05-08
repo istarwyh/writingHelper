@@ -1,5 +1,5 @@
 
-<h1 align = "center"><img  src="writingcatlogo.png" width="40px" height="40px"/>
+<h1 align = "center"><img  src="https://gitee.com/istarwyh/images/raw/master/1620488333_20210508233841877_2346.png" width="40px" height="40px"/>
 WritingHelper
 </h1>
 <p align="center">

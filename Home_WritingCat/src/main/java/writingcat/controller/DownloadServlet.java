@@ -28,6 +28,7 @@ public class DownloadServlet extends HttpServlet {
             IOException {
         //1.获取请求参数，文件名称
         String filename = request.getParameter("filename");
+//        todo:判断文件是否存在
         //2.使用字节输入流加载文件进内存
         cache.put(filename, new FileInputStream("./repository/" + filename));
         var fis = cache.get(filename);

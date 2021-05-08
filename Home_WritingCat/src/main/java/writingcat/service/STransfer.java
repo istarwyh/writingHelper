@@ -44,11 +44,11 @@ public class STransfer {
      * 在同一个抽象层面上封装API
      */
     public Phrases mergeFile(File jsonFile, MultipartFile file) {
-        var phrases = Phrases.builder().waitModified(false).modified(false).build();
+        Phrases phrases = Phrases.builder().waitModified(false).modified(false).build();
         try {
-            StringBuilder originSb = file2StringBuilder(jsonFile);
-            CollocationDetail[] originCdArr = GSON.fromJson(originSb.toString(), CollocationDetail[].class);
             List<CollocationDetail> list = this.bytes2List(file.getBytes());
+            CollocationDetail[] originCdArr = GSON.fromJson(file2StringBuilder(jsonFile).toString(),
+                    CollocationDetail[].class);
             rmDuplicateAndUpdate(phrases, cdArr2Map(originCdArr), list);
         } catch (IOException e) {
             e.printStackTrace();
@@ -65,14 +65,7 @@ public class STransfer {
         for (int i = list.size() - 1; i >= 0; i--) {
             CollocationDetail cur = list.get(i);
             if (map.containsKey(cur.getCollocation())) {
-                CollocationDetail cd = map.get(cur.getCollocation());
-                cd.setModified(false);
-                cd.setIssuesBySet(SetUtil.getUniqUnion(cur.getIssues(), cd.getIssues()));
-                cd.setWordKeysBySet(SetUtil.getUniqUnion(cur.getWordKeys(), cd.getWordKeys()));
-                cd.setInterpretationsBySet(SetUtil.getUniqUnion(cur.getInterpretations(), cd.getInterpretations()));
-                if (cd.getModified()) {
-                    phrases.setWaitModified(cd.getModified());
-                }
+                updateCollocationDetailInMap(phrases, map, cur);
                 list.remove(i);
             }
         }
@@ -87,6 +80,17 @@ public class STransfer {
             phrases.setJsonStr(GSON.toJson(cdArr)).setWaitModified(false).setModified(true);
         } else {
             phrases.setModified(false);
+        }
+    }
+
+    private void updateCollocationDetailInMap(Phrases phrases, Map<String, CollocationDetail> map, CollocationDetail cur) {
+        CollocationDetail cd = map.get(cur.getCollocation());
+        cd.setModified(false);
+        cd.setIssuesBySet(SetUtil.getUniqUnion(cur.getIssues(), cd.getIssues()));
+        cd.setWordKeysBySet(SetUtil.getUniqUnion(cur.getWordKeys(), cd.getWordKeys()));
+        cd.setInterpretationsBySet(SetUtil.getUniqUnion(cur.getInterpretations(), cd.getInterpretations()));
+        if (cd.getModified()) {
+            phrases.setWaitModified(cd.getModified());
         }
     }
 
@@ -171,11 +175,5 @@ public class STransfer {
                             .interpretations(tmpArray).build());
         });
         return cd;
-    }
-
-    private String modifyStringBuilder(StringBuilder sb) throws IOException {
-        sb.deleteCharAt(sb.length() - 1);
-        sb.append(",");
-        return sb.toString();
     }
 }

@@ -1,6 +1,7 @@
 package writingcat.entity;
 
 import com.google.gson.Gson;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,6 +32,6 @@ class InterpretationTest {
                 "      }";
         ips1[0] = new Gson().fromJson(jsonStr1, Interpretation.class);
         ips2[0] = new Gson().fromJson(jsonStr2, Interpretation.class);
-        System.out.println(ips1[0].equals(ips2[0]));
+        Assertions.assertEquals(ips1[0],ips2[0]);
     }
 }

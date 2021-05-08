@@ -27,7 +27,7 @@ class STransferTest {
 
     @Test
     void testInsertFile2MongoAndDelete() throws Exception {
-        var jsonFile = new File("./repository/CollocationJson.json");
+        var jsonFile = new File(PropertyUtil.getProperty("originFilePath"));
         String jsonStr = sTransfer.file2StringBuilder(jsonFile).toString();
         MongoCollection<Document> collection = sTransfer.getClient().getDatabase(PropertyUtil.getProperty("mongodb" +
                 ".database")).getCollection(
