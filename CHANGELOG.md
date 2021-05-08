@@ -1,6 +1,12 @@
 This is a part of my graduation dissertation, so now writingCat/writingHelper is not open. If you have any problems or issues,
 **you jsut contact me with wechat: `istarwyh`:-)**
-## [0.1.4] - 2021-4-4
+## [0.1.6] -2021-5-8
+### Fixed
+- Fix the small img what cannot be loaded correctly in the Readme.md
+### Support
+- "ff"+"culture/duty/efficient/environment/finance/fun/healthy/right/skill/safety/work/life/link" to wake up issues-hint
+ffskill 
+### [0.1.4] - 2021-4-4
 ### Removed
 - welcome hint
 ### Modified
@@ -17,8 +23,6 @@ This is a part of my graduation dissertation, so now writingCat/writingHelper is
 - more collocations hint
 - Continous Writing Experience
 - ![rainbowcat](https://gitee.com/istarwyh/images/raw/master/1617025579_20210329214515706_12235.gif)
-
-
 
 ### Fixed
 - Fix some completions error

@@ -17,7 +17,7 @@ If you have not yet reliazed word collocation, you can see [here](https://www.th
 
 ## 💡 演示
 <img  src="https://gitee.com/istarwyh/images/raw/master/1617350677_20210402160432489_31927.png" width="550px" height="80px"/>
-
+<img src="https://gitee.com/istarwyh/images/raw/master/1620489881_20210509000437026_23596.png" width="400px" height="70px"/>
 
 ## 📝使用说明 
 Just install me and write in a `.txt` / `.md`  file in English.
