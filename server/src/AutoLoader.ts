@@ -15,6 +15,7 @@ export default class AutoLoader {
     private constructor() {
         AutoLoader.wordTree = new TrieTree();
         AutoLoader.issueTree = new TrieTree();
+        // 这里必须是"writingcat",应该是Client中指定的LogPanelName
         AutoLoader.logger = Utils.createLogger("writingcat");
         AutoLoader.phraseMap = new Map<string, string>();
 
