@@ -48,4 +48,20 @@ public class FileUtils {
         }
         return fileName;
     }
+
+    public static String sureFilePath(String filePath) {
+        File f = new File(filePath);
+        File fp = new File(f.getParent());
+        if (!fp.exists()) {
+            fp.mkdirs();
+        }
+        if (!f.exists()) {
+            try {
+                f.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return filePath;
+    }
 }

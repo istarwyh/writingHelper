@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import writingcat.utils.FileUtils;
 import writingcat.utils.PropertyUtil;
 import writingcat.entity.CollocationDetail;
 import writingcat.entity.Phrases;
@@ -49,9 +50,9 @@ public class HomeController {
     public String postFile(@RequestParam(value = "file") MultipartFile file) throws Exception {
         String originFilePath = PropertyUtil.getProperty("originFilePath");
         String targetPath = PropertyUtil.getProperty("targetPath");
-        Phrases phrases = sTransfer.mergeFile(new File(originFilePath), file);
+        Phrases phrases = sTransfer.mergeFile(this.getClass().getResourceAsStream(originFilePath), file);
         if (phrases.getModified()) {
-            sTransfer.stringPersistence(phrases.getJsonStr(), new File(targetPath));
+            sTransfer.stringPersistence(phrases.getJsonStr(), new File(FileUtils.sureFilePath(targetPath)));
             return "<br><h3><font color=\"skyblue\">" +
                     "We will build our collocation repositories.<br>          " +
                     "Write essays increasingly smartly and freely! :-)</font></h3>";

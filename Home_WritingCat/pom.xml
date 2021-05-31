@@ -13,8 +13,9 @@
 
     <groupId>org.YiHui</groupId>
     <artifactId>WritingCat</artifactId>
-    <version>0.2.0</version>
+    <version>0.2.1</version>
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

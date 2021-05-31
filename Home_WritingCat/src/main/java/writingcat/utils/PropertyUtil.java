@@ -2,8 +2,8 @@ package writingcat.utils;
 
 import writingcat.service.STransfer;
 
-import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,8 +24,9 @@ public class PropertyUtil {
         configMap = new HashMap<>(16);
         var st = new STransfer();
         try {
-            String[] ss = st.file2StringBuilder(new File("./src/main/resources/application.txt")).toString().split(
-                    "\n");
+//            File file = new File("./src/main/resources/application.yml");
+            InputStream is = PropertyUtil.class.getResourceAsStream("/application.yml");
+            String[] ss = st.inputStream2StringBuilder(is).toString().split("\n");
             for (String s : ss) {
                 int splitIndex = s.indexOf(":");
                 String key = s.substring(0, splitIndex);
@@ -43,4 +44,5 @@ public class PropertyUtil {
         }
         return configMap.get(key);
     }
+
 }

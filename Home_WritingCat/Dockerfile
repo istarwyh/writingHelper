@@ -2,6 +2,7 @@
 # VERSION 0.1
 # Author: istarwyh
 FROM openjdk:11-jre
-ADD target/WritingCat-0.1.jar app.jar
+ADD target/WritingCat.jar wc0.2.1.jar
+ADD target/WritingCat.jar.original WritingCat.jar.original
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","/wc0.2.1.jar"]

@@ -44,10 +44,19 @@ public class STransfer {
      * 在同一个抽象层面上封装API
      */
     public Phrases mergeFile(File jsonFile, MultipartFile file) {
+        try {
+            return mergeFile(new FileInputStream(jsonFile), file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return Phrases.builder().build();
+    }
+
+    public Phrases mergeFile(InputStream is, MultipartFile file) {
         Phrases phrases = Phrases.builder().waitModified(false).modified(false).build();
         try {
             List<CollocationDetail> list = this.bytes2List(file.getBytes());
-            CollocationDetail[] originCdArr = GSON.fromJson(file2StringBuilder(jsonFile).toString(),
+            CollocationDetail[] originCdArr = GSON.fromJson(inputStream2StringBuilder(is).toString(),
                     CollocationDetail[].class);
             rmDuplicateAndUpdate(phrases, cdArr2Map(originCdArr), list);
         } catch (IOException e) {
@@ -83,7 +92,8 @@ public class STransfer {
         }
     }
 
-    private void updateCollocationDetailInMap(Phrases phrases, Map<String, CollocationDetail> map, CollocationDetail cur) {
+    private void updateCollocationDetailInMap(Phrases phrases, Map<String, CollocationDetail> map,
+                                              CollocationDetail cur) {
         CollocationDetail cd = map.get(cur.getCollocation());
         cd.setModified(false);
         cd.setIssuesBySet(SetUtil.getUniqUnion(cur.getIssues(), cd.getIssues()));
@@ -125,8 +135,16 @@ public class STransfer {
     }
 
     public StringBuilder file2StringBuilder(File file) throws IOException {
-//        Reader类为包装字节流后的字符流,因为按StandardCharsets.UTF_8格式每次读为字符,所以速度更快
-        var fileReader = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8);
+        return inputStream2StringBuilder(new FileInputStream(file));
+    }
+
+    public StringBuilder inputStream2StringBuilder(InputStream is) throws IOException {
+        //        Reader类为包装字节流后的字符流,因为按StandardCharsets.UTF_8格式每次读为字符,所以速度更快
+        var fileReader = new InputStreamReader(is, StandardCharsets.UTF_8);
+        return reader2StringBuilder(fileReader);
+    }
+
+    private StringBuilder reader2StringBuilder(InputStreamReader fileReader) throws IOException {
         var sb = new StringBuilder();
         int ch = -1;
         int i = 0;

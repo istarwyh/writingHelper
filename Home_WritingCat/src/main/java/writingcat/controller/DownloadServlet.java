@@ -4,14 +4,15 @@ import com.github.istarwyh.cache.LruCache;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import writingcat.utils.FileUtils;
+import writingcat.utils.PropertyUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * @Description: HomeController
@@ -21,7 +22,7 @@ import java.io.IOException;
  */
 @Controller
 public class DownloadServlet extends HttpServlet {
-    private final LruCache<FileInputStream> cache = new LruCache<>(2);
+    private final LruCache<InputStream> cache = new LruCache<>(2);
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
@@ -30,8 +31,8 @@ public class DownloadServlet extends HttpServlet {
         String filename = request.getParameter("filename");
 //        todo:判断文件是否存在
         //2.使用字节输入流加载文件进内存
-        cache.put(filename, new FileInputStream("./repository/" + filename));
-        var fis = cache.get(filename);
+        cache.put(filename, this.getClass().getResourceAsStream(PropertyUtil.getProperty("prefix") + filename));
+        InputStream is = cache.get(filename);
         //3.设置response的响应头
         //3.1设置响应头类型:content-type
         //获取文件的mime类型
@@ -45,10 +46,10 @@ public class DownloadServlet extends HttpServlet {
         ServletOutputStream sos = response.getOutputStream();
         byte[] buff = new byte[1024 * 8];
         int len = -1;
-        while ((len = fis.read(buff)) != -1) {
+        while ((len = is.read(buff)) != -1) {
             sos.write(buff, 0, len);
         }
-        fis.close();
+        is.close();
         //输出流可以关闭，也可以不关闭
         //如果不关闭，那么tomcat会在响应的时候帮你关闭
     }
