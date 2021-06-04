@@ -8,10 +8,10 @@ import { Logger } from 'log4js';
  * AutoLoader controller class to prepare resouces and dispathch tasks 
  */
 export default class AutoLoader {
-    public static wordTree: TrieTree;
-    public static issueTree: TrieTree;
-    public static phraseMap: Map<string, string>;
     public static logger: Logger;
+    private static wordTree: TrieTree;
+    private static issueTree: TrieTree;
+    private static phraseMap: Map<string, string>;
     private constructor() {
         AutoLoader.wordTree = new TrieTree();
         AutoLoader.issueTree = new TrieTree();
@@ -30,17 +30,32 @@ export default class AutoLoader {
             }
         )
     }
+
+    public static autoLoader(): void {
+        // 两个绑定在一起判断,因此省下两个判断
+        if (AutoLoader.wordTree === undefined || AutoLoader.issueTree === null) {
+            new AutoLoader();
+        }
+    }
+
     /**
      * single process of JS runtime, so don't need lock
      * null表示"没有对象"，即该处不应该有值，转为数值时为0;
      * undefined表示"缺少值"，就是此处应该有一个值，转为数值时为NaN。
      * @returns 
      */
-    public static buildSingleTrie(): TrieTree {
-        // 两个绑定在一起判断,因此省下两个判断
-        if (AutoLoader.wordTree === undefined || AutoLoader.issueTree === null) {
-            new AutoLoader();
-        }
+    public static getSingletonWordTree(): TrieTree {
+        this.autoLoader();
         return this.wordTree;
+    }
+
+    public static getIssueTree(): TrieTree {
+        this.autoLoader();
+        return this.issueTree;
+    }
+
+    public static getPhraseMap(): Map<string, string> {
+        this.autoLoader();
+        return this.phraseMap;
     }
 }

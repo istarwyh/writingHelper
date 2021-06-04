@@ -64,16 +64,16 @@ export function provideCompletionItems(document: TextDocument, position: Positio
     // id4--否-->id8[话题Key提示]
     // id7--是-->id4{话题Key是否<br>已经补全}--是-->id66[领域词伙补全]
     // id7--否-->id3{词伙Key是否<br>已经补全}--是-->id6[词伙补全]
-    
+
     // id3--否-->id9{是否位于<br>词伙补全范围}
     // id9--否-->id10[返回默认补全]
     // id9--是-->id5[词伙Key补全]--补全Key后-->id6
     // ```
-    var compleObject: abstractComple =
-        (CComple.isIssues(lastWord, issueRegex) && AutoLoader.issueTree.hasPrefix(chKey)) ?
-            (AutoLoader.issueTree.has(chKey) ? CComple.issueComple : CComple.issueCue) :
-            (AutoLoader.wordTree.has(chKey) ? CComple.phrasesComple :
-                (AutoLoader.wordTree.hasPrefix(chKey) ? CComple.wordComple :
+    let compleObject: abstractComple =
+        (CComple.isIssues(lastWord, issueRegex) && AutoLoader.getIssueTree().hasPrefix(chKey)) ?
+            (AutoLoader.getIssueTree().has(chKey) ? CComple.issueComple : CComple.issueCue) :
+            (AutoLoader.getSingletonWordTree().has(chKey) ? CComple.phrasesComple :
+                (AutoLoader.getSingletonWordTree().hasPrefix(chKey) ? CComple.wordComple :
                     CComple.blank));
     return compleObject.provideCompletionItems(chKey);
 }

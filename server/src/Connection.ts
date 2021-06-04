@@ -32,8 +32,8 @@ export default class ConnectCat {
 			return result;
 		});
 		ConnectCat.connection.onInitialized(() => {
-			// CHome.sayHello(ConnectCat.connection);
 			AutoLoader.logger.debug('-----------Connection Initialized-------------');
+			CHome.sayIniTime(ConnectCat.connection);
 		});
 		// Make the text document manager listen on the connection
 		// for open, change and close text document events

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import writingcat.entity.CollocationDetail;
 import writingcat.entity.Interpretation;
-import writingcat.entity.Phrases;
+import writingcat.dto.Phrases;
 import writingcat.entity.excel.CollocationDetailExcel;
 import writingcat.utils.SetUtil;
 

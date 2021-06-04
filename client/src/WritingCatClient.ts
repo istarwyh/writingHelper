@@ -10,15 +10,16 @@ import {
 } from 'vscode-languageclient';
 
 export default class WritingCatClient {
-	static client: LanguageClient;
-	serverModule: string;
-	debugOptions: { execArgv: string[]; };
+	private static iniDate: Date;
+	private static client: LanguageClient;
+	private serverModule: string;
+	private debugOptions: { execArgv: string[]; };
 	/**
 	 * If the extension is launched in debug mode then the debug server options are used
 	   Otherwise the run options are used
 	 */
-	serverOptions: lsp.ServerOptions;
-	clientOptions: lsp.LanguageClientOptions;
+	private serverOptions: lsp.ServerOptions;
+	private clientOptions: lsp.LanguageClientOptions;
 
 	/**
 	 * 
@@ -48,7 +49,7 @@ export default class WritingCatClient {
 			synchronize: {
 				// Notify the server about file changes to '.clientrc files contained in the workspace
 				// fileEvents: vscode.workspace.createFileSystemWatcher('**/.clientrc')
-				/* 为什么这个地方要用tsconfig? */ 
+				/* 为什么这个地方要用tsconfig? */
 				fileEvents: vscode.workspace.createFileSystemWatcher('**/tsconfig.json')
 			},
 			revealOutputChannelOn: lsp.RevealOutputChannelOn.Never,
@@ -59,6 +60,7 @@ export default class WritingCatClient {
 			this.serverOptions,
 			this.clientOptions
 		);
+		WritingCatClient.iniDate = new Date();
 	}
 	public static buildWritingCatClient(context: ExtensionContext, debuggerPort: number, logPanelName: string) {
 		if (WritingCatClient.client === null || WritingCatClient.client === undefined) {
@@ -66,4 +68,7 @@ export default class WritingCatClient {
 		}
 		return this.client;
 	}
-}	
+	public static getIniDate(): Date {
+		return this.iniDate;
+	}
+}

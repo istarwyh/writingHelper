@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="wc" type="docker-deploy" factoryName="docker-image" singleton="false" server-name="Docker">
+    <deployment type="docker-image">
+      <settings>
+        <option name="imageTag" value="wc0.2.1:latest" />
+        <option name="containerName" value="wc0.2.1" />
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>

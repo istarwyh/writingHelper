@@ -1,4 +1,5 @@
 import { Position, CompletionItem, MarkupContent, CompletionItemKind, InsertTextFormat, MarkupKind } from "vscode-languageserver";
+import AutoLoader from '../AutoLoader';
 // import WritingCatServer from '../server';
 import CollocationDetail from "../entity/CollocationDetail";
 import { Interpretation } from "../entity/Interpretation";
@@ -54,15 +55,22 @@ export default abstract class abstractComple implements IComComple {
         // completionItem.detail = ;
         return _item;
     }
-
+    /**
+     * 如果VS Code支持的documention中允许运行script或者支持文件系统就好了,可以提issue或者pr todo
+     * @param interpretation 
+     * @returns 
+     */
     private getAppendTitle(interpretation: Interpretation) {
         var appendTitle = "&emsp;<font color=\"skyblue\">Interpretation</font>&emsp;";
         // 对于Java打开网络:in = new BufferedReader(new InputStreamReader(new URL(urlStr).openStream(),"UTF-8") ); 
         if (UserSettings.getNetWorkState()) {
-            appendTitle = "![rainbowcat](https://gitee.com/istarwyh/images/raw/master/1617025579_20210329214515706_12235.gif)";
-        }
-        else {
-            setTimeout(() => userSeter.refreshNetWorkState(), 5000);
+            userSeter.refreshNetWorkState();
+            if(UserSettings.getNetWorkState()){
+                appendTitle = "![rainbowcat](https://gitee.com/istarwyh/images/raw/master/1617025579_20210329214515706_12235.gif)";
+            }
+        } else {
+            let waitTime: number = 5000;
+            setTimeout(() => userSeter.refreshNetWorkState(), waitTime);
         }
         var obj = interpretation; var enInterpretation; var sentence;
         if (obj.hasOwnProperty(Interpretation.EnglishStr())) {

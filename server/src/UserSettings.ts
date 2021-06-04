@@ -1,5 +1,6 @@
 import Document from './utils/impl/Document';
 import * as https from 'https';
+import AutoLoader from './AutoLoader';
 class UserSettings {
 	static maxNumberOfProblems: number = 10;
 	private static hasNetWork: boolean;
@@ -19,6 +20,7 @@ class UserSettings {
 		return UserSettings.hasNetWork;
 	}
 	public refreshNetWorkState() {
+		UserSettings.hasNetWork = false;
 		// const https = require('https');
 		let option: string = "https://www.baidu.com/";
 		// any async code will execute only after the main thread is available!
@@ -28,11 +30,11 @@ class UserSettings {
 		let req = https.request(option, (resp: any) => {
 			// 然而这里什么时候拿到的结果我是不知道的,但是预计不会再后面调用Comple的时候依然拿不到
 			UserSettings.hasNetWork = (resp.statusCode == '200' || resp.statusCode == '302');
-			// console.log(resp.statusCode + Utils.getCurTime("  "));
+			// console.log(resp.statusCode);
 		});
 		// If you don't catch error, the programming will be crased
 		req.on('error', function (error: any) {
-			console.log(error);
+			AutoLoader.logger.log(error);
 			return false;
 		});
 		req.end();

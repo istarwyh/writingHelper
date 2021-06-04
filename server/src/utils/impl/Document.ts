@@ -25,4 +25,12 @@ export default class Document implements IDocument {
 		};
 		return markdown;
 	}
+
+	static getImage(): MarkupContent {
+		let markdown: MarkupContent = {
+			kind: MarkupKind.Markdown,
+			value: "<img src=\"../repository/images/Dashboard.svg\">"
+		};
+		return markdown;
+	}
 }

@@ -8,13 +8,13 @@ import { IPlusComple } from '../IPlusComple';
 class WordComple extends abstractComple implements IPlusComple {
     public provideCompletionItems(...chKeys: string[]): CompletionItem[] {
         var prefix = chKeys[0];
-        var matchedWords = AutoLoader.wordTree.searchWordsByPrefix(prefix);
+        var matchedWords = AutoLoader.getSingletonWordTree().searchWordsByPrefix(prefix);
         return this.getComples4Arr(Utils.notNull(matchedWords));
     }
 
     modifyCompletionItem(_item: CompletionItem): CompletionItem {
         if(_item.label !== _item.data || _item.label.search(" ")) return _item;
-        const collocation: string = Utils.notUndefined(AutoLoader.phraseMap.get(_item.data));
+        const collocation: string = Utils.notUndefined(AutoLoader.getPhraseMap().get(_item.data));
         return this.constructComple4string(collocation);
     }
 

@@ -8,7 +8,7 @@ import AutoLoader from '../../AutoLoader';
 
 export default class IssueCue extends abstractComple {
     public provideCompletionItems(...issueKeys: string[]): CompletionItem[] {
-        const matchedKeys: string[] = Utils.notNull(AutoLoader.issueTree.searchWordsByPrefix(issueKeys[0]));   
+        const matchedKeys: string[] = Utils.notNull(AutoLoader.getIssueTree().searchWordsByPrefix(issueKeys[0]));   
         return this.getComples4Arr(matchedKeys);
     }
 }
