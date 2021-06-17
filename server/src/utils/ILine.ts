@@ -36,6 +36,11 @@ export interface ILineBuilder<T extends ILine> {
      * @returns 
      */
     validText(text: string): boolean;
+
+    /**
+     * Determine whether it is looking for an issue
+     */
+    isIssues(word: string, issueRegex: RegExp): boolean;
 }
 /**
  *  Interfaces can't have static declarations

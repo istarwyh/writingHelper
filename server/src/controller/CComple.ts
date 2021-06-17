@@ -15,18 +15,12 @@ class CComple {
         'u', 'v', 'w', 'x', 'y', 'z'];
     // https://code.visualstudio.com/docs/languages/identifiers
     static readonly documentSelector = ['plaintext', 'markdown', 'latex'];
+    
     static readonly issueCue = new IssueCue();
     static readonly wordComple = new WordComple();
     static readonly phrasesComple = new PhrasesComple();
     static readonly issueComple = new IssueComple();
     static readonly blank = new Blank();
-
-    /**
-     * Determine whether it is looking for an issue
-     */
-    public static isIssues(word: string, issueRegex: RegExp): boolean {
-        return issueRegex.test(word);
-    }
 
     public static modifyCompletionItem(_item: CompletionItem): CompletionItem {
         return CComple.wordComple.modifyCompletionItem(_item);
@@ -69,7 +63,7 @@ export function provideCompletionItems(document: TextDocument, position: Positio
     // id9--是-->id5[词伙Key补全]--补全Key后-->id6
     // ```
     let compleObject: abstractComple =
-        (CComple.isIssues(lastWord, issueRegex) && AutoLoader.getIssueTree().hasPrefix(chKey)) ?
+        (Line.isIssues(lastWord, issueRegex) && AutoLoader.getIssueTree().hasPrefix(chKey)) ?
             (AutoLoader.getIssueTree().has(chKey) ? CComple.issueComple : CComple.issueCue) :
             (AutoLoader.getSingletonWordTree().has(chKey) ? CComple.phrasesComple :
                 (AutoLoader.getSingletonWordTree().hasPrefix(chKey) ? CComple.wordComple :

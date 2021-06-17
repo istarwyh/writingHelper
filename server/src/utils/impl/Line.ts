@@ -32,5 +32,10 @@ class Line implements ILine {
     public static position2String(position: Position): string {
         return `{Line: ${position.line}, Character: ${position.character}}`;
     }
+
+    public static isIssues(word: string, issueRegex: RegExp): boolean {
+        return issueRegex.test(word);
+    }
+    
 }
 export default Line;
