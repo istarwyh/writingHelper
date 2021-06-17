@@ -8,7 +8,6 @@ export default class TrieTree {
     public readonly root: Node = new Node();
     public constructor() { }
 
-
     public insert(word: string): TrieTree {
         if (word === "") return this;
         let cur: Node = this.root;

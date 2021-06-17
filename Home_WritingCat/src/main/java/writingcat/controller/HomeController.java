@@ -6,10 +6,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import writingcat.dto.Phrases;
 import writingcat.utils.FileUtils;
 import writingcat.utils.PropertyUtil;
-import writingcat.entity.CollocationDetail;
-import writingcat.entity.Phrases;
 import writingcat.service.STransfer;
 
 import javax.annotation.Resource;
