@@ -6,7 +6,7 @@ class Line implements ILine {
     private static transer = new Transfer();
     public constructor() { }
 
-    public static distillNameByArray(text: string, wordRegex: RegExp): string {
+    public static distillLastWordByArray(text: string, wordRegex: RegExp): string {
         var matches = text.match(wordRegex);
         // let preWord = RegExp.$1.substring(-1);
         // // var preWord = RegExp[Symbol.match](text);
@@ -14,13 +14,13 @@ class Line implements ILine {
         return matches === null ? "" : matches[matches.length - 1];
     }
 
-    public static distillKey(lineText: string, wordRegex: RegExp, wordStr: string): string {
+    public static distillKeyFromRegex(lineText: string, wordRegex: RegExp, wordStr: string): string {
         let str = wordRegex.test(lineText) ? Line.cutLastWord(lineText, wordStr) : lineText;
         return Line.transer.builder(str).upper2proto().ing2proto().passive2proto().toString();
     }
 
-    public static cutLastWord(lineText: string, wordStr: string): string {
-        return lineText.trim().substring(lineText.lastIndexOf(wordStr) + wordStr.length, lineText.length);
+    public static cutLastWord(lineText: string, flag: string): string {
+        return lineText.trim().substring(lineText.lastIndexOf(flag) + flag.length, lineText.length);
     }
 
     public static validText(text: string): boolean {

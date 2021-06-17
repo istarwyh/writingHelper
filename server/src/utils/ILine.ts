@@ -11,18 +11,18 @@ export interface ILineBuilder<T extends ILine> {
     distillNameByArray(text: string, wordRegex: RegExp): string;
 
     /**
-     * 以wordRegex为起始点切割出剩余字符,如果没有wordRegex则从最后一个空格开始切割
+     * 以wordRegex为起始点切割出剩余字符,如果不匹配wordRegex则从最后一个空格开始切割
      * @param text 文本(行)
      * @param wordRegex 用以匹配以word作Key的正则条件
      */
-    distillKey(text: string, wordRegex: string): string;
+     distillKeyFromRegex(lineText: string, wordRegex: RegExp, wordStr: string): string;
 
     /**
      * 切割出char到最后的部分,不包括char本身
      * @param text 
-     * @param char 
+     * @param flag 
      */
-    cutLastWord(text: string, char: string): string;
+    cutLastWord(text: string, flag: string): string;
 
     /**
      * 

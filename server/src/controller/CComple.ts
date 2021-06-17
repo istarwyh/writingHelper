@@ -33,22 +33,16 @@ class CComple {
      * @returns todo: don't konw how to add 'provideCompletionItems' in WordComple
      */
     public static provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
-        /* 减少检索范围，仅检索光标所在行 */
-        let curRange = {
-            start: { line: position.line, character: 0 },
-            end: { line: position.line, character: position.character }
-        };
-        const lineText: string = document.getText(curRange);
-        if (!Line.validText(lineText)) {
+        const text: string = CComple.getTargetText(position, document);
+        if (!Line.validText(text)) {
             return [];
         }
         // global can enable the whole paragraph being matched
         const wordRegex = /([a-zA-Z]+)/g;
-        const lastWord: string = Line.distillNameByArray(lineText, wordRegex);
-        // console.log("THE wordKey:\n" + "<" + lastWord + ">");
+        const lastWord: string = Line.distillLastWordByArray(text, wordRegex);
         const issueRegex = /^ff/;
         const issueStr = "ff";
-        const chKey = Line.distillKey(lastWord, issueRegex, issueStr);
+        const chKey = Line.distillKeyFromRegex(lastWord, issueRegex, issueStr);
     
         // ```mermaid
         // graph LR
@@ -70,6 +64,16 @@ class CComple {
         return compleObject.provideCompletionItems(chKey);
     }
     
+    /**
+     * 减少检索范围，仅检索光标所在行 
+     */
+    private static getTargetText(position: Position, document: TextDocument) {
+        let curRange = {
+            start: { line: position.line, character: 0 },
+            end: { line: position.line, character: position.character }
+        };
+        return document.getText(curRange);
+    }
 }
 
 // https://www.jianshu.com/p/f1e54dde30c8
