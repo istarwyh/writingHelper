@@ -8,3 +8,4 @@ src/test
 *.zip
 vsc-extension-quickstart.md
 **/target/
+client/src/testFixture/

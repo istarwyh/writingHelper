@@ -8,11 +8,10 @@ import {
 } from 'vscode-languageserver';
 import AutoLoader from './AutoLoader';
 import Connection from './Connection';
-import CComple, { provideCompletionItems } from './controller/CComple';
+import CComple from './controller/CComple';
 import Document from './utils/impl/Document';
 import UserSettings from './UserSettings';
 import Utils from './utils/Utils';
-import CHome from './controller/CHome';
 
 // const needHover = vscode.workspace.getConfiguration().get('provideHover');
 export const userSeter = UserSettings.iniUserSettings();
@@ -28,7 +27,7 @@ connection.onCompletion(
 	// The pass parameter contains the position of the text document in which code complete got requested. 
 	(_textDocumentPosition: TextDocumentPositionParams): CompletionItem[] => {
 		Utils.logCurTime();
-		return provideCompletionItems(Document.getDocumentFromURI(_textDocumentPosition.textDocument.uri), _textDocumentPosition.position);
+		return CComple.provideCompletionItems(Document.getDocumentFromURI(_textDocumentPosition.textDocument.uri), _textDocumentPosition.position);
 	}
 );
 // 事实上可以先拿到item,然后再对每个item进行请求,这样就可以解决不连续补全的问题...todo
