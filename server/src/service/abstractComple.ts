@@ -1,10 +1,7 @@
 import { Position, CompletionItem, MarkupContent, CompletionItemKind, InsertTextFormat, MarkupKind } from "vscode-languageserver";
-import AutoLoader from '../AutoLoader';
-// import WritingCatServer from '../server';
 import CollocationDetail from "../entity/CollocationDetail";
 import { Interpretation } from "../entity/Interpretation";
 import { userSeter } from '../server';
-// import WritingCatServer from '../server';
 import UserSettings from '../UserSettings';
 import Document from '../utils/impl/Document';
 import Utils from "../utils/Utils";
