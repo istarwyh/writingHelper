@@ -4,24 +4,26 @@ import { Range, Position } from 'vscode-languageserver';
  */
 export interface ILineBuilder<T extends ILine> {
     new(): T;
+
     /**
-     * 
-     * @param text 文本(行)
-     * @param componentRegex 用以匹配以name作Key的正则条件
+     * Have verified by test(), so no verification required here( like verifing non-null) in fact.
      */
-    distillName(text: string, regExp: string): string;
+    distillNameByArray(text: string, wordRegex: RegExp): string;
+
     /**
      * 以wordRegex为起始点切割出剩余字符,如果没有wordRegex则从最后一个空格开始切割
-     * @param lineText 
-     * @param wordRegex 
+     * @param text 文本(行)
+     * @param wordRegex 用以匹配以word作Key的正则条件
      */
-    distillKey(lineText: string, wordRegex: string):string;
+    distillKey(text: string, wordRegex: string): string;
+
     /**
      * 切割出char到最后的部分,不包括char本身
      * @param text 
      * @param char 
      */
-    cutLastWord(text: string, char: string) :string;
+    cutLastWord(text: string, char: string): string;
+
     /**
      * 
      * @param position cursor(光标)所在位置
@@ -33,11 +35,11 @@ export interface ILineBuilder<T extends ILine> {
      * @param text 验证是否是正常文本
      * @returns 
      */
-    validText(text:string):boolean;
+    validText(text: string): boolean;
 }
 /**
  *  Interfaces can't have static declarations
  * https://stackoverflow.com/questions/40171533typescript-call-static-method-of-generic-type
  * 
  */
-export interface ILine {};
+export interface ILine { };

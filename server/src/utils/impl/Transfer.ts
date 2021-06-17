@@ -4,9 +4,7 @@ import ITransfer from '../ITransfer';
  */
 export default class Transfer implements ITransfer {
 	str: string;
-	public constructor(str: string) {
-		this.str = str;
-	}
+	public constructor() {	}
 	public builder(str: string): Transfer {
 		this.str = str;
 		return this;

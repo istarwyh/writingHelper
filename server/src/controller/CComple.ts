@@ -24,9 +24,8 @@ class CComple {
     /**
      * Determine whether it is looking for an issue
      */
-    public static isIssues(word: string, ffRegex: RegExp): boolean {
-        // const ffIndex = text.lastIndexOf("ff");
-        return ffRegex.test(word);
+    public static isIssues(word: string, issueRegex: RegExp): boolean {
+        return issueRegex.test(word);
     }
 
     public static modifyCompletionItem(_item: CompletionItem): CompletionItem {
@@ -52,7 +51,7 @@ export function provideCompletionItems(document: TextDocument, position: Positio
     }
     // global can enable the whole paragraph being matched
     const wordRegex = /([a-zA-Z]+)/g;
-    const lastWord: string = Line.distillNameOfArray(lineText, wordRegex);
+    const lastWord: string = Line.distillNameByArray(lineText, wordRegex);
     // console.log("THE wordKey:\n" + "<" + lastWord + ">");
     const issueRegex = /^ff/;
     const issueStr = "ff";
