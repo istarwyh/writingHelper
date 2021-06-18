@@ -1,6 +1,7 @@
 import { ILine } from "../ILine";
 import { Range, Position } from 'vscode-languageserver';
 import Transfer from './Transfer';
+import { IssueFeature } from '../../controller/CComple';
 
 class Line implements ILine {
     private static transer = new Transfer();
@@ -14,8 +15,8 @@ class Line implements ILine {
         return matches === null ? "" : matches[matches.length - 1];
     }
 
-    public static distillKeyFromRegex(lineText: string, wordRegex: RegExp, wordStr: string): string {
-        let str = wordRegex.test(lineText) ? Line.cutLastWord(lineText, wordStr) : lineText;
+    public static distillKeyFromRegex(word: string, issueFeature : IssueFeature): string {
+        let str = issueFeature.issueRegex.test(word) ? Line.cutLastWord(word, issueFeature.issueStr) : word;
         return Line.transer.builder(str).upper2proto().ing2proto().passive2proto().toString();
     }
 

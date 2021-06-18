@@ -1,4 +1,5 @@
 import { Range, Position } from 'vscode-languageserver';
+import { IssueFeature } from '../controller/CComple';
 /**
  * Generic constraints are only available in compilation time, but then the compiler removes them as javascript doesn't support it
  */
@@ -15,7 +16,7 @@ export interface ILineBuilder<T extends ILine> {
      * @param text 文本(行)
      * @param wordRegex 用以匹配以word作Key的正则条件
      */
-     distillKeyFromRegex(lineText: string, wordRegex: RegExp, wordStr: string): string;
+     distillKeyFromRegex(lineText: string, issueFeature : IssueFeature): string;
 
     /**
      * 切割出char到最后的部分,不包括char本身

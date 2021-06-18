@@ -2,10 +2,10 @@
 import { CompletionItem } from 'vscode-languageserver';
 import Phrases from '../../repository/Collocations.json';
 import CollocationDetail from '../../entity/CollocationDetail';
-import abstractComple from '../abstractComple';
+import CompleHandler from '../abstractComple';
 import AutoLoader from '../../AutoLoader';
 
-export default class PhrasesComple extends abstractComple{
+export default class PhrasesComple extends CompleHandler{
     /**
      * 
      * @param text 等用户补全/写完了直接拿到wordKey,在此之前引导向已有的wordKey补全

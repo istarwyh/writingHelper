@@ -7,10 +7,18 @@ import Document from '../utils/impl/Document';
 import Utils from "../utils/Utils";
 import { IComComple } from "./IComComple";
 
-export default abstract class abstractComple implements IComComple {
+export default abstract class CompleHandler implements IComComple {
+    protected next: CompleHandler;
 
     abstract provideCompletionItems(...regExps: string[]): CompletionItem[];
 
+    public getNext(): CompleHandler {
+        return this.next;
+    }
+    
+    public setNext(next: CompleHandler): void {
+        this.next = next;
+    }
     getComples4CollocationDetail(matchedphrases: CollocationDetail[]): CompletionItem[] {
         let completionItems = new Array<CompletionItem>();
         for (let phrase of matchedphrases) {
@@ -62,7 +70,7 @@ export default abstract class abstractComple implements IComComple {
         // 对于Java打开网络:in = new BufferedReader(new InputStreamReader(new URL(urlStr).openStream(),"UTF-8") ); 
         if (UserSettings.getNetWorkState()) {
             userSeter.refreshNetWorkState();
-            if(UserSettings.getNetWorkState()){
+            if (UserSettings.getNetWorkState()) {
                 appendTitle = "![rainbowcat](https://gitee.com/istarwyh/images/raw/master/1617025579_20210329214515706_12235.gif)";
             }
         } else {

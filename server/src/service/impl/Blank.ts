@@ -1,7 +1,7 @@
 import { CompletionItem } from 'vscode-languageserver';
-import abstractComple from '../abstractComple';
+import CompleHandler from '../abstractComple';
 
-export default class Blank extends abstractComple{
+export default class Blank extends CompleHandler{
 	public provideCompletionItems(...chKeys: string[]): CompletionItem[]{
 		return [];
 	}

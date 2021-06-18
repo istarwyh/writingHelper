@@ -2,10 +2,10 @@
 import { CompletionItem } from 'vscode-languageserver';
 import Utils from '../../utils/Utils';
 import AutoLoader from '../../AutoLoader';
-import abstractComple from '../abstractComple';
+import CompleHandler from '../abstractComple';
 import { IPlusComple } from '../IPlusComple';
 
-class WordComple extends abstractComple implements IPlusComple {
+class WordComple extends CompleHandler implements IPlusComple {
     public provideCompletionItems(...chKeys: string[]): CompletionItem[] {
         var prefix = chKeys[0];
         var matchedWords = AutoLoader.getSingletonWordTree().searchWordsByPrefix(prefix);
