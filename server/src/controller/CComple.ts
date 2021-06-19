@@ -32,30 +32,6 @@ class CComple {
      */
     public static provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
         const text: string = CComple.getTargetText(position, document);
-        // global can enable the whole paragraph being matched
-        // const wordRegex = /([a-zA-Z]+)/g;
-        // const lastWord = Line.distillLastWordByArray(text, wordRegex);
-        // const lastWordKey = Line.distillKeyFromRegex(lastWord, CComple.issueFeature);
-
-        // ```mermaid
-        // graph LR
-        // id1(lineText)--基础校验-->id2[validText]--业务校验-->id7{是否是issue查找&&<br>是否位于issue补全范围}
-        // id4--否-->id8[话题Key提示]
-        // id7--是-->id4{话题Key是否<br>已经补全}--是-->id66[领域词伙补全]
-        // id7--否-->id3{词伙Key是否<br>已经补全}--是-->id6[词伙补全]
-
-        // id3--否-->id9{是否位于<br>词伙补全范围}
-        // id9--否-->id10[返回默认补全]
-        // id9--是-->id5[词伙Key补全]--补全Key后-->id6
-        // ```
-        // let compleObject: CompleHandler =
-        //     (Line.isIssues(lastWord, CComple.issueFeature.issueRegex)) ?
-        //         (AutoLoader.getIssueTree().has(lastWordKey) ? CComple.issueComple : CComple.issueCue) :
-        //         (AutoLoader.getSingletonWordTree().has(lastWordKey) ? CComple.phrasesComple :
-        //             (AutoLoader.getSingletonWordTree().hasPrefix(lastWordKey) ? CComple.wordComple :
-        //                 CComple.blank));
-        // return compleObject.provideCompletionItems(lastWordKey);
-
         return CompleHandlerChain.handleComple(text);
     }
 
