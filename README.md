@@ -16,8 +16,8 @@ Hi, I am a VS Code Extension of IELTS English Writing, which can provide profess
 If you have not yet reliazed word collocation, you can see [here](https://www.thoughtco.com/what-is-collocation-1211244#:~:text=Collocation%20refers%20to%20a%20group%20of%20two%20or,place.%20Collocation%E2%80%8Bs%20are%20words%20that%20are%20located%20together.) for more information.
 
 ## 💡 演示
-<img  src="https://gitee.com/istarwyh/images/raw/master/1617350677_20210402160432489_31927.png" width="550px" height="80px"/>
-<img src="https://gitee.com/istarwyh/images/raw/master/1620489881_20210509000437026_23596.png" width="400px" height="70px"/>
+
+![功能展示](https://gitee.com/istarwyh/images/raw/master/1624119548_20210620001856138_14747.gif)
 
 ## 📝使用说明 
 Just install me and write in a `.txt` / `.md`  file in English.
