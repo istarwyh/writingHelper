@@ -12,16 +12,15 @@ class Line implements ILine {
         // let preWord = RegExp.$1.substring(-1);
         // // var preWord = RegExp[Symbol.match](text);
         // console.log("<"+preWord+">");    
-        return matches === null ? "" : matches[matches.length - 1];
+        return matches === null ? "" : Line.beDull(matches[matches.length - 1]);
     }
 
-    public static distillKeyFromRegex(word: string, issueFeature : IssueFeature): string {
-        let str = issueFeature.issueRegex.test(word) ? Line.cutLastWord(word, issueFeature.issueStr) : word;
-        return Line.transer.builder(str).upper2proto().ing2proto().passive2proto().toString();
+    private static beDull(word: string): string {
+        return Line.transer.builder(word).upper2proto().ing2proto().passive2proto().toString();
     }
 
     public static cutLastWord(lineText: string, flag: string): string {
-        return lineText.trim().substring(lineText.lastIndexOf(flag) + flag.length, lineText.length);
+        return lineText. substring(lineText.lastIndexOf(flag) + flag.length, lineText.length);
     }
 
     public static validText(text: string): boolean {
@@ -37,6 +36,6 @@ class Line implements ILine {
     public static isIssues(word: string, issueRegex: RegExp): boolean {
         return issueRegex.test(word);
     }
-    
+
 }
 export default Line;

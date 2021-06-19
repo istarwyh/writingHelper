@@ -1,17 +1,11 @@
-import IssueCue from '../service/impl/IssueCue';
-import WordComple from '../service/impl/WordComple';
-import PhrasesComple from '../service/impl/PhrasesComple';
-import Blank from '../service/impl/Blank';
-import Line from '../utils/impl/Line';
-import AutoLoader from '../AutoLoader';
-import CompleHandler from '../service/abstractComple';
+import { CompletionItem, Position } from 'vscode-languageserver';
 import { TextDocument } from 'vscode-languageserver-textdocument';
-import { CompletionItem, Position, Range } from 'vscode-languageserver';
-import IssueComple from '../service/impl/IssueComple';
+import CompleHandlerChain from '../service/CompleHandlerChain';
+import PhrasekeyComple from '../service/impl/PhraseKeyComple';
 
 export interface IssueFeature {
     issueRegex: RegExp;
-    issueStr: string;
+    issueFlag: string;
 }
 class CComple {
     // todo: 触发字符是@和.,怎么样让触发字符消失,这肯定是要改的
@@ -22,15 +16,10 @@ class CComple {
     static readonly documentSelector = ['plaintext', 'markdown', 'latex'];
     static readonly issueFeature: IssueFeature = {
         issueRegex: /^ff/,
-        issueStr: "ff"
+        issueFlag: "ff"
     };
 
-    static readonly issueCue = new IssueCue();
-    static readonly wordComple = new WordComple();
-    static readonly phrasesComple = new PhrasesComple();
-    static readonly issueComple = new IssueComple();
-    static readonly blank = new Blank();
-
+    static readonly wordComple = new PhrasekeyComple();
     public static modifyCompletionItem(_item: CompletionItem): CompletionItem {
         return CComple.wordComple.modifyCompletionItem(_item);
     }
@@ -43,13 +32,10 @@ class CComple {
      */
     public static provideCompletionItems(document: TextDocument, position: Position): CompletionItem[] {
         const text: string = CComple.getTargetText(position, document);
-        if (!Line.validText(text)) {
-            return [];
-        }
         // global can enable the whole paragraph being matched
-        const wordRegex = /([a-zA-Z]+)/g;
-        const lastWord: string = Line.distillLastWordByArray(text, wordRegex);
-        const chKey = Line.distillKeyFromRegex(lastWord, CComple.issueFeature);
+        // const wordRegex = /([a-zA-Z]+)/g;
+        // const lastWord = Line.distillLastWordByArray(text, wordRegex);
+        // const lastWordKey = Line.distillKeyFromRegex(lastWord, CComple.issueFeature);
 
         // ```mermaid
         // graph LR
@@ -62,13 +48,15 @@ class CComple {
         // id9--否-->id10[返回默认补全]
         // id9--是-->id5[词伙Key补全]--补全Key后-->id6
         // ```
-        let compleObject: CompleHandler =
-            (Line.isIssues(lastWord, issueRegex) && AutoLoader.getIssueTree().hasPrefix(chKey)) ?
-                (AutoLoader.getIssueTree().has(chKey) ? CComple.issueComple : CComple.issueCue) :
-                (AutoLoader.getSingletonWordTree().has(chKey) ? CComple.phrasesComple :
-                    (AutoLoader.getSingletonWordTree().hasPrefix(chKey) ? CComple.wordComple :
-                        CComple.blank));
-        return compleObject.provideCompletionItems(chKey);
+        // let compleObject: CompleHandler =
+        //     (Line.isIssues(lastWord, CComple.issueFeature.issueRegex)) ?
+        //         (AutoLoader.getIssueTree().has(lastWordKey) ? CComple.issueComple : CComple.issueCue) :
+        //         (AutoLoader.getSingletonWordTree().has(lastWordKey) ? CComple.phrasesComple :
+        //             (AutoLoader.getSingletonWordTree().hasPrefix(lastWordKey) ? CComple.wordComple :
+        //                 CComple.blank));
+        // return compleObject.provideCompletionItems(lastWordKey);
+
+        return CompleHandlerChain.handleComple(text);
     }
 
     /**

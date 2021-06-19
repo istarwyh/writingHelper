@@ -3,13 +3,16 @@ import CollocationDetail from "../entity/CollocationDetail";
 import { Interpretation } from "../entity/Interpretation";
 
 export interface IComComple {
+
+    // provideCompletionItems(...regExps: string[]): CompletionItem[];
+    
     /**
      * 各自找到自己的matched elements实现provideCompletionItems
+     * 等用户补全/写完了直接拿到wordKey,在此之前引导向已有的wordKey补全
      * @param lineText
      * @param regExps 
      */
-    provideCompletionItems(...regExps: string[]): CompletionItem[];
-
+    provideCompletionItems(regExp: string): CompletionItem[];
     /**
      * string construct CompletionItems
      * @param s 

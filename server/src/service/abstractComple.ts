@@ -8,24 +8,35 @@ import Utils from "../utils/Utils";
 import { IComComple } from "./IComComple";
 
 export default abstract class CompleHandler implements IComComple {
-    protected next: CompleHandler;
+    protected left : CompleHandler;
+    protected right : CompleHandler;
 
-    abstract provideCompletionItems(...regExps: string[]): CompletionItem[];
+    abstract provideCompletionItems(regExp: string): CompletionItem[];
 
-    public getNext(): CompleHandler {
-        return this.next;
+    // abstract provideCompletionItems(...regExps: string[]): CompletionItem[];
+
+    public getLeft(): CompleHandler {
+        return this.left;
     }
     
-    public setNext(next: CompleHandler): void {
-        this.next = next;
+    public setLeft(left: CompleHandler): void {
+        this.left = left;
     }
+    public getRight(): CompleHandler {
+        return this.right;
+    }
+    
+    public setRight(right: CompleHandler): void {
+        this.right = right;
+    }
+
     getComples4CollocationDetail(matchedphrases: CollocationDetail[]): CompletionItem[] {
         let completionItems = new Array<CompletionItem>();
         for (let phrase of matchedphrases) {
             const wordKey = phrase[CollocationDetail.wordKeyStr()][0];
             const interpretations: Interpretation[] = phrase[CollocationDetail.interpretationStr()];
             const collocation: string = phrase[CollocationDetail.collocationStr()];
-            completionItems.push(this.constrcutCompletionItem(wordKey, collocation, Utils.notNull(interpretations)));
+            completionItems.push(this.constrcutCompletionItem(wordKey, collocation, Utils.notNull(interpretations,"interpretations")));
         }
         return completionItems;
     }

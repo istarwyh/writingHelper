@@ -2,9 +2,14 @@ import { configure, getLogger, Logger } from 'log4js';
 import AutoLoader from '../AutoLoader';
 
 export default class Utils {
-    static notNull(o: any): any {
+    static notNullOrUndefiend(o:any){
+        Utils.notNull(o,"");
+        Utils.notUndefined(o);
+    }
+
+    static notNull(o: any , msg: string): any {
         if (o === null) {
-            throw Error(o + " should not be null!");
+            throw Error(msg+ " should not be null!");
         } else {
             return o;
         }

@@ -26,7 +26,6 @@ Utils.logCurTime();
 connection.onCompletion(
 	// The pass parameter contains the position of the text document in which code complete got requested. 
 	(_textDocumentPosition: TextDocumentPositionParams): CompletionItem[] => {
-		Utils.logCurTime();
 		return CComple.provideCompletionItems(Document.getDocumentFromURI(_textDocumentPosition.textDocument.uri), _textDocumentPosition.position);
 	}
 );
