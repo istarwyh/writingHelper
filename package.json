@@ -4,7 +4,7 @@
     "description": "get all the benefits of Grammarly & Linggle",
     "author": "istarwyh",
     "publisher": "istarwyh",
-    "license": "MIT",
+    "license": "GPLv2",
     "version": "0.1.6",
     "icon": "writingcatlogo.png",
     "repository": {

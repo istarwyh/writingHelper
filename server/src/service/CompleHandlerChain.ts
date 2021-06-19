@@ -1,5 +1,4 @@
 import { CompletionItem } from 'vscode-languageserver-types';
-import AutoLoader from '../AutoLoader';
 import CompleHandler from './abstractComple';
 import Blank from './impl/Blank';
 import IssueComple from './impl/IssueComple';

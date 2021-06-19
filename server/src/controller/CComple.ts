@@ -18,8 +18,8 @@ class CComple {
         issueRegex: /^ff/,
         issueFlag: "ff"
     };
-
     static readonly wordComple = new PhrasekeyComple();
+    
     public static modifyCompletionItem(_item: CompletionItem): CompletionItem {
         return CComple.wordComple.modifyCompletionItem(_item);
     }
