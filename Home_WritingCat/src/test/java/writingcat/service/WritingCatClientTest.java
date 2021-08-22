@@ -4,10 +4,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.result.DeleteResult;
 import org.bson.Document;
 import org.junit.jupiter.api.Test;
-import writingcat.entity.CollocationDetail;
 import writingcat.utils.PropertyUtil;
-
-import java.io.File;
 
 import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.gte;

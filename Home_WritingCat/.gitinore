@@ -1,3 +1,6 @@
 target
 *.class
 src/main/resources/repository/tmp.xlsx
+.settings
+.idea
+.vscode

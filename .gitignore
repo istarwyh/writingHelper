@@ -9,3 +9,10 @@ src/test
 vsc-extension-quickstart.md
 **/target/
 client/src/testFixture/
+Home_WritingCat/.factorypath
+Home_WritingCat/.project
+Home_WritingCat/.settings/org.eclipse.core.resources.prefs
+Home_WritingCat/.settings/org.eclipse.jdt.apt.core.prefs
+Home_WritingCat/.settings/org.eclipse.jdt.core.prefs
+Home_WritingCat/.settings/org.eclipse.m2e.core.prefs
+Home_WritingCat/.classpath
