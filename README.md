@@ -6,7 +6,7 @@ WritingHelper
   Hope to make Writing English Fulently & naturally  🚀
 </p>
 <p align = "center">
-  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-GPLv2-green" alt="License"></a>
+  <a href="./LICENSE"><img srcß="https://img.shields.io/badge/License-GPLv2-green" alt="License"></a>
   <a><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"/></a>
   <a><img src="https://img.shields.io/badge/Powered%20by-VSCode-blue"/></a>
 </p>
@@ -20,7 +20,7 @@ If you have not yet reliazed word collocation, you can see [here](https://www.th
 ![功能展示](https://gitee.com/istarwyh/images/raw/master/1624119548_20210620001856138_14747.gif)
 
 ## 📝使用说明 
-Just install me and write in a `.txt` / `.md`  file in English.
+Just install me and write in a `.txt` / `.md` / `.latex` file in English.
 
 ## 📸 安装
 
@@ -38,9 +38,17 @@ Just install me and write in a `.txt` / `.md`  file in English.
 ----------------
 
 # To Developer & Committer
-## ✨ 实现原理
-waiting...
 
+## ✨ Implementation Principle
+waiting...
+## how to run & publish
+1. `git clone https://github.com/istarwyh/writingHelper.git`
+2. install `npm` && `npm install typescript -g`
+3. `npm install` && `tsc -b`
+4. Open VS Code on this folder
+5. Start Debugging (`f5` generally)
+6. `npm install -g vsce` && `vsce package` 
+(Click [here](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) to see more)
 ## ⚠️🐞
 - [ ] Circular Dependency in server.js
 
