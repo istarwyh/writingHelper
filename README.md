@@ -6,7 +6,7 @@ WritingHelper
   Hope to make Writing English Fulently & naturally  🚀
 </p>
 <p align = "center">
-  <a href="./LICENSE"><img srcß="https://img.shields.io/badge/License-GPLv2-green" alt="License"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-GPLv2-green" alt="License"></a>
   <a><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"/></a>
   <a><img src="https://img.shields.io/badge/Powered%20by-VSCode-blue"/></a>
 </p>
