@@ -5,6 +5,7 @@ This is a part of my graduation dissertation, so now writingCat/writingHelper is
 ## [0.1.7] -2021-5-8
 ### Added
 - Support `tex`
+- `alt + q` in windows or `option + q` in mac to read the time that elapse from the time you open the writing page.
 
 ### [0.1.6] -2021-5-8
 ### Fixed

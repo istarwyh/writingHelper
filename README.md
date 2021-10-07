@@ -15,9 +15,11 @@ WritingHelper
 Hi, I am a VS Code Extension of IELTS English Writing, which can provide professional suggestion and completion of `Word Collocation`/`Word Group`.
 If you have not yet reliazed word collocation, you can see [here](https://www.thoughtco.com/what-is-collocation-1211244#:~:text=Collocation%20refers%20to%20a%20group%20of%20two%20or,place.%20Collocation%E2%80%8Bs%20are%20words%20that%20are%20located%20together.) for more information.
 
-## 💡 演示
+## 💡 功能与演示
 
 ![功能展示](https://gitee.com/istarwyh/images/raw/master/1624119548_20210620001856138_14747.gif)
+
+- `alt + q` in windows or `option + q` in mac to read the time that elapse from the time you open the writing page.
 
 ## 📝使用说明 
 Just install me and write in a `.txt` / `.md` / `.latex` / `.tex`file in English.
