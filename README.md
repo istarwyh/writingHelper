@@ -20,7 +20,7 @@ If you have not yet reliazed word collocation, you can see [here](https://www.th
 ![功能展示](https://gitee.com/istarwyh/images/raw/master/1624119548_20210620001856138_14747.gif)
 
 ## 📝使用说明 
-Just install me and write in a `.txt` / `.md` / `.latex` file in English.
+Just install me and write in a `.txt` / `.md` / `.latex` / `.tex`file in English.
 
 ## 📸 安装
 

@@ -1,6 +1,12 @@
 This is a part of my graduation dissertation, so now writingCat/writingHelper is not open. If you have any problems or issues,
 **you jsut contact me with wechat: `istarwyh`:-)**
-## [0.1.6] -2021-5-8
+
+
+## [0.1.7] -2021-5-8
+### Added
+- Support `tex`
+
+### [0.1.6] -2021-5-8
 ### Fixed
 - Fix the small img what cannot be loaded correctly in the Readme.md
 ### Support

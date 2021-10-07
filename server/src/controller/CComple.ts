@@ -13,7 +13,7 @@ class CComple {
         'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
         'u', 'v', 'w', 'x', 'y', 'z'];
     // https://code.visualstudio.com/docs/languages/identifiers
-    static readonly documentSelector = ['plaintext', 'markdown', 'latex'];
+    static readonly documentSelector = ['plaintext', 'markdown', 'latex','tex'];
     static readonly issueFeature: IssueFeature = {
         issueRegex: /^ff/,
         issueFlag: "ff"

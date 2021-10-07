@@ -44,7 +44,9 @@ export default class WritingCatClient {
 			documentSelector: [
 				{ scheme: 'file', language: 'plaintext' },
 				{ scheme: 'file', language: 'markdown' },
-				{ scheme: 'file', language: 'latex' }
+				{ scheme: 'file', language: 'latex' },
+				{ scheme: 'file', language: 'tex' }
+
 			],
 			synchronize: {
 				// Notify the server about file changes to '.clientrc files contained in the workspace
