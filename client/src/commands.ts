@@ -26,7 +26,10 @@ function restartServer(client: lsp.LanguageClient): Command {
 		},
 	};
 }
-
+/**
+ * 提示自Extension激活已经过了多少时间
+ * TODO 应该是从打开一个文本开始⌛️。1.识别文本重置时间；2.识别不同的文本
+ */
 function sayElapseTime(): Command {
 	return {
 		id: 'sayElapseTime',

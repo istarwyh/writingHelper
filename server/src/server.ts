@@ -18,6 +18,9 @@ export const userSeter = UserSettings.iniUserSettings();
 const connection = Connection.buildConnection();
 AutoLoader.autoLoader();
 
+/**
+ * 打印插件激活时的时间
+ */
 Utils.logCurTime();
 
 /**
@@ -26,7 +29,8 @@ Utils.logCurTime();
 connection.onCompletion(
 	// The pass parameter contains the position of the text document in which code complete got requested. 
 	(_textDocumentPosition: TextDocumentPositionParams): CompletionItem[] => {
-		return CComple.provideCompletionItems(Document.getDocumentFromURI(_textDocumentPosition.textDocument.uri), _textDocumentPosition.position);
+		return CComple.provideCompletionItems(
+			Document.getDocumentFromURI(_textDocumentPosition.textDocument.uri), _textDocumentPosition.position);
 	}
 );
 // 事实上可以先拿到item,然后再对每个item进行请求,这样就可以解决不连续补全的问题...todo
