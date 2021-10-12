@@ -11,8 +11,33 @@ This is a part of my graduation dissertation, so now writingCat/writingHelper is
 ### Fixed
 - Fix the small img what cannot be loaded correctly in the Readme.md
 ### Support
-- "ff"+"culture/duty/efficient/environment/finance/fun/healthy/right/skill/safety/work/life/link" to wake up issues-hint
-ffskill 
+- "ff"+
+culture
+
+duty
+
+efficient
+
+environment
+
+finance
+
+fun
+
+healthy
+
+right
+
+skill
+
+safety
+
+work
+
+life
+
+link to wake up issues-hint
+
 ### [0.1.4] - 2021-4-4
 ### Removed
 - welcome hint
