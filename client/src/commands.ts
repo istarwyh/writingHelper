@@ -3,6 +3,7 @@ import * as vscode from 'vscode';
 import * as lsp from 'vscode-languageclient';
 import { s_to_ms } from './utils/TimeUtils';
 import WritingCatClient from './WritingCatClient';
+import * as fs from 'fs';
 
 /**
  * Represent a vscode command with an ID and an impl function `execute`.
@@ -41,6 +42,27 @@ function sayElapseTime(): Command {
 		}
 	}
 }
+
+// function pullAndUpdateCollocations(): Command {
+// 	return {
+// 		id: 'pullAndUpdateCollocations',
+// 		execute() {
+// 			(async () => {
+// 				// 1. 同步获取所有语料库 
+// 				const content = await http.get("127.0.0.1:8080/getAllCollocationList","");
+// 				console.log(content);
+// 				try {
+// 					// 2. 同步更新现有语料库 本地fs		
+// 					const collocationPath = '/Users/yihui/Desktop/Learning/Codes/writing-cat/server/src/repository/Collocations.json';
+// 					fs.writeFileSync(collocationPath, "")
+// 				  } catch (err) {
+// 					console.error(err)
+// 				  }
+// 				vscode.window.showInformationMessage("It has been updated :-)");
+// 			})();
+// 		}
+// 	}
+// }
 
 export function registerCommands(client: lsp.LanguageClient): vscode.Disposable[] {
 	const commands: Command[] = [
