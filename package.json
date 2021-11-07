@@ -66,19 +66,28 @@
                     ],
                     "default": "off",
                     "description": "Traces the communication between VS Code and the language server (For Developer)."
-                }
+                },
+                "writingcat.showEnglishCount": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show English characters' number"
+				},
+				"writingcat.showAllCount": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show all characters' number in the text including symbols"
+				},
+                "writingcat.targetWordCount": {
+					"type": "number",
+					"default": 200,
+					"description": "The target number of character"
+				}
             }
         },
         "keybindings": [
             {
                 "command": "sayElapseTime",
                 "key": "alt+q"
-            },
-            {
-                "command": "showWordCount",
-                "key": "ctrl+l",
-                "mac": "cmd+l",
-                "when": "editorTextFocus"
             }
         ]
     },

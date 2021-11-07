@@ -8,6 +8,7 @@ import WordCounter from './utils/WordCounter';
 
 /**
  * Represent a vscode command with an ID and an impl function `execute`.
+ * - id need be added in package.json int the root
  */
 interface Command {
 	id: string;
@@ -16,7 +17,7 @@ interface Command {
 }
 
 /**
- * 重启WritingCatClient
+ * 保证客户端能够在扩展关闭的同时关闭,并开启客户端
  * @param client language client
  */
 function restartServer(client: lsp.LanguageClient): Command {
@@ -44,17 +45,16 @@ function sayElapseTime(): Command {
 	}
 }
 
-function showWordCount(): Command {
+export function encourageByWordCount(): Command {
 	return {
-		id:'showWordCount',
+		id:'encourageByWordCount',
 		execute(){
 			let editor = vscode.window.activeTextEditor;
 			if (!editor) {
 				return;
 			}
-			let doc = editor.document;
-			let WordCount = WordCounter.countWord(doc);
-			vscode.window.showInformationMessage(`English:${WordCount.englishWordCount}, All:${WordCount.allWordCount}`);
+			let encourageContent :string = WordCounter.encourage();
+			vscode.window.showInformationMessage(encourageContent);
 		}
 	}
 }
@@ -84,7 +84,7 @@ export function registerCommands(client: lsp.LanguageClient): vscode.Disposable[
 	const commands: Command[] = [
 		restartServer(client),
 		sayElapseTime(),
-		showWordCount()
+		encourageByWordCount()
 	];
 	const disposables = commands.map((command) => {
 		return vscode.commands.registerCommand(command.id, command.execute);
