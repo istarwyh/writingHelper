@@ -1,7 +1,7 @@
 {
 	"name": "writingcat-client",
 	"description": "A English language Client",
-	"license": "MIT",
+	"license": "GPLv2",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/istarwyh/writingHelper"

@@ -4,6 +4,7 @@ import * as lsp from 'vscode-languageclient';
 import { s_to_ms } from './utils/TimeUtils';
 import WritingCatClient from './WritingCatClient';
 import * as fs from 'fs';
+import WordCounter from './utils/WordCounter';
 
 /**
  * Represent a vscode command with an ID and an impl function `execute`.
@@ -43,6 +44,21 @@ function sayElapseTime(): Command {
 	}
 }
 
+function showWordCount(): Command {
+	return {
+		id:'showWordCount',
+		execute(){
+			let editor = vscode.window.activeTextEditor;
+			if (!editor) {
+				return;
+			}
+			let doc = editor.document;
+			let WordCount = WordCounter.countWord(doc);
+			vscode.window.showInformationMessage(`English:${WordCount.englishWordCount}, All:${WordCount.allWordCount}`);
+		}
+	}
+}
+
 // function pullAndUpdateCollocations(): Command {
 // 	return {
 // 		id: 'pullAndUpdateCollocations',
@@ -67,7 +83,8 @@ function sayElapseTime(): Command {
 export function registerCommands(client: lsp.LanguageClient): vscode.Disposable[] {
 	const commands: Command[] = [
 		restartServer(client),
-		sayElapseTime()
+		sayElapseTime(),
+		showWordCount()
 	];
 	const disposables = commands.map((command) => {
 		return vscode.commands.registerCommand(command.id, command.execute);

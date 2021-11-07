@@ -5,7 +5,7 @@
     "author": "istarwyh",
     "publisher": "istarwyh",
     "license": "GPLv2",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "icon": "writingcatlogo.png",
     "repository": {
         "type": "git",
@@ -30,7 +30,6 @@
         "onLanguage:plaintext",
         "onLanguage:latex",
         "onLanguage:tex"
-
     ],
     "contributes": {
         "configuration": {
@@ -74,6 +73,12 @@
             {
                 "command": "sayElapseTime",
                 "key": "alt+q"
+            },
+            {
+                "command": "showWordCount",
+                "key": "ctrl+l",
+                "mac": "cmd+l",
+                "when": "editorTextFocus"
             }
         ]
     },
