@@ -7,8 +7,7 @@ import {
   workspace,
 } from "vscode";
 import { encourageByWordCount } from '../commands';
-
-
+import { includedByDocumentTypeEnum } from '../common/DocumentTypeEnum';
 
 export default class WordCounter {
 
@@ -66,25 +65,21 @@ export default class WordCounter {
     if (!this._statusBarItem) {
       this._statusBarItem = window.createStatusBarItem(StatusBarAlignment.Left);
     }
-
     // Get the current text editor
     let editor = window.activeTextEditor;
     if (!editor) {
       this._statusBarItem.hide();
       return;
     }
-
     let doc = editor.document;
-
-    if (
-      doc.languageId === "plaintext" ||
-      doc.languageId === "markdown" ||
-      doc.languageId === "tex" ||
-      doc.languageId === "latex"
-    ) {
+    if (includedByDocumentTypeEnum(doc.languageId)) {
       this.countWord(doc);
+      setStatusBar();
+    } else {
+      this._statusBarItem.hide();
+    }
 
-      // Update the status bar
+    function setStatusBar() {
       let textArr = [];
       if (this.showEnglishCount) {
         textArr.push(`English: ${this.englishWordCount}`);
@@ -101,8 +96,6 @@ export default class WordCounter {
       this._statusBarItem.text = "$(pencil) " + textArr.join(", ");
       this._statusBarItem.show();
       this._statusBarItem.command = encourageByWordCount().id;
-    } else {
-      this._statusBarItem.hide();
     }
   }
 
@@ -122,6 +115,10 @@ export default class WordCounter {
     WordCounter.englishWordCount = englishWordContent.length;
   }
 
+  /**
+   * 
+   * @returns 用于提示的文案
+   */
   static encourage():string {
     if(this.englishWordCount > this.targetWordCount ){
       return `Congratulations , you have done it well:-)`;

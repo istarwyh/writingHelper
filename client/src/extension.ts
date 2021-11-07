@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import{registerCommands} from './commands';
 import {LanguageClient} from 'vscode-languageclient';
 import WritingCatClient from './WritingCatClient';
-import WordCounter from './utils/WordCounter';
+import WordCounter from './biz/WordCounter';
 
 let client: LanguageClient;
 export function activate(context: vscode.ExtensionContext) {

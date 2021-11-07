@@ -8,6 +8,7 @@ import {
 	ServerOptions,
 	TransportKind
 } from 'vscode-languageclient';
+import { DocumentTypeEnum } from './common/DocumentTypeEnum';
 
 export default class WritingCatClient {
 	private static iniDate: Date;
@@ -42,10 +43,10 @@ export default class WritingCatClient {
 		};
 		this.clientOptions = {
 			documentSelector: [
-				{ scheme: 'file', language: 'plaintext' },
-				{ scheme: 'file', language: 'markdown' },
-				{ scheme: 'file', language: 'latex' },
-				{ scheme: 'file', language: 'tex' }
+				{ scheme: 'file', language: DocumentTypeEnum.plaintext },
+				{ scheme: 'file', language: DocumentTypeEnum.markdown },
+				{ scheme: 'file', language: DocumentTypeEnum.tex },
+				{ scheme: 'file', language: DocumentTypeEnum.latex }
 
 			],
 			synchronize: {

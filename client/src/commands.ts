@@ -4,7 +4,7 @@ import * as lsp from 'vscode-languageclient';
 import { s_to_ms } from './utils/TimeUtils';
 import WritingCatClient from './WritingCatClient';
 import * as fs from 'fs';
-import WordCounter from './utils/WordCounter';
+import WordCounter from './biz/WordCounter';
 
 /**
  * Represent a vscode command with an ID and an impl function `execute`.
