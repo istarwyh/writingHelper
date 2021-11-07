@@ -21,6 +21,7 @@ If you have not yet reliazed word collocation, you can see [here](https://www.th
 
 - `alt + q` in windows or `option + q` in mac to read the time that elapse from the time you open the writing page.
 
+- a words number show at the left bottom of VS Code
 ## 📝使用说明 
 Just install me and write in a `.txt` / `.md` / `.latex` / `.tex`file in English.
 
