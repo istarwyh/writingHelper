@@ -17,3 +17,4 @@ Home_WritingCat/.settings/org.eclipse.jdt.core.prefs
 Home_WritingCat/.settings/org.eclipse.m2e.core.prefs
 Home_WritingCat/.classpath
 client/src/testFixture/completion.txt
+.DS_Store

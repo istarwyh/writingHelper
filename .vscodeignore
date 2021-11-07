@@ -19,10 +19,12 @@ client/node_modules/**
 
 ##
 Home_WritingCat
-client/src/testFixture
+client/src/utils/testFixture
 server/src/repository
 scripts
 Release/**
 tslint.json
 *.zip
 *.vsix
+rollup.config.js
+**/yarn.lock

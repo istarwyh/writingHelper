@@ -50,7 +50,7 @@ waiting...
 3. `npm install` && `tsc -b`
 4. Open VS Code on this folder
 5. Start Debugging (`f5` generally)
-6. `npm install -g vsce` && `vsce package` 
+6. `npm install -g vsce` && `vsce package --no-yarn` 
 (Click [here](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) to see more)
 ## ⚠️🐞
 - [ ] Circular Dependency in server.js
