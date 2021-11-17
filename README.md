@@ -53,14 +53,12 @@ waiting...
 6. `npm install -g vsce` && `vsce package --no-yarn` 
 (Click [here](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) to see more)
 ## ⚠️🐞
-- [ ] Circular Dependency in server.js
+~~
 
 ## 🚩Todo
-- [ ] count words number
 - [ ] work with time limit
 - [ ] hover
 - [ ] if neccesary, don't launch this programm.(Will the extension be launced when VSC open a file every time?)
 
 ## 📣note
->This is a part of my graduation dissertation, so now writingCat/writingHelper is not open. If you have any problems or issues,
-**you jsut contact me with wechat: `istarwyh`** or **email:** `yihui.wang@pku.edu.cn` :-)
+Welcome issues or pull requests! If you have more problems, **you jsut contact me with wechat: `istarwyh`** or **email:** `yihui.wang@pku.edu.cn` :-)
