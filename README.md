@@ -3,7 +3,7 @@
 WritingHelper
 </h1>
 <p align="center">
-  Hope to make Writing English Fulently & naturally  🚀
+  Hope to make Writing English Fulently & Naturally  🚀
 </p>
 <p align = "center">
   <a href="./LICENSE"><img src="https://img.shields.io/badge/License-GPLv2-green" alt="License"></a>
@@ -59,6 +59,7 @@ waiting...
 - [ ] work with time limit
 - [ ] hover
 - [ ] if neccesary, don't launch this programm.(Will the extension be launced when VSC open a file every time?)
+- [ ] More Collocations
 
 ## 📣note
 Welcome issues or pull requests! If you have more problems, **you jsut contact me with wechat: `istarwyh`** or **email:** `yihui.wang@pku.edu.cn` :-)
