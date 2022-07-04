@@ -60,6 +60,7 @@ waiting...
 - [ ] hover
 - [ ] if neccesary, don't launch this programm.(Will the extension be launced when VSC open a file every time?)
 - [ ] More Collocations
+- [ ] enpuz.com
 
 ## 📣note
 Welcome issues or pull requests! If you have more problems, **you jsut contact me with wechat: `istarwyh`** or **email:** `yihui.wang@pku.edu.cn` :-)
