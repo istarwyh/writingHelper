@@ -123,7 +123,7 @@ export default class WordCounter {
     if(this.englishWordCount > this.targetWordCount ){
       return `Congratulations , you have done it well:-)`;
     }else{
-      return `Come on, it's ${this.targetWordCount} words short of ${this.targetWordCount - this.englishWordCount} words!`;
+      return `Come on, it's ${this.targetWordCount - this.englishWordCount} words short of ${this.targetWordCount} words!`;
     }
   }
 
