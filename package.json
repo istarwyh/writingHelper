@@ -29,7 +29,9 @@
         "onLanguage:markdown",
         "onLanguage:plaintext",
         "onLanguage:latex",
-        "onLanguage:tex"
+        "onLanguage:tex",
+        "onLanguage:javascript",
+        "onLanguage:typescript"
     ],
     "contributes": {
         "configuration": {
@@ -44,16 +46,16 @@
                 "writingcat.completionSetting": {
                     "type": "string",
                     "default": "Sentence",
-                    "description": "提示词伙以及优先单词例句",
+                    "description": "\u63d0\u793a\u8bcd\u4f19\u4ee5\u53ca\u4f18\u5148\u5355\u8bcd\u4f8b\u53e5",
                     "enum": [
                         "OnlyNecessary",
                         "Sentence",
                         "Interpretation "
                     ],
                     "enumDescriptions": [
-                        "仅提示词伙",
-                        "提示词伙以及优先单词例句",
-                        "提示词伙以及优先词伙解释"
+                        "\u4ec5\u63d0\u793a\u8bcd\u4f19",
+                        "\u63d0\u793a\u8bcd\u4f19\u4ee5\u53ca\u4f18\u5148\u5355\u8bcd\u4f8b\u53e5",
+                        "\u63d0\u793a\u8bcd\u4f19\u4ee5\u53ca\u4f18\u5148\u8bcd\u4f19\u89e3\u91ca"
                     ]
                 },
                 "writingcat.trace.server": {
@@ -68,20 +70,33 @@
                     "description": "Traces the communication between VS Code and the language server (For Developer)."
                 },
                 "writingcat.showEnglishCount": {
-					"type": "boolean",
-					"default": true,
-					"description": "Show English characters' number"
-				},
-				"writingcat.showAllCount": {
-					"type": "boolean",
-					"default": true,
-					"description": "Show all characters' number in the text including symbols"
-				},
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Show English characters' number"
+                },
+                "writingcat.showAllCount": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Show all characters' number in the text including symbols"
+                },
                 "writingcat.targetWordCount": {
-					"type": "number",
-					"default": 200,
-					"description": "The target number of character"
-				}
+                    "type": "number",
+                    "default": 200,
+                    "description": "The target number of character"
+                },
+                "writingcat.commentDiagnostics.enabled": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Check English spelling in JavaScript/TypeScript comments locally. No network requests."
+                },
+                "writingcat.commentDiagnostics.ignoreWords": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [],
+                    "description": "Words to ignore in comment spelling diagnostics (case-insensitive)."
+                }
             }
         },
         "keybindings": [
@@ -96,7 +111,8 @@
         "compile": "tsc -b",
         "watch": "tsc -b -w",
         "postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
-        "test": "sh ./scripts/e2e.sh"
+        "test": "sh ./scripts/e2e.sh",
+        "test:comments": "npm run compile && node --test client/test/commentSpelling.test.cjs"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^13.0.0",
@@ -109,14 +125,11 @@
         "rollup": "^2.0.6",
         "ts-loader": "^8.1.0",
         "tslint": "^6.1.0",
-        "tslint-eslint-rules": "5.4.0",
-        "typescript": "^3.9.10",
+        "typescript": "4.9.5",
         "vsce": "^1.96.1",
         "webpack": "^5.30.0",
         "webpack-cli": "^4.6.0"
     },
-    "dependencies": {
-        "tsc": "^1.20150623.0"
-    },
+    "dependencies": {},
     "__npminstall_done": false
 }

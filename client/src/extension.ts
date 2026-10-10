@@ -3,11 +3,13 @@ import{registerCommands} from './commands';
 import {LanguageClient} from 'vscode-languageclient';
 import WritingCatClient from './WritingCatClient';
 import WordCounter from './biz/WordCounter';
+import {registerCommentDiagnostics} from './biz/CommentDiagnostics';
 
 let client: LanguageClient;
 export function activate(context: vscode.ExtensionContext) {
 	client = WritingCatClient.buildWritingCatClient(context, 6009, "writingcat");
 	context.subscriptions.push(
+	registerCommentDiagnostics(),
 	...registerCommands(client),
 	client.start(),
 	WordCounter.showWordCountStatusBar());

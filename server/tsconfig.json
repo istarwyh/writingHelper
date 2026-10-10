@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+        "types": ["node"],
 		"outDir": "out",
 		"rootDir": "src",
 		"target": "es2019",
