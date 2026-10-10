@@ -23,6 +23,16 @@ export async function createEnglishSpeller(): Promise<Speller> {
     return require('nspell')({ aff, dic });
 }
 
+/** Keep sentence-initial capitalization without changing dictionary proper names. */
+export function spellingSuggestions(word: string, speller: Speller): string[] {
+    return matchCapitalization(word, speller.suggest(word.toLowerCase()).slice(0, 3));
+}
+
+function matchCapitalization(word: string, suggestions: string[]): string[] {
+    return suggestions.map(suggestion => /^[A-Z]/.test(word)
+        ? suggestion.charAt(0).toUpperCase() + suggestion.slice(1) : suggestion);
+}
+
 /** Inspect parser-recognized comments, excluding strings, regexes and template text. */
 export function diagnoseComments(
     text: string,
@@ -41,7 +51,10 @@ export function diagnoseComments(
         add(ts.getTrailingCommentRanges(text, node.getFullStart()));
         add(ts.getTrailingCommentRanges(text, node.getEnd()));
         if (ts.isIdentifier(node)) identifiers.add(node.text.toLowerCase());
-        ts.forEachChild(node, visit);
+        // Include punctuation and keyword tokens omitted by forEachChild. The parser
+        // retains regex/template boundaries, unlike a context-free scanner pass.
+        // JSDoc's parsed nodes are inside an already collected comment.
+        if (node.kind !== ts.SyntaxKind.JSDocComment) node.getChildren(source).forEach(visit);
     }
     visit(source);
     add(ts.getLeadingCommentRanges(text, 0));
@@ -68,7 +81,8 @@ export function diagnoseComments(
             const suggestions = checked.get(lower);
             if (suggestions !== null) {
                 problems.push({ word, start: range.pos + match.index,
-                    end: range.pos + match.index + word.length, suggestions: suggestions || [] });
+                    end: range.pos + match.index + word.length,
+                    suggestions: matchCapitalization(word, suggestions || []) });
             }
             if (problems.length >= 100) return problems;
         }

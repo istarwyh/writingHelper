@@ -43,6 +43,30 @@ exports.run = async () => {
         await waitFor(() => diagnostics().length === 0);
         await configuration.update('ignoreWords', [], vscode.ConfigurationTarget.Global);
         await waitFor(() => diagnostics().length === 1);
+        const replaceDocument = async content => {
+            const edit = new vscode.WorkspaceEdit();
+            edit.replace(document.uri, new vscode.Range(document.positionAt(0), document.positionAt(document.getText().length)), content);
+            await vscode.workspace.applyEdit(edit);
+        };
+        await replaceDocument('if /* recieve */ (ready) {}\nexport /* seperate */ default value;');
+        await waitFor(() => diagnostics().length === 2);
+        assert.deepEqual(diagnostics().map(item => document.getText(item.range)), ['recieve', 'seperate']);
+        await replaceDocument('// Recieve the result');
+        await waitFor(() => diagnostics().length === 1 && document.getText(diagnostics()[0].range) === 'Recieve');
+        let capitalizedFix;
+        for (let attempt = 0; attempt < 10 && !capitalizedFix; attempt++) {
+            try {
+                const actions = await vscode.commands.executeCommand('vscode.executeCodeActionProvider', document.uri, diagnostics()[0].range, vscode.CodeActionKind.QuickFix.value);
+                capitalizedFix = actions.find(action => action.title === "Replace with 'Receive'");
+            } catch (error) { if (attempt === 9) throw error; }
+            if (!capitalizedFix) await pause(100);
+        }
+        assert.ok(capitalizedFix && capitalizedFix.edit, 'capitalized spelling quick fix exists');
+        await vscode.workspace.applyEdit(capitalizedFix.edit);
+        await waitFor(() => diagnostics().length === 0);
+        assert.equal(document.getText(), '// Receive the result');
+        await replaceDocument('// recieve');
+        await waitFor(() => diagnostics().length === 1);
         await configuration.update('enabled', false, vscode.ConfigurationTarget.Global);
         await waitFor(() => diagnostics().length === 0);
         console.log('VS Code: activation/default/diagnostics/quick-fix/edit/ignore/disable passed');

@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { createEnglishSpeller, diagnoseComments, Speller } from './commentSpelling';
+import { createEnglishSpeller, diagnoseComments, spellingSuggestions, Speller } from './commentSpelling';
 
 const languages = new Set(['javascript', 'typescript']);
 const source = 'writingHelper comments';
@@ -69,7 +69,7 @@ export function registerCommentDiagnostics(): vscode.Disposable {
                     for (const diagnostic of context.diagnostics) {
                         if (diagnostic.source !== source || typeof diagnostic.code !== 'string'
                             || document.getText(diagnostic.range) !== diagnostic.code) continue;
-                        for (const suggestion of dictionary.suggest(diagnostic.code.toLowerCase()).slice(0, 3)) {
+                        for (const suggestion of spellingSuggestions(diagnostic.code, dictionary)) {
                             const action = new vscode.CodeAction(`Replace with '${suggestion}'`, vscode.CodeActionKind.QuickFix);
                             action.diagnostics = [diagnostic];
                             action.edit = new vscode.WorkspaceEdit();
