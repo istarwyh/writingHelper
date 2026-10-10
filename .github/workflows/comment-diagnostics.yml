@@ -1,0 +1,19 @@
+name: Comment spelling diagnostics
+on:
+  pull_request:
+  push:
+    branches: [master, main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci --ignore-scripts
+      - run: npm ci --prefix client --ignore-scripts
+      - run: npm ci --prefix server --ignore-scripts
+      - run: npm run test:comments
+      - run: xvfb-run -a node scripts/test-comment-extension.cjs
+      - run: npx vsce ls --no-yarn

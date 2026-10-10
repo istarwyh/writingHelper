@@ -28,3 +28,8 @@ tslint.json
 *.vsix
 rollup.config.js
 **/yarn.lock
+!client/node_modules/nspell/**
+!client/node_modules/is-buffer/**
+!client/node_modules/dictionary-en/**
+!client/node_modules/typescript/**
+client/test/**
